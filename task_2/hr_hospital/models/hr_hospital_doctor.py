@@ -4,6 +4,6 @@ class HHDoctor(models.Model):
     _name = 'hr.hospital.doctor'
     _description = 'Doctor'
 
-    name = fields.Char(string='Name')
+    name = fields.Char(string='Doctor')
     specialty = fields.Char(string='Specialty')
 
