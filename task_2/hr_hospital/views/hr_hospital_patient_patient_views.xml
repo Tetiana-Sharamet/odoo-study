@@ -43,7 +43,7 @@
 
         <menuitem id="hr_hospital_menu_patient"
                   action="action_hr_hospital_patient_window"
-                  parent="hr_hospital_menu_patient"
+                  parent="hr_hospital_menu_main_patient"
                   name="Patient" sequence="200"/>
 
 
