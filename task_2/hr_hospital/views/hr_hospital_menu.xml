@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
   <menuitem id="hr_hospital_main_menu"
-            name="hospital" sequence="300"/>
+            name="HR Hospital" sequence="300"/>
 
   <menuitem id="hr_hospital_menu_doctor"
             parent="hr_hospital_main_menu"
