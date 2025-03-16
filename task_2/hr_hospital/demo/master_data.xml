@@ -1,0 +1,16 @@
+<odoo>
+    <record id="disease_flu" model="hr.hospital.disease">
+        <field name="name">Flu</field>
+        <field name="description">Seasonal influenza</field>
+    </record>
+
+    <record id="disease_cough" model="hr.hospital.disease">
+        <field name="name">Cough</field>
+        <field name="description">Persistent coughing</field>
+    </record>
+
+    <record id="disease_cold" model="hr.hospital.disease">
+        <field name="name">Cold</field>
+        <field name="description">Common cold symptoms</field>
+    </record>
+</odoo>

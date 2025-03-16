@@ -1,0 +1,18 @@
+odoo>
+
+    <record id="hrh_doctor_demo_1" model="res.partner.doctor">
+        <field name="name">Nazarenko O.P</field>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <record id="hrh_doctor_demo_2" model="res.partner.doctor">
+        <field name="name">Klimenko G.V.</field>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <record id="ohrh_doctor_demo_3" model="res.partner.doctor">
+        <field name="name">Bokin R.T.</field>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+</odoo>
