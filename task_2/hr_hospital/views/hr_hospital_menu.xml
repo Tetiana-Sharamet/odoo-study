@@ -4,11 +4,11 @@
   <menuitem id="hr_hospital_main_menu"
             name="HR Hospital" sequence="300"/>
 
-  <menuitem id="hr_hospital_menu_doctor"
+  <menuitem id="hr_hospital_menu_main_doctor"
             parent="hr_hospital_main_menu"
             name="Doctor" sequence="100"/>
 
-  <menuitem id="hr_hospital_menu_patient"
+  <menuitem id="hr_hospital_menu_main_patient"
             parent="hr_hospital_main_menu"
             name="Patient" sequence="900"/>
 </odoo>
