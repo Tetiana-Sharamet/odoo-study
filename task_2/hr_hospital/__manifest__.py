@@ -17,8 +17,8 @@
         'views/hr_hospital_doctor_views.xml',],
 
     'demo': [
-        'demo/hr_hospital_doctor_demo.xml',
-        'demo/hr.hospital.patient.demo.csv',
+        'demo/hr_hospital_demo.xml',
+
     ],
 
 
