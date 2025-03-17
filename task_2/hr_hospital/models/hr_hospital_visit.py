@@ -1,4 +1,4 @@
-from odoo.odoo import models, fields
+from odoo import models, fields
 
 class HHVisit(models.Model):
     _name = 'hr.hospital.visit'

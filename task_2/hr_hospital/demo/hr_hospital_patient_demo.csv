@@ -1,0 +1,4 @@
+"id","name","description","doctor_id:id"
+"HH_patient_1","Petrov I.I.","","hr_hospital.hrh_doctor_demo_2
+"HH_patient_2","Ivanov P.P.","","hr_hospital.hrh_doctor_demo_3"
+"HH_patient_3","Sidorov V.V.","","hr_hospital.hrh_doctor_demo_2"
