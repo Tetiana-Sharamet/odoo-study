@@ -47,6 +47,6 @@
 
         <menuitem id="hr_hospital_menu_doctor"
                   action="action_hr_hospital_doctor_window"
-                  parent="hr_hospital_menu_main_doctor"
+                  parent="hr_hospital_menu_main_doctor_patient"
                   name="Doctors" sequence="200"/>
 </odoo>

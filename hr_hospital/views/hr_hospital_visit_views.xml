@@ -6,7 +6,6 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="specialty"/>
                 </tree>
             </field>
         </record>
@@ -20,13 +19,8 @@
                         <group>
                             <group>
                                 <field name="name"/>
-                                <field name="specialty"/>
                             </group>
-                            <group>
-                                <field name="last_name"/>
-                                <field name="first_name"/>
-                                <field name="phone"/>
-                            </group>
+
                         </group>
                     </sheet>
                 </form>

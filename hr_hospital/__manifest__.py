@@ -12,8 +12,10 @@
 
     'data': [
         'security/ir.model.access.csv',
+        'data/hr_hospital_disease.xml',
         'views/hr_hospital_menu.xml',
         'views/hr_hospital_patient_views.xml',
+        'views/hr_hospital_visit_views.xml',
         'views/hr_hospital_doctor_views.xml', ],
 
     'demo': [

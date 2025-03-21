@@ -38,14 +38,14 @@ class HHVisit(models.Model):
     def create(self, vals):
         if 'scheduled_datetime' in vals and 'visit_status' in vals and vals['visit_status'] != 'scheduled':
             raise ValueError('Неможливо змінити час/дату візиту після того, як візит був завершений або скасований.')
-        return super(PatientVisit, self).create(vals)
+        return super(HHVisit, self).create(vals)
 
     def write(self, vals):
         if 'scheduled_datetime' in vals or 'doctor_id' in vals:
             for record in self:
                 if record.visit_status in ['completed', 'cancelled']:
                     raise ValueError('Неможливо змінювати час/дату/лікаря для завершеного або скасованого візиту.')
-        return super(PatientVisit, self).write(vals)
+        return super(HHVisit, self).write(vals)
 
     @api.constrains('patient_id', 'doctor_id', 'scheduled_datetime')
     def _check_patient_doctor_schedule(self):
@@ -68,4 +68,4 @@ class HHVisit(models.Model):
         for record in self:
             if record.diagnosis_ids:
                 raise ValueError('Не можна видаляти або архівувати візит з діагнозами.')
-        return super(PatientVisit, self).unlink()
+        return super(HHVisit, self).unlink()
