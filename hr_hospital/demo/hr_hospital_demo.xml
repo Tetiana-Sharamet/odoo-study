@@ -1,0 +1,37 @@
+<odoo>
+    <record id="disease_1" model="hr.hospital.disease">
+        <field name="name">Flu</field>
+    </record>
+    <record id="disease_2" model="hr.hospital.disease">
+        <field name="name">Cold</field>
+    </record>
+    <record id="disease_3" model="hr.hospital.disease">
+        <field name="name">COVID-19</field>
+    </record>
+
+    <record id="doctor_1" model="hr.hospital.doctor">
+        <field name="name">Dr. Smith</field>
+        <field name="specialty">Cardiologist</field>
+    </record>
+    <record id="doctor_2" model="hr.hospital.doctor">
+        <field name="name">Dr. Johnson</field>
+        <field name="specialty">Neurologist</field>
+    </record>
+    <record id="doctor_3" model="hr.hospital.doctor">
+        <field name="name">Dr. Brown</field>
+        <field name="specialty">Pediatrician</field>
+    </record>
+
+    <record id="patient_1" model="hr.hospital.patient">
+        <field name="name">John Doe</field>
+        <field name="doctor_id" ref="doctor_1"/>
+    </record>
+    <record id="patient_2" model="hr.hospital.patient">
+        <field name="name">Jane Doe</field>
+        <field name="doctor_id" ref="doctor_2"/>
+    </record>
+    <record id="patient_3" model="hr.hospital.patient">
+        <field name="name">Alice Johnson</field>
+        <field name="doctor_id" ref="doctor_3"/>
+    </record>
+</odoo>
