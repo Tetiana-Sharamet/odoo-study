@@ -12,7 +12,7 @@ class HHPatient(models.Model):
     description = fields.Text()
 
     doctor_id = fields.Many2one(comodel_name='hr.hospital.doctor',
-                                string='Doctor')
+                                string='Personal doctor')
 
     birth_date = fields.Date()
 

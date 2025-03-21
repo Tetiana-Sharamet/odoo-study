@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 class Diagnosis(models.Model):
     _name = 'hr.hospital.diagnosis'
@@ -14,3 +15,10 @@ class Diagnosis(models.Model):
     description = fields.Text()
 
     is_approved = fields.Boolean(default=False)
+
+    @api.constrains('approved')
+    def _check_mentor_approval(self):
+        for record in self:
+            doctor = record.visit_id.doctor_id
+            if doctor.is_intern and record.is_approved and not doctor.mentor_id:
+                raise ValidationError(_("Intern's diagnosis must be approved by a mentor."))

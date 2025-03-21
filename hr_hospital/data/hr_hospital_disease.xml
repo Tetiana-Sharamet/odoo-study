@@ -1,5 +1,4 @@
 <odoo>
-    <!-- Основні категорії хвороб -->
     <record id="disease_infectious" model="hr.hospital.disease">
         <field name="name">Infectious Diseases</field>
         <field name="description">Diseases caused by pathogens such as bacteria, viruses, or fungi.</field>
@@ -21,7 +20,6 @@
         <field name="description">A bacterial infection that primarily affects the lungs.</field>
     </record>
 
-    <!-- Підкатегорії для "Хронічні захворювання" -->
     <record id="disease_arthritis" model="hr.hospital.disease">
         <field name="name">Arthritis</field>
         <field name="parent_id" ref="disease_chronic"/>

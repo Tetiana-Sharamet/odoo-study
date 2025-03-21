@@ -1,14 +1,12 @@
-from datetime import datetime
 from odoo import models, fields, api
-
+from odoo.exceptions import ValidationError
+from odoo.tools.translate import _
 
 class HHVisit(models.Model):
     _name = 'hr.hospital.visit'
     _description = 'Visit'
 
-    name = fields.Char()
-
-    visit_date = fields.Datetime()
+    visit_date = fields.Datetime(copy=False)
     patient_id = fields.Many2one(comodel_name='hr.hospital.patient',
                                  required=True)
 
@@ -23,49 +21,42 @@ class HHVisit(models.Model):
         ('completed', 'Завершено'),
         ('cancelled', 'Скасовано')
     ],
+        copy=False,
         default='scheduled')
 
-    scheduled_datetime = fields.Datetime()
+    scheduled_date = fields.Datetime()
 
-    completed_datetime = fields.Datetime()
+    completed_date = fields.Datetime()
 
     diagnosis_ids = fields.One2many(comodel_name='hr.hospital.diagnosis',
                                     inverse_name='visit_id')
 
-
-
     @api.model
-    def create(self, vals):
-        if 'scheduled_datetime' in vals and 'visit_status' in vals and vals['visit_status'] != 'scheduled':
-            raise ValueError('Неможливо змінити час/дату візиту після того, як візит був завершений або скасований.')
-        return super(HHVisit, self).create(vals)
-
     def write(self, vals):
-        if 'scheduled_datetime' in vals or 'doctor_id' in vals:
+        if 'scheduled_date' in vals or 'doctor_id' in vals:
             for record in self:
-                if record.visit_status in ['completed', 'cancelled']:
-                    raise ValueError('Неможливо змінювати час/дату/лікаря для завершеного або скасованого візиту.')
-        return super(HHVisit, self).write(vals)
+                if record.visit_status != 'scheduled':
+                    raise ValidationError(_('Неможливо змінювати час/дату/лікаря для завершеного або скасованого візиту.'))
+        return super().write(vals)
 
     @api.constrains('patient_id', 'doctor_id', 'scheduled_datetime')
     def _check_patient_doctor_schedule(self):
-        """Перевірка, щоб не можна було записати одного пацієнта до одного лікаря в один день більше одного разу."""
         for record in self:
             if record.visit_status == 'scheduled':
-                # Перевірка на інші візити для того ж пацієнта та лікаря в той самий день
-                existing_visits = self.env['patient.visit'].search([
+                existing_visits = self.search([
+                    ('id', '!=', record.id),
                     ('patient_id', '=', record.patient_id.id),
                     ('doctor_id', '=', record.doctor_id.id),
                     ('visit_status', '=', 'scheduled'),
-                    ('scheduled_datetime', '>=', record.scheduled_datetime.date().strftime('%Y-%m-%d') + ' 00:00:00'),
-                    ('scheduled_datetime', '<=', record.scheduled_datetime.date().strftime('%Y-%m-%d') + ' 23:59:59')
+                    ('scheduled_date', '>=', record.scheduled_date.date().strftime('%Y-%m-%d') + ' 00:00:00'),
+                    ('scheduled_date', '<=', record.scheduled_date.date().strftime('%Y-%m-%d') + ' 23:59:59')
                 ])
                 if existing_visits:
-                    raise ValueError('Пацієнт уже записаний до цього лікаря на цей день.')
+                    raise ValidationError(_('Пацієнт уже записаний до цього лікаря на цей день.'))
 
     @api.model
     def unlink(self):
         for record in self:
             if record.diagnosis_ids:
-                raise ValueError('Не можна видаляти або архівувати візит з діагнозами.')
-        return super(HHVisit, self).unlink()
+                raise ValidationError(_('Не можна видаляти або архівувати візит з діагнозами.'))
+        return super().unlink()
