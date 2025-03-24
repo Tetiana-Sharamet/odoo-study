@@ -11,17 +11,19 @@ class HHPatient(models.Model):
 
     description = fields.Text()
 
-    doctor_id = fields.Many2one(comodel_name='hr.hospital.doctor',
-                                string='Personal doctor')
+    doctor_id = fields.Many2one(
+        comodel_name='hr.hospital.doctor',
+        string='Personal doctor')
 
     birth_date = fields.Date()
 
-    age = fields.Integer(compute='_compute_age', store=True)
+    age = fields.Integer(
+        compute='_compute_age',
+        store=True)
 
     passport_number = fields.Char()
 
     emergency_contact = fields.Char()
-
 
     @api.depends('birth_date')
     def _compute_age(self):

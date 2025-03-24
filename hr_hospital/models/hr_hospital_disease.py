@@ -8,17 +8,22 @@ class HHDisease(models.Model):
 
     name = fields.Char()
     description = fields.Text()
-    parent_id = fields.Many2one(comodel_name='hr.hospital.disease',
-                                ondelete='cascade')
-    child_ids = fields.One2many(comodel_name='hr.hospital.disease',
-                                inverse_name='parent_id',
-                                string='Sub Diseases')
+    parent_id = fields.Many2one(
+        comodel_name='hr.hospital.disease',
+        ondelete='cascade')
 
-    complete_name = fields.Char(String='Complete Name',
-                                compute='_compute_complete_name',
-                                recursive=True, store=True)
-    parent_path = fields.Char(index=True,
-                              unaccent=False)
+    child_ids = fields.One2many(
+        comodel_name='hr.hospital.disease',
+        inverse_name='parent_id',
+        string='Sub Diseases')
+
+    complete_name = fields.Char(
+        string='Complete Name',
+        compute='_compute_complete_name',
+        recursive=True, store=True)
+    parent_path = fields.Char(
+        index=True,
+        unaccent=False)
 
     @api.depends('name', 'parent_id.complete_name')
     def _compute_complete_name(self):

@@ -7,7 +7,8 @@ class HHDoctor(models.Model):
     _description = 'Doctor'
 
     name = fields.Char()
-    specialty = fields.Selection([
+    specialty = fields.Selection(
+        selection=[
         ('cardiologist', 'Cardiologist'),
         ('neurologist', 'Neurologist'),
         ('therapist', 'Therapist'),
