@@ -30,6 +30,6 @@
      <menuitem id="hr_hospital_menu_diagnosis"
                   action="action_diagnosis"
                   parent="hr_hospital_main_menu"
-                  name="Doctors" sequence="200"/>
+                  name="Diagnoses" sequence="200"/>
 
 </odoo>

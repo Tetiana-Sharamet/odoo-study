@@ -6,7 +6,6 @@ class HHVisit(models.Model):
     _name = 'hr.hospital.visit'
     _description = 'Visit'
 
-    visit_date = fields.Datetime(copy=False)
     patient_id = fields.Many2one(comodel_name='hr.hospital.patient',
                                  required=True)
 

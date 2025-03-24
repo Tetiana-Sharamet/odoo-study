@@ -5,7 +5,12 @@
             <field name="model">hr.hospital.visit</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name"/>
+                    <field name="visit_status"/>
+                    <field name="scheduled_date"/>
+                    <field name="doctor_id"/>
+                    <field name="patient_id"/>
+                    <field name="disease_id"/>
+                    <field name="visit_status"/>
                 </tree>
             </field>
         </record>
@@ -18,7 +23,13 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="name"/>
+                                <field name="visit_status"/>
+                                <field name="doctor_id"/>
+                                <field name="patient_id"/>
+                                <field name="disease_id"/>
+                                <field name="diagnosis_ids"/>
+                                <field name="scheduled_date"/>
+                                <field name="completed_date"/>
                             </group>
 
                         </group>
@@ -36,6 +47,6 @@
 
         <menuitem id="hr_hospital_menu_visit"
                   action="action_hr_hospital_visit_window"
-                  parent="hr_hospital_menu_main_visit"
+                  parent="hr_hospital_main_menu"
                   name="Visits" sequence="200"/>
 </odoo>
