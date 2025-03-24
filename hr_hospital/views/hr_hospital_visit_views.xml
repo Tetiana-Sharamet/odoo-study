@@ -10,7 +10,6 @@
                     <field name="doctor_id"/>
                     <field name="patient_id"/>
                     <field name="disease_id"/>
-                    <field name="visit_status"/>
                 </tree>
             </field>
         </record>

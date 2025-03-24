@@ -23,9 +23,9 @@ class HHVisit(models.Model):
         copy=False,
         default='scheduled')
 
-    scheduled_date = fields.Datetime()
+    scheduled_date = fields.Datetime(copy=False)
 
-    completed_date = fields.Datetime()
+    completed_date = fields.Datetime(copy=False)
 
     diagnosis_ids = fields.One2many(comodel_name='hr.hospital.diagnosis',
                                     inverse_name='visit_id')
