@@ -42,14 +42,12 @@ class HHVisit(models.Model):
     @api.constrains('patient_id', 'doctor_id', 'scheduled_datetime')
     def _check_patient_doctor_schedule(self):
         for record in self:
-            if record.visit_status == 'scheduled':
+            if record.scheduled_date:
                 existing_visits = self.search([
                     ('id', '!=', record.id),
                     ('patient_id', '=', record.patient_id.id),
                     ('doctor_id', '=', record.doctor_id.id),
-                    ('visit_status', '=', 'scheduled'),
-                    ('scheduled_date', '>=', record.scheduled_date.date().strftime('%Y-%m-%d') + ' 00:00:00'),
-                    ('scheduled_date', '<=', record.scheduled_date.date().strftime('%Y-%m-%d') + ' 23:59:59')
+                    ('scheduled_date', '=', record.scheduled_date.date()),
                 ])
                 if existing_visits:
                     raise ValidationError(_('Пацієнт уже записаний до цього лікаря на цей день.'))
