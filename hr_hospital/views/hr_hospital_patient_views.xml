@@ -5,6 +5,10 @@
             <field name="model">hr.hospital.patient</field>
             <field name="arch" type="xml">
                 <tree>
+                    <header>
+                        <button name="%(hr_hospital.hr_hospital_set_personal_doctor_wizard_act_window)d"
+                                string="Set personal doctor" type="action"/>
+                    </header>
                     <field name="name"/>
                     <field name="description"/>
                     <field name="doctor_id"/>
@@ -17,7 +21,10 @@
             <field name="model">hr.hospital.patient</field>
             <field name="arch" type="xml">
                 <form>
-                    <header></header>
+                     <header>
+                        <button name="%(hr_hospital.hr_hospital_set_personal_doctor_wizard_act_window)d"
+                                string="Set personal doctor" type="action"/>
+                    </header>
                     <sheet>
                         <group>
                             <group>
