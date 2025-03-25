@@ -29,8 +29,8 @@ class DiseaseReportWizard(models.TransientModel):
         if self.disease_ids:
             domain.append(('disease_id', 'in', self.disease_ids.ids))
 
-        domain.append(('date', '>=', self.date_from))
-        domain.append(('date', '<=', self.date_to))
+        domain.append(('visit_id.scheduled_date', '>=', self.date_from))
+        domain.append(('visit_id.scheduled_date', '<=', self.date_to))
 
         diagnosis_records = self.env['hr.hospital.diagnosis'].search(domain)
 
