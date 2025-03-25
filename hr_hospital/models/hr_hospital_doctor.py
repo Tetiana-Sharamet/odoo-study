@@ -17,7 +17,8 @@ class HHDoctor(models.Model):
 
     is_intern = fields.Boolean(string='Intern')
     mentor_id = fields.Many2one(comodel_name='hr.hospital.doctor',
-                                string='Mentor')
+                                string='Mentor',
+                                domain=[('is_intern','=', False)])
 
     @api.constrains('mentor_id')
     def _check_mentor_not_intern(self):

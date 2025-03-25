@@ -18,9 +18,9 @@ class HHDisease(models.Model):
         string='Sub Diseases')
 
     complete_name = fields.Char(
-        string='Complete Name',
         compute='_compute_complete_name',
         recursive=True, store=True)
+
     parent_path = fields.Char(
         index=True,
         unaccent=False)

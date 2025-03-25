@@ -47,7 +47,7 @@ class HHVisit(models.Model):
     @api.constrains('patient_id', 'doctor_id', 'scheduled_datetime')
     def _check_patient_doctor_schedule(self):
         for record in self:
-            if not record.scheduled_date and record.doctor_id:
+            if not (record.scheduled_date and record.doctor_id):
                 continue
             existing_visits = self.env['hr.hospital.visit'].search([
                 ('id', '!=', record.id),

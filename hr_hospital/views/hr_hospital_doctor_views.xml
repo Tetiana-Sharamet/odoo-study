@@ -31,6 +31,8 @@
                                 <field name="last_name"/>
                                 <field name="first_name"/>
                                 <field name="phone"/>
+                                <field name="is_intern"/>
+                                <field name="mentor_id"/>
                             </group>
                         </group>
                     </sheet>

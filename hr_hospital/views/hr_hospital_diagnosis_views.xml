@@ -1,27 +1,33 @@
 <odoo>
     <record id="view_diagnosis_tree" model="ir.ui.view">
-        <field name="name">Diagnosis Tree</field>
+        <field name="name">hr.hospital.diagnosis.tree ()</field>
         <field name="model">hr.hospital.diagnosis</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="visit_id"/>
                 <field name="disease_id"/>
+                <field name="description"/>
                 <field name="is_approved"/>
             </tree>
         </field>
     </record>
     <record id="view_diagnosis_form" model="ir.ui.view">
-        <field name="name">Diagnosis Form</field>
+        <field name="name">hr.hospital.diagnosis.form ()</field>
         <field name="model">hr.hospital.diagnosis</field>
         <field name="arch" type="xml">
             <form>
-                <field name="visit_id"/>
-                <field name="disease_id"/>
-                <field name="description"/>
-                <field name="is_approved"/>
+                <sheet>
+                        <group>
+                                <field name="visit_id"/>
+                                <field name="disease_id"/>
+                                <field name="description"/>
+                                <field name="is_approved"/>
+                        </group>
+                </sheet>
             </form>
         </field>
     </record>
+
     <record id="action_diagnosis" model="ir.actions.act_window">
         <field name="name">Diagnoses</field>
         <field name="res_model">hr.hospital.diagnosis</field>

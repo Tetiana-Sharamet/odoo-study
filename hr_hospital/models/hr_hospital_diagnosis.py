@@ -13,11 +13,14 @@ class Diagnosis(models.Model):
 
     disease_id = fields.Many2one(
         comodel_name='hr.hospital.disease',
+        string='Disease',
         required=True)
 
     description = fields.Text()
 
-    is_approved = fields.Boolean(default=False)
+    is_approved = fields.Boolean(
+        string='Approved',
+        default=False)
 
     @api.constrains('approved')
     def _check_mentor_approval(self):
