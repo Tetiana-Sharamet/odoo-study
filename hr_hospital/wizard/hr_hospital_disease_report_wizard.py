@@ -24,14 +24,14 @@ class DiseaseReportWizard(models.TransientModel):
         domain = []
 
         if self.doctor_ids:
-            domain.append(('visit_id.doctor_id', 'in', self.doctor_ids.ids))
+            domain.append(('doctor_id', 'in', self.doctor_ids.ids))
 
         if self.disease_ids:
             domain.append(('disease_id', 'in', self.disease_ids.ids))
 
-        domain.append(('visit_id.scheduled_date', '>=', self.date_from))
-        domain.append(('visit_id.scheduled_date', '<=', self.date_to))
+        domain.append(('scheduled_date', '>=', self.date_from))
+        domain.append(('scheduled_date', '<=', self.date_to))
 
-        diagnosis_records = self.env['hr.hospital.diagnosis'].search(domain)
+        diagnosis_records = self.env['hr.hospital.visit'].search(domain)
 
         return diagnosis_records
