@@ -17,8 +17,14 @@ class DiseaseReportWizard(models.TransientModel):
         required=False
     )
 
-    date_from = fields.Date('From Date', required=True)
-    date_to = fields.Date('To Date', required=True)
+    date_from = fields.Date(
+        string='From Date',
+        required=True
+    )
+    date_to = fields.Date(
+        string='To Date',
+        required=True
+    )
 
     def get_disease_report(self):
         domain = []
@@ -28,9 +34,10 @@ class DiseaseReportWizard(models.TransientModel):
 
         if self.disease_ids:
             domain.append(('disease_id', 'in', self.disease_ids.ids))
-
-        domain.append(('scheduled_date', '>=', self.date_from))
-        domain.append(('scheduled_date', '<=', self.date_to))
+        if self.date_from:
+            domain.append(('scheduled_date', '>=', self.date_from))
+        if self.date_to:
+            domain.append(('scheduled_date', '<=', self.date_to))
 
         diagnosis_records = self.env['hr.hospital.visit'].search(domain)
 
