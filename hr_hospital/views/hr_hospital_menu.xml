@@ -11,5 +11,5 @@
 
   <menuitem id="hr_hospital_menu_main_visit"
             parent="hr_hospital_main_menu"
-            name="Visits" sequence="900"/>
+            name="Wizard" sequence="900"/>
 </odoo>
