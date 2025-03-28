@@ -1,72 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <record id="hr_hospital_patient_tree" model="ir.ui.view">
-            <field name="name">hr.hospital.patient.tree ()</field>
-            <field name="model">hr.hospital.patient</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <header>
-                        <button name="%(hr_hospital.hr_hospital_set_personal_doctor_wizard_act_window)d"
-                                string="Set personal doctor" type="action"/>
-                    </header>
-                    <field name="name"/>
-                    <field name="description"/>
-                    <field name="doctor_id"/>
-                </tree>
-            </field>
-        </record>
+    <record id="hr_hospital_patient_tree" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.tree ()</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <header>
+                    <button name="%(hr_hospital.hr_hospital_set_personal_doctor_wizard_act_window)d"
+                            string="Set personal doctor" type="action"/>
+                </header>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="doctor_id"/>
+            </tree>
+        </field>
+    </record>
 
-        <record id="hr_hospital_patient_form" model="ir.ui.view">
-            <field name="name">hr.hospital.patient.form ()</field>
-            <field name="model">hr.hospital.patient</field>
-            <field name="arch" type="xml">
-                <form>
-                     <header>
-                        <button name="%(hr_hospital.hr_hospital_set_personal_doctor_wizard_act_window)d"
-                                string="Set personal doctor" type="action"/>
-                    </header>
-                    <sheet>
+    <record id="hr_hospital_patient_form" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.form ()</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="%(hr_hospital.hr_hospital_set_personal_doctor_wizard_act_window)d"
+                            string="Set personal doctor" type="action"/>
+                </header>
+                <sheet>
+                    <group>
                         <group>
-                            <group>
-                                <field name="name"/>
-                                <field name="description"/>
-                            </group>
-                            <group>
-                                <field name="photo" widget='image' class="oe_avatar m-0"
-                                   options='{"zoom": true, "preview_image":"avatar_256"}'/>
-                                <field name="gender"/>
-                            </group>
-                            <group>
-                                <field name="doctor_id"/>
-                            </group>
-                             <group>
-                                <field name="last_name"/>
-                                <field name="first_name"/>
-                                <field name="phone"/>
-                            </group>
-                             <group>
-                                <field name="birth_date"/>
-                                <field name="age"/>
-                            </group>
-                            <group>
-                                <field name="passport_number"/>
-                                <field name="emergency_contact"/>
-                            </group>
+                            <field name="name"/>
+                            <field name="description"/>
                         </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+                        <group>
+                            <field name="photo" widget='image' class="oe_avatar m-0"
+                                   options='{"zoom": true, "preview_image":"avatar_256"}'/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="doctor_id"/>
+                        </group>
+                        <group>
+                            <field name="last_name"/>
+                            <field name="first_name"/>
+                            <field name="phone"/>
+                        </group>
+                        <group>
+                            <field name="birth_date"/>
+                            <field name="age"/>
+                        </group>
+                        <group>
+                            <field name="passport_number"/>
+                            <field name="emergency_contact"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <record id="action_hr_hospital_patient_window" model="ir.actions.act_window">
-            <field name="name">Patient</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">hr.hospital.patient</field>
-            <field name="view_mode">tree,form</field>
-        </record>
+    <record id="hr_hospital_patient_search" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.search (hr_hospital_patient)</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <search string="Filters">
+                <field name="name"/>
+                <field name="last_name"/>
+                <field name="first_name"/>
+                <field name="phone"/>
+                <group expand="0" string="Group By">
+                    <filter string="Doctor" name="status" domain="[]" context="{'group_by':'doctor_id'}"/>
+                </group>
 
-        <menuitem id="hr_hospital_menu_patient"
-                  action="action_hr_hospital_patient_window"
-                  parent="hr_hospital_menu_main_doctor_patient"
-                  name="Patients" sequence="200"/>
+                <searchpanel>
+                    <field name="doctor_id" string="Filter by Doctors" icon="fa-users" select="multi" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_hr_hospital_patient_window" model="ir.actions.act_window">
+        <field name="name">Patient</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="hr_hospital_menu_patient"
+              action="action_hr_hospital_patient_window"
+              parent="hr_hospital_menu_main_doctor_patient"
+              name="Patients" sequence="200"/>
 </odoo>

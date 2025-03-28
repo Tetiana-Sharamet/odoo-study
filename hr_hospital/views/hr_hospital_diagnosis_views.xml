@@ -4,6 +4,7 @@
         <field name="model">hr.hospital.diagnosis</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="name"/>
                 <field name="visit_id"/>
                 <field name="disease_id"/>
                 <field name="description"/>
@@ -18,6 +19,7 @@
             <form>
                 <sheet>
                     <group>
+                        <field name="name"/>
                         <field name="visit_id"/>
                         <field name="disease_id"/>
                         <field name="description"/>

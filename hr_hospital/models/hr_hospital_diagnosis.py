@@ -6,6 +6,8 @@ class Diagnosis(models.Model):
     _name = 'hr.hospital.diagnosis'
     _description = 'Diagnosis'
 
+    name = fields.Char()
+
     visit_id = fields.Many2one(
         comodel_name='hr.hospital.visit',
         string='Visit',
