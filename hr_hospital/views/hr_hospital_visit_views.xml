@@ -19,10 +19,12 @@
             <field name="model">hr.hospital.visit</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <field name="visit_status" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
                     <sheet>
                         <group>
                             <group>
-                                <field name="visit_status"/>
                                 <field name="doctor_id"/>
                                 <field name="patient_id"/>
                                 <field name="disease_id"/>
