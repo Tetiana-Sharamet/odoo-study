@@ -38,3 +38,14 @@ class HHPatient(models.Model):
                     record.age = age
             else:
                 record.age = 0
+
+    def action_open_visits(self):
+
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Visit History',
+            'res_model': 'hr.hospital.visit',
+            'view_mode': 'tree,form',
+            'domain': [('patient_id', '=', self.id)],
+            'target': 'current',
+        }
