@@ -39,6 +39,25 @@
         </field>
     </record>
 
+    <record id="hr_hospital_visit_search" model="ir.ui.view">
+        <field name="name">hr.hospital.visit.calendar (hr_hospital_visit)</field>
+        <field name="model">hr.hospital.visit</field>
+        <field name="arch" type="xml">
+            <search string="Filters">
+                <field name="doctor_id" />
+
+                <filter name="filter_date" date="scheduled_date"/>
+                <group expand="0" string="Group By">
+                    <filter string="Visit status" name="status" domain="[]" context="{'group_by':'visit_status'}"/>
+                </group>
+
+                <searchpanel>
+                    <field name="doctor_id" string="Filter by Doctors" icon="fa-users" select="multi" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
     <record id="hr_hospital_visit_calendar" model="ir.ui.view">
         <field name="name">hr.hospital.visit.calendar (hr_hospital_visit)</field>
         <field name="model">hr.hospital.visit</field>
