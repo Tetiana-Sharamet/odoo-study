@@ -25,9 +25,10 @@
                     <button name="%(hr_hospital.hr_hospital_set_personal_doctor_wizard_act_window)d"
                             string="Set personal doctor" type="action"/>
                     <button name="action_open_visits" string="Visit History" type="object" class="oe_highlight"/>
-
+                    <button name="action_create_visit" string="Create Visit" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
+
                     <group>
                         <group>
                             <field name="name"/>
