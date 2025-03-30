@@ -76,12 +76,11 @@
         <field name="model">hr.hospital.doctor</field>
         <field name="priority">100</field>
         <field name="arch" type="xml">
-            <kanban>
-
+            <kanban default_group_by="specialty">
                  <header>
                 </header>
                 <field name="specialty"/>
-                <progressbar field="specialty" colors='{"cardiologist":"success","therapist":"warning","neurologist":"danger","pediatrician":"success"}'/>
+<!--                <progressbar field="specialty" colors='{"cardiologist":"success","therapist":"warning","neurologist":"danger","pediatrician":"success"}'/>-->
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_content">
