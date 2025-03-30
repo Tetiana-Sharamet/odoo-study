@@ -19,6 +19,26 @@
             </form>
         </field>
     </record>
+
+     <record id="hr_hospital_disease_search" model="ir.ui.view">
+        <field name="name">hr.hospital.disease.search (hr_hospital_disease)</field>
+        <field name="model">hr.hospital.disease</field>
+        <field name="arch" type="xml">
+            <search string="Filters">
+                <field name="name"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Parent" name="status" domain="[]" context="{'group_by':'parent_id'}"/>
+                </group>
+
+                <searchpanel>
+                    <field name="parent_id" string="Filter" icon="fa-users" select="multi"
+                           enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
     <record id="action_disease" model="ir.actions.act_window">
         <field name="name">Disease</field>
         <field name="res_model">hr.hospital.disease</field>
