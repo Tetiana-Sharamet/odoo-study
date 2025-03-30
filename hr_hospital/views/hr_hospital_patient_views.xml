@@ -28,34 +28,42 @@
                     <button name="action_create_visit" string="Create Visit" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
-
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" class="oe_inline"/>
+                        </h1>
+                    </div>
+                    <newline/>
                     <group>
                         <group>
-                            <field name="name"/>
-                            <field name="description"/>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <separator/>
+                            <field name="birth_date"/>
+                            <field name="age"/>
                         </group>
                         <group>
                             <field name="photo" widget='image' class="oe_avatar m-0"
                                    options='{"zoom": true, "preview_image":"avatar_256"}'/>
                             <field name="gender"/>
-                        </group>
-                        <group>
-                            <field name="doctor_id"/>
-                        </group>
-                        <group>
-                            <field name="last_name"/>
-                            <field name="first_name"/>
-                            <field name="phone"/>
-                        </group>
-                        <group>
-                            <field name="birth_date"/>
-                            <field name="age"/>
-                        </group>
-                        <group>
-                            <field name="passport_number"/>
-                            <field name="emergency_contact"/>
+                            <separator/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Doctor Data">
+                            <group>
+                                <field name="doctor_id"/>
+                                <field name="description"/>
+                            </group>
+                        </page>
+                        <page string="Personal Data">
+                            <group>
+                                <field name="passport_number"/>
+                                <field name="phone"/>
+                                <field name="emergency_contact"/>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
