@@ -63,25 +63,3 @@ class DiseaseReportWizard(models.TransientModel):
             'target': 'current',
         }
 
-    def get_disease_report1(self):
-
-        domain = []
-
-        if self.doctor_ids:
-            domain.append(('doctor_id', 'in', self.doctor_ids.ids))
-
-        if self.disease_ids:
-            domain.append(('disease_id', 'in', self.disease_ids.ids))
-
-        domain.append(('scheduled_date', '>=', self.date_from))
-
-        domain.append(('scheduled_date', '<=', self.date_to))
-
-        return {
-            'type': 'ir.actions.act_window',
-            'name': 'Visit History',
-            'res_model': 'hr.hospital.visit',
-            'view_mode': 'tree,form',
-            'domain': domain,
-            'target': 'current',
-        }
