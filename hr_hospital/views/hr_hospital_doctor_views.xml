@@ -32,14 +32,19 @@
                             <separator/>
                             <field name="is_intern"/>
                             <field name="mentor_id"/>
+                            <separator/>
+                            <field name="interns_ids"  mode="kanban"/>
+
                         </group>
                         <group>
                             <field name="photo" widget='image' class="oe_avatar m-0"
                                    options='{"zoom": true, "preview_image":"avatar_256"}'/>
-                            <field name="gender"/>
+                            <field name="gender" widget="radio_button"/>
                             <separator/>
                             <separator/>
                             <field name="phone"/>
+                             <separator/>
+                             <field name="patients_ids"  mode="kanban"/>
                         </group>
 
                     </group>
@@ -73,7 +78,6 @@
         <field name="arch" type="xml">
             <kanban>
                  <header>
-                    <button type="object" name="create_visit" string="Create visit" display="display"/>
                 </header>
                 <field name="specialty"/>
                 <templates>
@@ -82,6 +86,7 @@
                             <strong><field name="name"/></strong>
                             <div><field name="specialty"/></div>
                             <div><field name="mentor_id"/></div>
+                            <button name="create_visit" string="Create visit" type="object" class="oe_highlight"/>
                         </div>
                     </t>
                 </templates>

@@ -17,6 +17,14 @@ class HHDoctor(models.Model):
         ('pediatrician', 'Pediatrician'),
     ])
 
+    interns_ids = fields.One2many(
+        comodel_name='hr.hospital.doctor',
+        inverse_name='mentor_id')
+
+    patients_ids = fields.One2many(
+        comodel_name='hr.hospital.patient',
+        inverse_name='doctor_id')
+
     is_intern = fields.Boolean(string='Intern')
     mentor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
