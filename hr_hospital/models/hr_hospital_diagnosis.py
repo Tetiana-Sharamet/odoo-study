@@ -25,13 +25,21 @@ class Diagnosis(models.Model):
         default=False)
 
     diagnosis_date = fields.Datetime(
-        related='visit_id.scheduled_date',
-        string="Diagnosis Date",
+        compute='_compute_data',
         store=True)
 
     doctor_id = fields.Many2one(
-        related='visit_id.doctor_id',
+        compute='_compute_data',
         store=True)
+
+    @api.depends('visit_id')
+    def _compute_data(self):
+        for record in self:
+            if record.visit_id:
+                record.doctor_id = record.visit_id.doctor_id.id
+                record.diagnosis_date = record.visit_id.scheduled_date
+
+
 
     @api.constrains('approved')
     def _check_mentor_approval(self):

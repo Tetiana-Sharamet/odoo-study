@@ -2,16 +2,19 @@
     <record id="doctor_10" model="hr.hospital.doctor">
         <field name="first_name">John</field>
         <field name="last_name">Smith</field>
+        <field name="gender">male</field>
         <field name="specialty">cardiologist</field>
     </record>
     <record id="doctor_20" model="hr.hospital.doctor">
         <field name="first_name">Mark</field>
         <field name="last_name">Johnson</field>
+        <field name="gender">male</field>
         <field name="specialty">neurologist</field>
     </record>
     <record id="doctor_30" model="hr.hospital.doctor">
         <field name="first_name">Robert</field>
         <field name="last_name">Brown</field>
+        <field name="gender">male</field>
         <field name="specialty">pediatrician</field>
     </record>
 
@@ -20,6 +23,7 @@
         <field name="last_name">Jobs</field>
         <field name="specialty">cardiologist</field>
         <field name="is_intern">True</field>
+        <field name="gender">male</field>
         <field name="mentor_id" ref="doctor_30"/>
     </record>
 
@@ -27,6 +31,7 @@
         <field name="first_name">Devid</field>
         <field name="last_name">Orhast</field>
         <field name="specialty">cardiologist</field>
+        <field name="gender">male</field>
         <field name="is_intern">True</field>
         <field name="mentor_id" ref="doctor_20"/>
     </record>
@@ -35,24 +40,32 @@
         <field name="name">John Doe</field>
         <field name="first_name">John</field>
         <field name="last_name">Doe</field>
+        <field name="birth_date" eval="datetime(2001,4,1)"/>
         <field name="doctor_id" ref="doctor_10"/>
+        <field name="gender">male</field>
     </record>
     <record id="patient_20" model="hr.hospital.patient">
         <field name="name">Jane Doe</field>
         <field name="first_name">Jane</field>
         <field name="last_name">Doe</field>
+        <field name="gender">female</field>
+        <field name="birth_date" eval="datetime(1982,5,7)"/>
         <field name="doctor_id" ref="doctor_20"/>
     </record>
     <record id="patient_30" model="hr.hospital.patient">
         <field name="name">Alice Johnson</field>
         <field name="first_name">Alice</field>
         <field name="last_name">Johnson</field>
+        <field name="gender">female</field>
+        <field name="birth_date" eval="datetime(1981, 10, 1)"/>
         <field name="doctor_id" ref="doctor_30"/>
     </record>
 
     <record id="patient_40" model="hr.hospital.patient">
         <field name="first_name">Alice</field>
         <field name="last_name">Milano</field>
+        <field name="gender">female</field>
+         <field name="birth_date" eval="datetime(1991, 11, 1)"/>
         <field name="doctor_id" ref="doctor_20"/>
     </record>
 

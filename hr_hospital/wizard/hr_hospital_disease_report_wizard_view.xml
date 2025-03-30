@@ -11,7 +11,7 @@
                     <field name="date_to"/>
                 </group>
                 <footer>
-                    <button string="Generate Report" type="object" name="generate_report" class="btn-primary"/>
+                    <button string="Generate Report" type="object" name="get_disease_report" class="btn-primary"/>
                     <button string="Cancel" type="object" class="btn-secondary" special="cancel"/>
                 </footer>
             </form>
@@ -25,8 +25,8 @@
         <field name="target">new</field>
     </record>
 
-<!--    <menuitem id="menu_disease_report_1"-->
-<!--              name="Disease Report"-->
-<!--              parent="hr_hospital_menu_main_visit1"-->
-<!--              action="action_disease_report_wizard1"/>-->
+    <menuitem id="menu_disease_report_1"
+              name="Disease Report"
+              parent="hr_hospital_menu_main_visit1"
+              action="action_disease_report_wizard1"/>
 </odoo>
