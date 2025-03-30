@@ -81,7 +81,7 @@
                  <header>
                 </header>
                 <field name="specialty"/>
-                <progressbar field="specialty" colors='{"cardiologist": "success","therapist": "warning","neurologist": "danger","pediatrician": "success"}'/>
+                <progressbar field="specialty" colors='{"cardiologist":"success","therapist":"warning","neurologist":"danger","pediatrician":"success"}'/>
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_content">

@@ -8,6 +8,7 @@
                 <field name="visit_id"/>
                 <field name="disease_id"/>
                 <field name="description"/>
+                <field name="diagnosis_date"/>
                 <field name="is_approved"/>
             </tree>
         </field>
@@ -23,6 +24,7 @@
                         <field name="visit_id"/>
                         <field name="disease_id"/>
                         <field name="description"/>
+                        <field name="diagnosis_date"/>
                         <field name="is_approved"/>
                     </group>
                 </sheet>
@@ -37,7 +39,6 @@
         <field name="arch" type="xml">
             <pivot string="Pivot Example" sample="1" disable_linking="1" display_quantity="1">
                 <field name="diagnosis_date" interval="month" type="col"/>
-                  <field name="diagnosis_date" interval="year" type="col"/>
                 <field name="name" type="row"/>
                 <field name="disease_id" type="row"/>
             </pivot>

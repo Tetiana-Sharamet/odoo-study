@@ -16,11 +16,13 @@
         'wizard/set_personal_doctor_wizard_view.xml',
         'wizard/hr_hospital_disease_report_wizard_view.xml',
         'views/hr_hospital_menu.xml',
+        'demo/hr_hospital_demo.xml',
         'views/hr_hospital_patient_views.xml',
         'views/hr_hospital_visit_views.xml',
         'views/hr_hospital_doctor_views.xml',
         'views/hr_hospital_diagnosis_views.xml',
         'views/hr_hospital_disease_views.xml',
+        'report/hr_hospital_report.xml',
     ],
 
     'demo': [

@@ -29,6 +29,10 @@ class Diagnosis(models.Model):
         string="Diagnosis Date",
         store=True)
 
+    doctor_id = fields.Many2one(
+        related='visit_id.doctor_id',
+        store=True)
+
     @api.constrains('approved')
     def _check_mentor_approval(self):
         for record in self:
