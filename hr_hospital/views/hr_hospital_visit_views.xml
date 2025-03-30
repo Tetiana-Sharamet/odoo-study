@@ -28,11 +28,10 @@
                             <field name="doctor_id"/>
                             <field name="patient_id"/>
                             <field name="disease_id"/>
-                            <field name="diagnosis_ids" widget="many2many_tags" />
+                            <field name="diagnosis_ids"  mode="kanban"/>
                             <field name="scheduled_date"/>
                             <field name="completed_date"/>
                         </group>
-
                     </group>
                 </sheet>
             </form>

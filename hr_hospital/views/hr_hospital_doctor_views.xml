@@ -1,54 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <record id="hr_hospital_doctor_tree" model="ir.ui.view">
-            <field name="name">hr.hospital.doctor.tree ()</field>
-            <field name="model">hr.hospital.doctor</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="name"/>
-                    <field name="specialty"/>
-                </tree>
-            </field>
-        </record>
+    <record id="hr_hospital_doctor_tree" model="ir.ui.view">
+        <field name="name">hr.hospital.doctor.tree ()</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="specialty"/>
+            </tree>
+        </field>
+    </record>
 
-        <record id="hr_hospital_doctor_form" model="ir.ui.view">
-            <field name="name">hr.hospital.doctor.form ()</field>
-            <field name="model">hr.hospital.doctor</field>
-            <field name="arch" type="xml">
-                <form>
-                    <sheet>
+    <record id="hr_hospital_doctor_form" model="ir.ui.view">
+        <field name="name">hr.hospital.doctor.form ()</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" class="oe_inline"/>
+                        </h1>
+                    </div>
+                    <newline/>
+                    <group>
                         <group>
-                            <group>
-                                <field name="name"/>
-                                <field name="specialty"/>
-                            </group>
-                             <group>
-                                 <field name="photo" widget='image' class="oe_avatar m-0"
-                                   options='{"zoom": true, "preview_image":"avatar_256"}'/>
-                                 <field name="gender"/>
-                            </group>
-                            <group>
-                                <field name="last_name"/>
-                                <field name="first_name"/>
-                                <field name="phone"/>
-                                <field name="is_intern"/>
-                                <field name="mentor_id"/>
-                            </group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <separator/>
+                            <field name="specialty"/>
+                            <separator/>
+                            <field name="is_intern"/>
+                            <field name="mentor_id"/>
                         </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+                        <group>
+                            <field name="photo" widget='image' class="oe_avatar m-0"
+                                   options='{"zoom": true, "preview_image":"avatar_256"}'/>
+                            <field name="gender"/>
+                            <separator/>
+                            <separator/>
+                            <field name="phone"/>
+                        </group>
 
-        <record id="action_hr_hospital_doctor_window" model="ir.actions.act_window">
-            <field name="name">Doctors</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">hr.hospital.doctor</field>
-            <field name="view_mode">tree,form</field>
-        </record>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <menuitem id="hr_hospital_menu_doctor"
-                  action="action_hr_hospital_doctor_window"
-                  parent="hr_hospital_menu_main_doctor_patient"
-                  name="Doctors" sequence="200"/>
+      <record id="hr_hospital_doctor_search" model="ir.ui.view">
+        <field name="name">hr.hospital.doctor.search (hr_hospital_doctor)</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <search string="Filters">
+                <field name="name"/>
+                <group >
+                    <filter string="Mentors" name="status" domain="[('is_intern','=', False)]" />
+                     <filter string="Interns" name="status" domain="[('is_intern','=', True)]" />
+                </group>
+                <searchpanel>
+                    <field name="mentor_id" string="Filter by Mentors" icon="fa-users" select="multi"
+                           enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+     <record id="hr_hospital_doctor_kanban" model="ir.ui.view">
+        <field name="name">hr.hospital.doctor.kanban (hr_hospital_doctor)</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <kanban>
+                 <header>
+                    <button type="object" name="create_visit" string="Create visit" display="display"/>
+                </header>
+                <field name="specialty"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_content">
+                            <strong><field name="name"/></strong>
+                            <div><field name="specialty"/></div>
+                            <div><field name="mentor_id"/></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+         </field>
+    </record>
+
+    <record id="action_hr_hospital_doctor_window" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.hospital.doctor</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <menuitem id="hr_hospital_menu_doctor"
+              action="action_hr_hospital_doctor_window"
+              parent="hr_hospital_menu_main_doctor_patient"
+              name="Doctors" sequence="200"/>
 </odoo>

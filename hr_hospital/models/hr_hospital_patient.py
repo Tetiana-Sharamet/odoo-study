@@ -7,7 +7,9 @@ class HHPatient(models.Model):
     _name = 'hr.hospital.patient'
     _description = 'Patient'
 
-    name = fields.Char()
+    name = fields.Char(
+        compute='_compute_name',
+        store=True)
 
     description = fields.Text()
 
@@ -24,6 +26,13 @@ class HHPatient(models.Model):
     passport_number = fields.Char()
 
     emergency_contact = fields.Char()
+
+    @api.depends('first_name','last_name')
+    def _compute_name(self):
+        for record in self:
+            if record.last_name or record.first_name:
+                record.name = '%s  %s' % (
+                    record.first_name, record.last_name )
 
     @api.depends('birth_date')
     def _compute_age(self):
