@@ -56,7 +56,7 @@ class DiseaseReportWizard(models.TransientModel):
 
         return {
             'type': 'ir.actions.act_window',
-            'name': 'Visit History',
+            'name': 'Disease report',
             'res_model': 'hr.hospital.diagnosis',
             'view_mode': 'tree,form',
             'domain': domain,
