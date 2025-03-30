@@ -24,6 +24,11 @@ class Diagnosis(models.Model):
         string='Approved',
         default=False)
 
+    diagnosis_date = fields.Datetime(
+        related='visit_id.scheduled_date',
+        string="Diagnosis Date",
+        store=True)
+
     @api.constrains('approved')
     def _check_mentor_approval(self):
         for record in self:
