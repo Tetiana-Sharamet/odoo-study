@@ -72,25 +72,25 @@
     <record id="demo_patient_visit_10" model="hr.hospital.visit">
         <field name="patient_id" ref="patient_30"/>
         <field name="doctor_id" ref="doctor_30"/>
-        <field name="scheduled_date" eval="datetime(2025, 4, 1, 10, 0)"/>
+        <field name="scheduled_date" eval="datetime(2025, 3, 1, 10, 0)"/>
     </record>
 
     <record id="demo_patient_visit_20" model="hr.hospital.visit">
         <field name="patient_id" ref="patient_20"/>
         <field name="doctor_id" ref="doctor_20"/>
-        <field name="scheduled_date" eval="datetime(2025, 4, 15, 10, 0)"/>
+        <field name="scheduled_date" eval="datetime(2025, 3, 15, 10, 0)"/>
     </record>
 
     <record id="demo_patient_visit_30" model="hr.hospital.visit">
         <field name="patient_id" ref="patient_10"/>
         <field name="doctor_id" ref="doctor_10"/>
-        <field name="scheduled_date" eval="datetime(2025, 4, 20, 10, 0)"/>
+        <field name="scheduled_date" eval="datetime(2025, 3, 20, 10, 0)"/>
     </record>
 
     <record id="demo_patient_visit_40" model="hr.hospital.visit">
         <field name="patient_id" ref="patient_20"/>
         <field name="doctor_id" ref="doctor_10"/>
-        <field name="scheduled_date" eval="datetime(2025, 4, 20, 13, 0)"/>
+        <field name="scheduled_date" eval="datetime(2025, 3, 20, 13, 0)"/>
     </record>
 
     <record id="demo_disease_10" model="hr.hospital.diagnosis">
