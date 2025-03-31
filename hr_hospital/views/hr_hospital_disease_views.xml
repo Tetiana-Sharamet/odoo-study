@@ -3,7 +3,7 @@
         <field name="name">Disease Tree</field>
         <field name="model">hr.hospital.disease</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree default_group_by="parent_id">
                 <field name="name"/>
                 <field name="parent_id"/>
             </tree>
