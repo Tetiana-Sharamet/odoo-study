@@ -75,9 +75,9 @@
         <field name="model">hr.hospital.visit</field>
         <field name="priority" eval="10"/>
         <field name="arch" type="xml">
-            <calendar string="Visit date" create="1" quick_create="1" mode="month" scales="day,week,month,year"
+            <calendar string="Visit date" create="1" quick_create="0" mode="month" scales="day,week,month,year"
                       create_name_field="scheduled_date" color="visit_status" date_start="scheduled_date"
-                      event_open_popup="True">
+                      event_open_popup="False">
                 <field name="doctor_id" avatar_field="avatar_128"/>
                 <field name="visit_status" filters="1" invisible="1"/>
             </calendar>
