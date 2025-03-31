@@ -62,4 +62,3 @@ class DiseaseReportWizard(models.TransientModel):
             'domain': domain,
             'target': 'current',
         }
-
