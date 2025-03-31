@@ -39,7 +39,7 @@
                         <group>
                             <field name="photo" widget='image' class="oe_avatar m-0"
                                    options='{"zoom": true, "preview_image":"avatar_256"}'/>
-                            <field name="gender" widget="radio_button"/>
+                            <field name="gender" widget='radio'/>
                             <separator/>
                             <separator/>
                             <field name="phone"/>

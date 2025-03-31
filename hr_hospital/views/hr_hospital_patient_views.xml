@@ -46,7 +46,7 @@
                             <field name="photo" widget='image' class="oe_avatar m-0"
                                    options='{"zoom": true, "preview_image":"avatar_256"}'/>
                           <separator/>
-                            <field name="gender"/>
+                            <field name="gender" widget='radio'/>
 
                         </group>
                     </group>
