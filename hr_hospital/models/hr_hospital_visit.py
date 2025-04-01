@@ -32,8 +32,9 @@ class HHVisit(models.Model):
 
     completed_date = fields.Datetime(copy=False)
 
-    diagnosis_ids = fields.One2many(comodel_name='hr.hospital.diagnosis',
-                                    inverse_name='visit_id')
+    diagnosis_ids = fields.One2many(
+        comodel_name='hr.hospital.diagnosis',
+        inverse_name='visit_id')
 
     @api.model
     def write(self, vals):
@@ -41,10 +42,12 @@ class HHVisit(models.Model):
             for record in self:
                 if record.visit_status != 'scheduled':
                     raise ValidationError(
-                        _('It is not possible to change the time/date/doctor for a completed or canceled visit!'))
+                        _('It is not possible to change /'
+                          'the time/date/doctor /'
+                          'for a completed or canceled visit!'))
         return super().write(vals)
 
-    @api.constrains('patient_id', 'doctor_id', 'scheduled_datetime')
+    @api.constrains('patient_id', 'doctor_id', 'scheduled_date')
     def _check_patient_doctor_schedule(self):
         for record in self:
             if not (record.scheduled_date and record.doctor_id):
@@ -53,15 +56,22 @@ class HHVisit(models.Model):
                 ('id', '!=', record.id),
                 ('patient_id', '=', record.patient_id.id),
                 ('doctor_id', '=', record.doctor_id.id),
-                ('scheduled_date', '>=', record.scheduled_date.date().strftime('%Y-%m-%d') + ' 00:00:00'),
-                ('scheduled_date', '<=', record.scheduled_date.date().strftime('%Y-%m-%d') + ' 23:59:59')
+                ('scheduled_date', '>=',
+                 record.scheduled_date.date().strftime('%Y-%m-%d')
+                 + ' 00:00:00'),
+                ('scheduled_date', '<=',
+                 record.scheduled_date.date().strftime('%Y-%m-%d')
+                 + ' 23:59:59')
             ])
             if existing_visits:
-                raise ValidationError(_('The patient is already scheduled to see this doctor for this day!'))
+                raise ValidationError(_('The patient is already /'
+                                        'scheduled to see this /'
+                                        'doctor for this day!'))
 
     @api.model
     def unlink(self):
         for record in self:
             if record.diagnosis_ids:
-                raise ValidationError(_('You cannot delete or archive a visit with diagnoses!'))
+                raise ValidationError(_('You cannot delete or /'
+                                        'archive a visit with diagnoses!'))
         return super().unlink()

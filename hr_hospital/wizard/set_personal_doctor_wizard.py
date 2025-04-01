@@ -1,5 +1,6 @@
 from odoo import models, fields
 
+
 class HHSetPersonalDoctorWizard(models.TransientModel):
     _name = 'hr.hospital.set.personal.doctor.wizard'
     _description = 'Wizard to set personal doctor for selected patients'

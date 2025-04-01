@@ -33,7 +33,8 @@ class DiseaseReportWizard(models.TransientModel):
         for record in self:
             if record.date_from > record.date_to:
                 raise ValidationError(
-                    _("The 'From Date' should be before or equal to the 'To Date'."))
+                    _("The 'From Date' should be before /"
+                      " or equal to the 'To Date'."))
 
     def _get_report_base_filename(self):
         self.ensure_one()
@@ -51,8 +52,6 @@ class DiseaseReportWizard(models.TransientModel):
         domain.append(('diagnosis_date', '>=', self.date_from))
 
         domain.append(('diagnosis_date', '<=', self.date_to))
-
-        # diagnosis_records = self.env['hr.hospital.diagnosis'].search(domain)
 
         return {
             'type': 'ir.actions.act_window',

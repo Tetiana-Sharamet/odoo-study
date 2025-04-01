@@ -27,24 +27,22 @@ class HHPatient(models.Model):
 
     emergency_contact = fields.Char()
 
-    @api.depends('first_name','last_name')
+    @api.depends('first_name', 'last_name')
     def _compute_name(self):
         for record in self:
             if record.last_name or record.first_name:
                 record.name = '%s  %s' % (
-                    record.first_name, record.last_name )
+                    record.first_name, record.last_name)
 
     @api.depends('birth_date')
     def _compute_age(self):
         today = date.today()
         for record in self:
             if record.birth_date:
-                age = today.year - record.birth_date.year
-                if (today.month, today.day) < (record.birth_date.month, record.birth_date.day):
-                    age -= 1
-                    record.age = age
-                else:
-                    record.age = age
+                age = (today.year - record.birth_date.year -
+                       ((record.birth_date.month, record.birth_date.day) <
+                        (today.month, today.day)))
+                record.age = age
             else:
                 record.age = 0
 

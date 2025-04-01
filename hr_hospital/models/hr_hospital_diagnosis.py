@@ -29,6 +29,7 @@ class Diagnosis(models.Model):
         store=True)
 
     doctor_id = fields.Many2one(
+        comodel_name='hr.hospital.doctor',
         compute='_compute_data',
         store=True)
 
@@ -39,11 +40,11 @@ class Diagnosis(models.Model):
                 record.doctor_id = record.visit_id.doctor_id.id
                 record.diagnosis_date = record.visit_id.scheduled_date
 
-
-
     @api.constrains('is_approved')
     def _check_mentor_approval(self):
         for record in self:
             doctor = record.visit_id.doctor_id
-            if doctor.is_intern and record.is_approved and not doctor.mentor_id:
-                raise ValidationError(_("Intern's diagnosis must be approved by a mentor."))
+            if (doctor.is_intern and record.is_approved
+                    and not doctor.mentor_id):
+                raise ValidationError(_("Intern's diagnosis must /"
+                                        "be approved by a mentor."))

@@ -44,6 +44,7 @@
         <field name="doctor_id" ref="doctor_10"/>
         <field name="gender">male</field>
     </record>
+
     <record id="patient_20" model="hr.hospital.patient">
         <field name="name">Jane Doe</field>
         <field name="first_name">Jane</field>
@@ -52,6 +53,7 @@
         <field name="birth_date" eval="datetime(1982,5,7)"/>
         <field name="doctor_id" ref="doctor_20"/>
     </record>
+
     <record id="patient_30" model="hr.hospital.patient">
         <field name="name">Alice Johnson</field>
         <field name="first_name">Alice</field>

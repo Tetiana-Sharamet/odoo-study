@@ -2,6 +2,7 @@ from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 from odoo.tools.translate import _
 
+
 class HHDisease(models.Model):
     _name = 'hr.hospital.disease'
     _description = 'Disease'
