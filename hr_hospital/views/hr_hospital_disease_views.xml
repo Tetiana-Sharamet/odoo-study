@@ -14,8 +14,12 @@
         <field name="model">hr.hospital.disease</field>
         <field name="arch" type="xml">
             <form>
-                <field name="name"/>
-                <field name="parent_id"/>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="parent_id"/>
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>
@@ -32,7 +36,7 @@
                 </group>
 
                 <searchpanel>
-                    <field name="parent_id" string="Filter" icon="fa-users" select="multi"
+                    <field name="parent_id" string="Filter" icon="fa-users" hierarchize="1" select="one"
                            enable_counters="1"/>
                 </searchpanel>
             </search>

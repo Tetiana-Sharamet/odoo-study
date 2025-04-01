@@ -40,6 +40,11 @@ class DiseaseReportWizard(models.TransientModel):
         self.ensure_one()
         return 'Report - %s' % (self.date_from)
 
+    def default_get(self, fields_list):
+        res = super().default_get(fields_list)
+        res['doctor_ids'] = [(6, 0, self.env.context.get('active_ids'))]
+        return res
+
     def get_disease_report(self):
         domain = []
 

@@ -5,9 +5,12 @@ class HHSetPersonalDoctorWizard(models.TransientModel):
     _name = 'hr.hospital.set.personal.doctor.wizard'
     _description = 'Wizard to set personal doctor for selected patients'
 
-    doctor_id = fields.Many2one(comodel_name='hr.hospital.doctor',
-                                string='New Personal Doctor', required=True)
-    patient_ids = fields.Many2many(comodel_name='hr.hospital.patient', )
+    doctor_id = fields.Many2one(
+        comodel_name='hr.hospital.doctor',
+        string='New Personal Doctor',
+        required=True)
+    patient_ids = fields.Many2many(
+        comodel_name='hr.hospital.patient', )
 
     def default_get(self, fields_list):
         res = super().default_get(fields_list)

@@ -29,4 +29,13 @@
               name="Disease Report"
               parent="hr_hospital_menu_main_visit1"
               action="action_disease_report_wizard1"/>
-</odoo>
+
+    <record id="action_disease_report_wizard30" model="ir.actions.act_window">
+        <field name="name">Disease Report</field>
+        <field name="res_model">hr.hospital.disease.report.wizard</field>
+        <field name="view_mode">form,tree</field>
+        <field name="binding_model_id" ref="model_hr_hospital_doctor"/>
+        <field name="binding_type">report</field>
+        <field name="target">new</field>
+    </record>
+        </odoo>
