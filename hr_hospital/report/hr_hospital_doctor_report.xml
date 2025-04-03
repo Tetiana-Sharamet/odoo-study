@@ -25,17 +25,23 @@
         <field name="attachment"/>
         <field name="binding_model_id" ref="model_hr_hospital_doctor"/>
         <field name="binding_type">report</field>
-         <field name="paperformat_id" ref="hr_hospital.hr_hospital_doctor_paperformat"/>
+        <field name="paperformat_id" ref="hr_hospital.hr_hospital_doctor_paperformat"/>
     </record>
 
+
+
     <template id="hr_hospital_doctor_main_template">
-        <t t-call="web.html_container">
+        <t t-call="web.external_layout">
             <t t-foreach="docs" t-as="o">
+
                 <strong>--------------------------------------------------------</strong>
                 <div class="row">
+
                     <div name="hh_doctor_main_block">
                             <div>
+
                                 <strong>Doctor: </strong>
+
                                 <h1><div t-field="o.name"/></h1>
                                 <strong>Specialty:</strong>
                                 <h1><div t-field="o.specialty"/></h1>
