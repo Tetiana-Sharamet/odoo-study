@@ -23,7 +23,6 @@
                                 <strong>Specialty:</strong>
                                 <h1><div t-field="o.specialty"/></h1>
                             </div>
-
                     </div>
                 </div>
             </t>
