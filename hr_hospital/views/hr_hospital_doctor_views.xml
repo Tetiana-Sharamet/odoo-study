@@ -92,6 +92,8 @@
                             <strong><field name="name"/></strong>
                             <div><field name="specialty"/></div>
                             <div><field name="mentor_id"/></div>
+
+
                             <button name="create_visit" string="Create visit" type="object" class="oe_highlight"/>
                         </div>
                     </t>

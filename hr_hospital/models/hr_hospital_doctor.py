@@ -10,6 +10,7 @@ class HHDoctor(models.Model):
     name = fields.Char(
         compute='_compute_name',
         store=True)
+
     specialty = fields.Selection(
         selection=[
             ('cardiologist', 'Cardiologist'),
@@ -25,7 +26,10 @@ class HHDoctor(models.Model):
     patients_ids = fields.One2many(
         comodel_name='hr.hospital.patient',
         inverse_name='doctor_id')
-    color = fields.Char()
+
+    color = fields.Char(
+        compute="_compute_color",
+        store=True)
 
     is_intern = fields.Boolean(string='Intern')
     mentor_id = fields.Many2one(
@@ -33,6 +37,18 @@ class HHDoctor(models.Model):
         string='Mentor',
         domain=[('is_intern', '=', False)]
     )
+
+    @api.depends('specialty')
+    def _compute_color(self):
+        for record in self:
+            if record.specialty == 'cardiologist':
+                record.color = '#FF0000'
+            elif record.specialty == 'pediatrician':
+                record.color = '#00FF00'
+            elif record.specialty == 'neurologist':
+                record.color = '#FFD700'
+            else:
+                record.color = '#FFFFFF'
 
     @api.depends('first_name', 'last_name')
     def _compute_name(self):
