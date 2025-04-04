@@ -80,6 +80,8 @@
                 <header>
                 </header>
                 <field name="specialty"/>
+                <field name="interns_ids"/>
+
                 <templates>
                     <t t-name="kanban-menu">
                         <t t-if="widget.editable">
@@ -101,20 +103,28 @@
                                     <field name="specialty"/>
                                 </p>
                             </div>
-                            <div>
-                                <p>
-                                    <strong>Mentor: </strong>
-                                    <field name="mentor_id"  options="{'color_field': 'color'}"/>
-                                </p>
-                            </div>
-                            <div>
-                                <p>
-                                    <strong>Interns:</strong>
-                                    <field name="interns_ids" widget="many2many_tags"
-                                           options="{'color_field': 'color'}"/>
-                                </p>
-                            </div>
 
+                             <t t-if="record.mentor_id.raw_value">
+                                  <div>
+                                     <p>
+                                         <strong>Mentor: </strong>
+                                         <field name="mentor_id"  widget="many2one" />
+                                     </p>
+                                 </div>
+                                 <div>
+                                     <strong>Intern:</strong>✅
+                                 </div>
+                             </t>
+
+                              <t t-else="">
+                                  <div>
+                                      <p>
+                                          <strong>Interns:</strong>
+                                          <field name="interns_ids" widget="many2many_tags"
+                                           options="{'color_field': 'color'}"/>
+                                      </p>
+                                  </div>
+                              </t>
                             <button name="create_visit" string="Create visit" type="object" class="oe_highlight"/>
                         </div>
                     </t>
