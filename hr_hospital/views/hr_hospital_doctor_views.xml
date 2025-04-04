@@ -33,7 +33,7 @@
                             <field name="is_intern"/>
                             <field name="mentor_id"/>
                             <separator/>
-                            <field name="interns_ids"  mode="kanban"/>
+                            <field name="interns_ids" mode="kanban"/>
 
                         </group>
                         <group>
@@ -43,8 +43,8 @@
                             <separator/>
                             <separator/>
                             <field name="phone"/>
-                             <separator/>
-                             <field name="patients_ids"  mode="kanban"/>
+                            <separator/>
+                            <field name="patients_ids" mode="kanban"/>
                         </group>
 
                     </group>
@@ -53,15 +53,15 @@
         </field>
     </record>
 
-      <record id="hr_hospital_doctor_search" model="ir.ui.view">
+    <record id="hr_hospital_doctor_search" model="ir.ui.view">
         <field name="name">hr.hospital.doctor.search (hr_hospital_doctor)</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
             <search string="Filters">
                 <field name="name"/>
-                <group >
-                    <filter string="Mentors" name="status" domain="[('is_intern','=', False)]" />
-                     <filter string="Interns" name="status" domain="[('is_intern','=', True)]" />
+                <group>
+                    <filter string="Mentors" name="status" domain="[('is_intern','=', False)]"/>
+                    <filter string="Interns" name="status" domain="[('is_intern','=', True)]"/>
                 </group>
                 <searchpanel>
                     <field name="mentor_id" string="Filter by Mentors" icon="fa-users" select="multi"
@@ -71,46 +71,68 @@
         </field>
     </record>
 
-     <record id="hr_hospital_doctor_kanban" model="ir.ui.view">
+    <record id="hr_hospital_doctor_kanban" model="ir.ui.view">
         <field name="name">hr.hospital.doctor.kanban (hr_hospital_doctor)</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="priority">100</field>
         <field name="arch" type="xml">
             <kanban default_group_by="specialty">
-                 <header>
+                <header>
                 </header>
                 <field name="specialty"/>
-<!--                <progressbar field="specialty" colors='{"cardiologist":"success","therapist":"warning","neurologist":"danger","pediatrician":"success"}'/>-->
+                <!--                <progressbar field="specialty" colors='{"cardiologist":"success","therapist":"warning","neurologist":"danger","pediatrician":"success"}'/>-->
                 <templates>
-                     <t t-name="kanban-menu">
-                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
-                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                    <t t-name="kanban-menu">
+                        <t t-if="widget.editable">
+                            <a role="menuitem" type="edit" class="dropdown-item">Edit</a>
+                        </t>
+                        <t t-if="widget.deletable">
+                            <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                        </t>
                         <ul class="oe_kanban_colorpicker" data-field="color"/>
                     </t>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_content">
-                            <strong><field name="name"/></strong>
-                            <div><field name="specialty"/></div>
-                            <div><field name="mentor_id"/></div>
-
-
-                            <button name="create_visit" string="Create visit" type="object" class="oe_highlight"/>
+                        <strong>
+                            <field name="name"/>
+                        </strong>
+                        <div>
+                            <field name="specialty"/>
                         </div>
-                    </t>
-                </templates>
-            </kanban>
-         </field>
-    </record>
+                        <div>
+                            <field name="mentor_id"/>
+                        </div>
+                        <div>
+                            <field name="interns_ids"/>
+                        </div>
 
-    <record id="action_hr_hospital_doctor_window" model="ir.actions.act_window">
-        <field name="name">Doctors</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">hr.hospital.doctor</field>
-        <field name="view_mode">tree,form,kanban</field>
-    </record>
+<!--                        <div>-->
+<!--                        <t t-set="interns"-->
+<!--                           t-value="request.env['hr.hospital.doctor'].search([('mentor_id', '=', id)])"/>-->
+<!--                        <tr t-foreach="intern" t-as="interns">-->
+<!--                         <h5><span t-out="intern.name"/></h5>-->
+<!--                        </tr>-->
 
-    <menuitem id="hr_hospital_menu_doctor"
-              action="action_hr_hospital_doctor_window"
-              parent="hr_hospital_menu_main_doctor_patient"
-              name="Doctors" sequence="200"/>
-</odoo>
+<!--                    </div>-->
+
+
+                    <button name="create_visit" string="Create visit" type="object" class="oe_highlight"/>
+                </div>
+            </t>
+        </templates>
+    </kanban>
+</field>
+        </record>
+
+<record id="action_hr_hospital_doctor_window" model="ir.actions.act_window">
+<field name="name">Doctors</field>
+<field name="type">ir.actions.act_window</field>
+<field name="res_model">hr.hospital.doctor</field>
+<field name="view_mode">tree,form,kanban</field>
+</record>
+
+<menuitem id="hr_hospital_menu_doctor"
+          action="action_hr_hospital_doctor_window"
+          parent="hr_hospital_menu_main_doctor_patient"
+          name="Doctors" sequence="200"/>
+        </odoo>
