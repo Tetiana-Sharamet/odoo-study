@@ -80,7 +80,6 @@
                 <header>
                 </header>
                 <field name="specialty"/>
-                <!--                <progressbar field="specialty" colors='{"cardiologist":"success","therapist":"warning","neurologist":"danger","pediatrician":"success"}'/>-->
                 <templates>
                     <t t-name="kanban-menu">
                         <t t-if="widget.editable">
@@ -91,48 +90,50 @@
                         </t>
                         <ul class="oe_kanban_colorpicker" data-field="color"/>
                     </t>
+
+
                     <t t-name="kanban-box">
                         <div class="oe_kanban_content">
-                        <strong>
-                            <field name="name"/>
-                        </strong>
-                        <div>
-                            <field name="specialty"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                            <div>
+                                <p>
+                                    <strong>Specialty: </strong>
+                                    <field name="specialty"/>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <strong>Mentor: </strong>
+                                    <field name="mentor_id"  options="{'color_field': 'color'}"/>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <strong>Interns:</strong>
+                                    <field name="interns_ids" widget="many2many_tags"
+                                           options="{'color_field': 'color'}"/>
+                                </p>
+                            </div>
+
+                            <button name="create_visit" string="Create visit" type="object" class="oe_highlight"/>
                         </div>
-                        <div>
-                            <field name="mentor_id"/>
-                        </div>
-                        <div>
-                            <field name="interns_ids"/>
-                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
-<!--                        <div>-->
-<!--                        <t t-set="interns"-->
-<!--                           t-value="request.env['hr.hospital.doctor'].search([('mentor_id', '=', id)])"/>-->
-<!--                        <tr t-foreach="intern" t-as="interns">-->
-<!--                         <h5><span t-out="intern.name"/></h5>-->
-<!--                        </tr>-->
+    <record id="action_hr_hospital_doctor_window" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.hospital.doctor</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
 
-<!--                    </div>-->
-
-
-                    <button name="create_visit" string="Create visit" type="object" class="oe_highlight"/>
-                </div>
-            </t>
-        </templates>
-    </kanban>
-</field>
-        </record>
-
-<record id="action_hr_hospital_doctor_window" model="ir.actions.act_window">
-<field name="name">Doctors</field>
-<field name="type">ir.actions.act_window</field>
-<field name="res_model">hr.hospital.doctor</field>
-<field name="view_mode">tree,form,kanban</field>
-</record>
-
-<menuitem id="hr_hospital_menu_doctor"
-          action="action_hr_hospital_doctor_window"
-          parent="hr_hospital_menu_main_doctor_patient"
-          name="Doctors" sequence="200"/>
-        </odoo>
+    <menuitem id="hr_hospital_menu_doctor"
+              action="action_hr_hospital_doctor_window"
+              parent="hr_hospital_menu_main_doctor_patient"
+              name="Doctors" sequence="200"/>
+</odoo>
