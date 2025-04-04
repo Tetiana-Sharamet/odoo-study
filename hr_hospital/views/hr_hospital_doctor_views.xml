@@ -90,8 +90,6 @@
                         </t>
                         <ul class="oe_kanban_colorpicker" data-field="color"/>
                     </t>
-
-
                     <t t-name="kanban-box">
                         <div class="oe_kanban_content">
                             <h1>
