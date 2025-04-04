@@ -114,6 +114,12 @@
                         </tbody>
                     </table>
                 </div>
+                <div style="position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 12px;">
+                     <t t-set="DateTime"
+                               t-value="datetime.datetime.now().time()"/>
+                    <p>Time of printing: <span t-esc="DateTime"/></p>
+                    <p>City: <span t-esc="request.env.user.company_id.city"/></p>
+                </div>
             </t>
         </t>
     </template>
