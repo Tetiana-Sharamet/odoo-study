@@ -25,6 +25,7 @@ class HHDoctor(models.Model):
     patients_ids = fields.One2many(
         comodel_name='hr.hospital.patient',
         inverse_name='doctor_id')
+    color = fields.Char()
 
     is_intern = fields.Boolean(string='Intern')
     mentor_id = fields.Many2one(

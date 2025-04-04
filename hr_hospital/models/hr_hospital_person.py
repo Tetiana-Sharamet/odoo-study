@@ -8,7 +8,8 @@ class Person(models.AbstractModel):
     last_name = fields.Char()  # Прізвище
     first_name = fields.Char()  # Ім'я
     phone = fields.Char()  # Телефон
-    photo = fields.Binary()  # Фото
+    photo = fields.Binary()
+
     gender = fields.Selection(
         selection=[
             ('male', 'Male'),
