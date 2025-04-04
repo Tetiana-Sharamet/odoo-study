@@ -46,9 +46,10 @@
                             </h1>
                         </div>
                     </div>
-<!--                     <div style="max-width: 1800px; margin: 60px auto; padding: 60px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">-->
-                     <h1 style="font-size: 24px; margin-bottom: 20px; text-align: center;">Visit Information</h1>
-                    <table class="table table-condensed"   border="2" cellspacing="2" style="font-size: 18px; margin-bottom: 50px; text-align: center; width: 100%;">
+                    <!--                     <div style="max-width: 1800px; margin: 60px auto; padding: 60px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">-->
+                    <h1 style="font-size: 24px; margin-bottom: 20px; text-align: center;">Visit`s Information</h1>
+                    <table class="table table-condensed" border="2" cellspacing="2"
+                           style="font-size: 18px; margin-bottom: 50px; text-align: center; width: 100%;">
                         <thead>
                             <tr>
                                 <th>Scheduled date</th>
@@ -60,14 +61,58 @@
                             <t t-set="visits"
                                t-value="request.env['hr.hospital.visit'].search([('doctor_id', '=', doctor.id)], order='scheduled_date desc')"/>
                             <tr t-foreach="visits" t-as="visit">
-                                     <td><span t-field="visit.scheduled_date"/></td>
-                                     <td><span t-field="visit.patient_id.name"/></td>
-                                     <td t-attf-style="color: {{ ('#FFD700' if visit.visit_status == 'scheduled' else '#008000' if visit.visit_status == 'completed' else '#ff0000' )}}"><span t-field="visit.visit_status"/></td>
+                                <td>
+                                    <span t-field="visit.scheduled_date"/>
+                                </td>
+                                <td>
+                                    <span t-field="visit.patient_id.name"/>
+                                </td>
+                                <td t-attf-style="color: {{ ('#FFD700' if visit.visit_status == 'scheduled' else '#008000' if visit.visit_status == 'completed' else '#ff0000' )}}">
+                                    <span t-field="visit.visit_status"/>
+                                </td>
 
                             </tr>
                         </tbody>
                     </table>
-<!--                         </div>-->
+                    <h1 style="font-size: 24px; margin-bottom: 20px; text-align: center;">Patient`s Information</h1>
+                    <table class="table table-condensed" border="2" cellspacing="2"
+                           style="font-size: 18px; margin-bottom: 50px; text-align: center; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Gender</th>
+                                <th>Birth date</th>
+                                <th>Phone number</th>
+                                <th>Status last visit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="patients"
+                               t-value="request.env['hr.hospital.patient'].search([('doctor_id', '=', doctor.id)])"/>
+                            <tr t-foreach="patients" t-as="patient">
+                                <td>
+                                    <span t-field="patient.name"/>
+                                </td>
+                                <td>
+                                    <span t-field="patient.gender"/>
+                                </td>
+                                <td>
+                                    <span t-field="patient.birth_date"/>
+                                </td>
+                                <td>
+                                    <span t-field="patient.phone"/>
+                                </td>
+                                <t t-set="Lastvisit"
+                                   t-value="request.env['hr.hospital.visit'].search([('doctor_id', '=', doctor.id), ('patient_id', '=', patient.id) ], order='scheduled_date desc')[0]"/>
+                                <t t-if="Lastvisit">
+                                    <!--    <t t-esc="visit[0].visit_status"/>-->
+                                    <td t-attf-style="color: {{ ('#FFD700' if Lastvisit.visit_status == 'scheduled' else '#008000' if Lastvisit.visit_status == 'completed' else '#ff0000' )}}">
+                                        <span t-field="Lastvisit.visit_status"/>
+                                    </td>
+                                </t>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </t>
         </t>
