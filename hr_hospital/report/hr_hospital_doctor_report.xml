@@ -32,8 +32,9 @@
     <template id="hr_hospital_doctor_main_template">
         <t t-call="web.html_container">
 
-            <t t-foreach="docs" t-as="doctor">
+
                 <t t-call="web.external_layout">
+                      <t t-foreach="docs" t-as="doctor">
                     <strong>--------------------------------------------------------</strong>
                     <div class="row">
                         <div name="hh_doctor_main_block">
