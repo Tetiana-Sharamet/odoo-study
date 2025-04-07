@@ -38,18 +38,6 @@ class HHDoctor(models.Model):
         domain=[('is_intern', '=', False)]
     )
 
-    @api.depends('specialty')
-    def _compute_color(self):
-        for record in self:
-            if record.specialty == 'cardiologist':
-                record.color = '#FF0000'
-            elif record.specialty == 'pediatrician':
-                record.color = '#00FF00'
-            elif record.specialty == 'neurologist':
-                record.color = '#FFD700'
-            else:
-                record.color = '#FFFFFF'
-
     @api.depends('first_name', 'last_name')
     def _compute_name(self):
         for record in self:

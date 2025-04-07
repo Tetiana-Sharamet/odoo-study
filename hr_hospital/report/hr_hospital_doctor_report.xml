@@ -104,7 +104,7 @@
                                         <span t-field="patient.phone"/>
                                     </td>
                                     <t t-set="Lastvisit"
-                                       t-value="request.env['hr.hospital.visit'].search([('doctor_id', '=', doctor.id), ('patient_id', '=', patient.id) ], order='scheduled_date desc')[0]"/>
+                                       t-value="request.env['hr.hospital.visit'].search([('doctor_id', '=', doctor.id), ('patient_id', '=', patient.id) ], order='scheduled_date desc')"/>
                                     <t t-if="Lastvisit">
                                         <!--    <t t-esc="visit[0].visit_status"/>-->
                                         <td t-attf-style="color: {{ ('#FFD700' if Lastvisit.visit_status == 'scheduled' else '#008000' if Lastvisit.visit_status == 'completed' else '#ff0000' )}}">
@@ -117,8 +117,8 @@
                     </div>
                     <div style="position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 12px;">
                         <t t-set="DateTime"
-                           t-value="datetime.datetime.now().time()"/>
-                        <p>Time of printing:
+                           t-value="datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+                        <p>Date of printing:
                             <span t-esc="DateTime"/>
                         </p>
                         <p>City:
