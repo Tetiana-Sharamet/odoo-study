@@ -94,26 +94,24 @@
                     </t>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_content">
-                            <h1>
+                            <strong>
                                 <field name="name"/>
-                            </h1>
+                            </strong>
                             <div>
                                 <p>
                                     <strong>Specialty: </strong>
                                     <field name="specialty"/>
                                 </p>
-                            </div>
+                           </div>
 
                              <t t-if="record.mentor_id.raw_value">
-                                  <div>
+                                <div>
                                      <p>
                                          <strong>Mentor: </strong>
                                          <field name="mentor_id"  widget="many2one" />
                                      </p>
-                                 </div>
-                                 <div>
                                      <strong>Intern:</strong>✅
-                                 </div>
+                                </div>
                              </t>
 
                               <t t-else="">

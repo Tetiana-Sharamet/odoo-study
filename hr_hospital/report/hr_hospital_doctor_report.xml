@@ -16,7 +16,7 @@
     </record>
 
     <record id="hr_hospital_doctor_main_report" model="ir.actions.report">
-        <field name="name">HH Doctor report</field>
+        <field name="name">Main Doctor report</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="report_type">qweb-html</field>
         <field name="report_name">hr_hospital.hr_hospital_doctor_main_template</field>
@@ -39,13 +39,13 @@
                         <div name="hh_doctor_main_block">
                             <div>
                                 <!--                            <strong>Doctor:</strong>-->
-                                <h1>
-                                    <div t-field="doctor.name"/>
-                                </h1>
-                                <strong>Specialty:</strong>
                                 <h2>
-                                    <div t-field="doctor.specialty"/>
+                                    <div t-field="doctor.name"/>
                                 </h2>
+                                <div>
+                                <strong>Specialty:</strong>
+                                    <div t-field="doctor.specialty"/>
+                                 </div>
                             </div>
                         </div>
                         <h1 style="font-size: 24px; margin-bottom: 20px; text-align: center;">Visit`s Information</h1>
@@ -71,7 +71,6 @@
                                     <td t-attf-style="color: {{ ('#FFD700' if visit.visit_status == 'scheduled' else '#008000' if visit.visit_status == 'completed' else '#ff0000' )}}">
                                         <span t-field="visit.visit_status"/>
                                     </td>
-
                                 </tr>
                             </tbody>
                         </table>
@@ -117,7 +116,7 @@
                     </div>
                     <div style="position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 12px;">
                         <t t-set="DateTime"
-                           t-value="datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+                           t-value="datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')"/>
                         <p>Date of printing:
                             <span t-esc="DateTime"/>
                         </p>
