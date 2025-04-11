@@ -81,6 +81,7 @@
                 </header>
                 <field name="specialty"/>
                 <field name="interns_ids"/>
+                <field name="color"/>
 
                 <templates>
                     <t t-name="kanban-menu">
@@ -93,37 +94,40 @@
                         <ul class="oe_kanban_colorpicker" data-field="color"/>
                     </t>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_content">
-                            <strong>
-                                <field name="name"/>
-                            </strong>
-                            <div>
-                                <p>
-                                    <strong>Specialty: </strong>
-                                    <field name="specialty"/>
-                                </p>
-                           </div>
+                         <div t-attf-class="oe_kanban_global_click o_kanban_record oe_kanban_color_#{record.color.raw_value}" style="display: flex; flex-direction: row; align-items: stretch;">
 
-                             <t t-if="record.mentor_id.raw_value">
+                            <div class="oe_kanban_content">
+                                <strong>
+                                    <field name="name"/>
+                                </strong>
                                 <div>
-                                     <p>
-                                         <strong>Mentor: </strong>
-                                         <field name="mentor_id"  widget="many2one" />
-                                     </p>
-                                     <strong>Intern:</strong>✅
+                                    <p>
+                                        <strong>Specialty:</strong>
+                                        <field name="specialty"/>
+                                    </p>
                                 </div>
-                             </t>
 
-                              <t t-else="">
-                                  <div>
-                                      <p>
-                                          <strong>Interns:</strong>
-                                          <field name="interns_ids" widget="many2many_tags"
-                                           options="{'color_field': 'color'}"/>
-                                      </p>
-                                  </div>
-                              </t>
-                            <button name="create_visit" string="Create visit" type="object" class="oe_highlight"/>
+                                <t t-if="record.mentor_id.raw_value">
+                                    <div>
+                                        <p>
+                                            <strong>Mentor:</strong>
+                                            <field name="mentor_id" widget="many2one"/>
+                                        </p>
+                                        <strong>Intern:</strong>✅
+                                    </div>
+                                </t>
+
+                                <t t-else="">
+                                    <div>
+                                        <p>
+                                            <strong>Interns:</strong>
+                                            <field name="interns_ids" widget="many2many_tags"
+                                                   options="{'color_field': 'color'}"/>
+                                        </p>
+                                    </div>
+                                </t>
+                                <button name="create_visit" string="Create visit" type="object" class="oe_highlight"/>
+                            </div>
                         </div>
                     </t>
                 </templates>
