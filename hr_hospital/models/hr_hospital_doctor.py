@@ -27,7 +27,6 @@ class HHDoctor(models.Model):
         comodel_name='hr.hospital.patient',
         inverse_name='doctor_id')
 
-
     color = fields.Integer()
 
     is_intern = fields.Boolean(string='Intern')
@@ -37,20 +36,6 @@ class HHDoctor(models.Model):
         domain=[('is_intern', '=', False)]
     )
 
-
-    # @api.onchange('specialty')
-    # def _onchange_priority_color(self):
-    #     for record in self:
-    #         if record.specialty == 'cardiologist':
-    #             record.color = 1
-    #         elif record.specialty == 'neurologist':
-    #             record.color = 2
-    #         elif record.specialty == 'therapist':
-    #             record.color = 5
-    #         else:
-    #             record.color = 4
-
-
     @api.depends('first_name', 'last_name')
     def _compute_name(self):
         for record in self:
@@ -58,15 +43,13 @@ class HHDoctor(models.Model):
                 record.name = 'Dr. %s  %s' % (
                     record.first_name, record.last_name)
 
-
     @api.constrains('mentor_id')
     def _check_mentor_not_intern(self):
         for record in self:
             if (record.mentor_id
-                and record.mentor_id.is_intern):
+                    and record.mentor_id.is_intern):
                 raise models.ValidationError(_("An intern cannot /"
-                                           "be a mentor."))
-
+                                               "be a mentor."))
 
     def create_visit(self):
         return {
@@ -76,6 +59,6 @@ class HHDoctor(models.Model):
             'view_mode': 'form',
             'target': 'new',
             'context': {
-            'default_doctor_id': self.id,
+                'default_doctor_id': self.id,
             },
         }
