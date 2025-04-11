@@ -2,6 +2,7 @@ from odoo.tests import TransactionCase
 from odoo.exceptions import ValidationError
 from datetime import datetime
 
+
 class TestHospitalVisit(TransactionCase):
 
     def setUp(self):
@@ -23,26 +24,27 @@ class TestHospitalVisit(TransactionCase):
             'patient_id': self.patient.id,
             'doctor_id': self.doctor.id,
             'disease_id': self.disease.id,
-            'scheduled_date':  datetime(2025, 4, 12, 11, 0),
+            'scheduled_date': datetime(2025, 4, 12, 11, 0),
             'visit_status': 'completed',
         })
         # Спроба змінити час або лікаря для візиту зі статусом "completed"
         with self.assertRaises(ValidationError):
-            visit.write({'scheduled_date':  datetime(2025, 4, 12, 11, 0)})
+            visit.write({'scheduled_date': datetime(2025, 4, 12, 11, 0)})
 
     def test_check_patient_doctor_schedule(self):
         # Створення першого візиту
         self.env['hr.hospital.visit'].create({
             'patient_id': self.patient.id,
             'doctor_id': self.doctor.id,
-            'scheduled_date':  datetime(2025, 4, 12, 10, 0),
+            'scheduled_date': datetime(2025, 4, 12, 10, 0),
         })
-        # Створення другого візиту для того ж пацієнта і лікаря на той самий день
+        # Створення другого візиту для
+        # того ж пацієнта і лікаря на той самий день
         with self.assertRaises(ValidationError):
             self.env['hr.hospital.visit'].create({
                 'patient_id': self.patient.id,
                 'doctor_id': self.doctor.id,
-                'scheduled_date':  datetime(2025, 4, 12, 11, 0),
+                'scheduled_date': datetime(2025, 4, 12, 11, 0),
             })
 
     def test_unlink_with_diagnosis(self):
@@ -50,7 +52,7 @@ class TestHospitalVisit(TransactionCase):
         visit = self.env['hr.hospital.visit'].create({
             'patient_id': self.patient.id,
             'doctor_id': self.doctor.id,
-            'scheduled_date':  datetime(2025, 4, 12, 11, 0),
+            'scheduled_date': datetime(2025, 4, 12, 11, 0),
         })
         # Створення діагнозу для візиту
         self.env['hr.hospital.diagnosis'].create({
@@ -66,10 +68,12 @@ class TestHospitalVisit(TransactionCase):
         visit = self.env['hr.hospital.visit'].create({
             'patient_id': self.patient.id,
             'doctor_id': self.doctor.id,
-            'scheduled_date':  datetime(2025, 4, 12, 11, 0),
+            'scheduled_date':
+                datetime(2025, 4, 12, 11, 0),
             'visit_status': 'scheduled',
         })
         # Спроба змінити час для візиту, який ще не завершений
-        visit.write({'scheduled_date':  datetime(2025, 4, 12, 11, 0)})
-        self.assertEqual(visit.scheduled_date,  datetime(2025, 4, 12, 11, 0), "Час візиту не був оновлений")
-
+        visit.write({'scheduled_date': datetime(2025, 4, 12, 11, 0)})
+        self.assertEqual(visit.scheduled_date,
+                         datetime(2025, 4, 12, 11, 0),
+                         "Час візиту не був оновлений")
