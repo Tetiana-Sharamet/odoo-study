@@ -18,7 +18,7 @@ class Diagnosis(models.Model):
         string='Disease',
         required=True)
 
-    description = fields.Text()
+    description = fields.Text(translate=True)
 
     is_approved = fields.Boolean(
         string='Approved',
