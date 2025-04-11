@@ -9,6 +9,9 @@ class Person(models.AbstractModel):
     first_name = fields.Char()  # Ім'я
     phone = fields.Char()  # Телефон
     photo = fields.Binary()
+    user_id = fields.Many2one(
+        comodel_name='res.users',
+        ondelete='set null')
 
     gender = fields.Selection(
         selection=[

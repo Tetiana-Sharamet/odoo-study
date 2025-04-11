@@ -11,7 +11,9 @@
     'external_dependencies': {'python': []},
 
     'data': [
+        'security/hr_hospital_groups.xml',
         'security/ir.model.access.csv',
+        'security/hr_hospital_security.xml',
         'views/hr_hospital_menu.xml',
         'data/hr_hospital_disease.xml',
         'wizard/set_personal_doctor_wizard_view.xml',
