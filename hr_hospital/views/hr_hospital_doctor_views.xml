@@ -102,7 +102,7 @@
                                 </strong>
                                 <div>
                                     <p>
-                                        <strong>Specialty:</strong>
+                                        <strong>Specialty: </strong>
                                         <field name="specialty"/>
                                     </p>
                                 </div>
@@ -110,10 +110,10 @@
                                 <t t-if="record.mentor_id.raw_value">
                                     <div>
                                         <p>
-                                            <strong>Mentor:</strong>
+                                            <strong>Mentor: </strong>
                                             <field name="mentor_id" widget="many2one"/>
                                         </p>
-                                        <strong>Intern:</strong>✅
+                                        <strong>Intern: </strong>✅
                                     </div>
                                 </t>
 
