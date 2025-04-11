@@ -48,7 +48,7 @@ class HHDoctor(models.Model):
         for record in self:
             if (record.mentor_id
                     and record.mentor_id.is_intern):
-                raise models.ValidationError(_("An intern cannot /"
+                raise models.ValidationError(_("An intern cannot "
                                                "be a mentor."))
 
     def create_visit(self):

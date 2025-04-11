@@ -42,8 +42,8 @@ class HHVisit(models.Model):
             for record in self:
                 if record.visit_status != 'scheduled':
                     raise ValidationError(
-                        _('It is not possible to change /'
-                          'the time/date/doctor /'
+                        _('It is not possible to change '
+                          'the time/date/doctor '
                           'for a completed or canceled visit!'))
         return super().write(vals)
 
@@ -64,14 +64,14 @@ class HHVisit(models.Model):
                  + ' 23:59:59')
             ])
             if existing_visits:
-                raise ValidationError(_('The patient is already /'
-                                        'scheduled to see this /'
+                raise ValidationError(_('The patient is already '
+                                        'scheduled to see this '
                                         'doctor for this day!'))
 
     @api.model
     def unlink(self):
         for record in self:
             if record.diagnosis_ids:
-                raise ValidationError(_('You cannot delete or /'
+                raise ValidationError(_('You cannot delete or '
                                         'archive a visit with diagnoses!'))
         return super().unlink()
