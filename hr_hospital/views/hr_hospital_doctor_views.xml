@@ -94,7 +94,8 @@
                         <ul class="oe_kanban_colorpicker" data-field="color"/>
                     </t>
                     <t t-name="kanban-box">
-                         <div t-attf-class="oe_kanban_global_click o_kanban_record oe_kanban_color_#{record.color.raw_value}" style="display: flex; flex-direction: row; align-items: stretch;">
+                         <div t-attf-class="oe_kanban_global_click o_kanban_record oe_kanban_color_#{record.color.raw_value}"
+                              style="display: flex; flex-direction: row; align-items: stretch;">
 
                             <div class="oe_kanban_content">
                                 <strong>
