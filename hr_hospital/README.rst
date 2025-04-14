@@ -1,6 +1,6 @@
-=========================
+===========================
 Hospital Management System
-=========================
+===========================
 
 This is a Hospital Management System built on the Odoo platform, designed to manage hospital-related operations.
 It includes models for handling patients, doctors, diseases, visits, and diagnoses, along with the ability to track medical histories, schedule visits, and manage hospital staff.

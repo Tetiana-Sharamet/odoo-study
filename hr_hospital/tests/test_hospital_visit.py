@@ -1,6 +1,7 @@
+from datetime import datetime
 from odoo.tests import TransactionCase
 from odoo.exceptions import ValidationError
-from datetime import datetime
+
 
 
 class TestHospitalVisit(TransactionCase):

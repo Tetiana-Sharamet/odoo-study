@@ -1,153 +1,78 @@
 from odoo import models, fields, api
-from odoo.exceptions import ValidationError
 from odoo.tools.translate import _
 
 
-class HHVisit(models.Model):
-    """
-    Model representing a hospital visit record.
+class HHDoctor(models.Model):
+    _inherit = 'hr.hospital.person'
+    _name = 'hr.hospital.doctor'
+    _description = 'Doctor'
 
-    This model is used to track the details of a patient's
-    visit to the hospital. It includes information
-    about the patient, doctor, disease, visit status,
-    scheduled dates, and any diagnoses made during the visit.
-    The model also provides business logic to ensure
-    visits are not scheduled with conflicts, and that
-    changes to visits cannot be made once they are
-    completed or canceled.
+    name = fields.Char(
+        compute='_compute_name',
+        store=True)
 
-    Attributes:
-        patient_id (Many2one): Reference to
-        the patient for the visit.
-        doctor_id (Many2one): Reference to
-        the doctor responsible for the visit.
-        disease_id (Many2one): Reference to
-        the disease being treated or diagnosed during the visit.
-        visit_status (Selection): The status
-        of the visit (scheduled, completed, or cancelled).
-        scheduled_date (Datetime): The scheduled date
-        and time of the visit.
-        completed_date (Datetime): The actual date
-        and time when the visit was completed (if applicable).
-        diagnosis_ids (One2many): A list of diagnoses made during the visit.
-
-    Methods:
-        write(vals): Overridden to prevent changes
-        to scheduled time, date, or doctor for completed or canceled visits.
-        _check_patient_doctor_schedule(): Validates that
-        the patient is not double-booked with the same doctor on the same day.
-        unlink(): Ensures that visits with diagnoses cannot
-        be deleted or archived.
-    """
-    _name = 'hr.hospital.visit'
-    _description = 'Visit'
-
-    patient_id = fields.Many2one(
-        comodel_name='hr.hospital.patient',
-        required=True,
-        help="The patient who is visiting the hospital."
-    )
-
-    doctor_id = fields.Many2one(
-        comodel_name='hr.hospital.doctor',
-        required=True,
-        help="The doctor assigned to the "
-             "patient for the visit."
-    )
-
-    disease_id = fields.Many2one(
-        comodel_name='hr.hospital.disease',
-        help="The disease being treated"
-             " or diagnosed during the visit."
-    )
-
-    visit_status = fields.Selection(
+    specialty = fields.Selection(
         selection=[
-            ('scheduled', 'Scheduled'),
-            ('completed', 'Completed'),
-            ('cancelled', 'Cancelled')
-        ],
-        copy=False,
-        default='scheduled',
-        help="The current status of the visit "
-             "(scheduled, completed, or cancelled)."
+            ('cardiologist', 'Cardiologist'),
+            ('neurologist', 'Neurologist'),
+            ('therapist', 'Therapist'),
+            ('pediatrician', 'Pediatrician'),
+        ])
+
+    interns_ids = fields.One2many(
+        comodel_name='hr.hospital.doctor',
+        inverse_name='mentor_id')
+
+    patients_ids = fields.One2many(
+        comodel_name='hr.hospital.patient',
+        inverse_name='doctor_id')
+
+    color = fields.Char(
+        compute="_compute_color",
+        store=True)
+
+    is_intern = fields.Boolean(string='Intern')
+    mentor_id = fields.Many2one(
+        comodel_name='hr.hospital.doctor',
+        string='Mentor',
+        domain=[('is_intern', '=', False)]
     )
 
-    scheduled_date = fields.Datetime(
-        help="The scheduled date and time for the visit."
-    )
-
-    completed_date = fields.Datetime(
-        copy=False,
-        help="The date and time when the visit"
-             " was completed (if applicable)."
-    )
-
-    diagnosis_ids = fields.One2many(
-        comodel_name='hr.hospital.diagnosis',
-        inverse_name='visit_id',
-        help="A list of diagnoses made "
-             "during the visit."
-    )
-
-    @api.model
-    def write(self, vals):
-        """
-        Overridden method to prevent
-        changes to scheduled date/time
-        or doctor once a visit is completed or canceled.
-        """
-        if 'scheduled_date' in vals or 'doctor_id' in vals:
-            for record in self:
-                if record.visit_status != 'scheduled':
-                    raise ValidationError(
-                        _('It is not possible to change '
-                          'the time/date/doctor '
-                          'for a completed or canceled visit!')
-                    )
-        return super().write(vals)
-
-    @api.constrains('patient_id', 'doctor_id', 'scheduled_date')
-    def _check_patient_doctor_schedule(self):
-        """
-        Ensures that the same patient is
-        not double-booked with the same doctor on the same day.
-
-        This method checks whether the
-        patient has already been scheduled for
-        another visit with the same doctor
-        on the same day. If a conflict
-        is found, a ValidationError is raised.
-        """
+    @api.depends('specialty')
+    def _compute_color(self):
         for record in self:
-            if not (record.scheduled_date and record.doctor_id):
-                continue
-            existing_visits = self.env['hr.hospital.visit'].search([
-                ('id', '!=', record.id),
-                ('patient_id', '=', record.patient_id.id),
-                ('doctor_id', '=', record.doctor_id.id),
-                ('scheduled_date', '>=',
-                 record.scheduled_date.date().strftime('%Y-%m-%d')
-                 + ' 00:00:00'),
-                ('scheduled_date', '<=',
-                 record.scheduled_date.date().strftime('%Y-%m-%d')
-                 + ' 23:59:59')
-            ])
-            if existing_visits:
-                raise ValidationError(_('The patient is already '
-                                        'scheduled to see this '
-                                        'doctor for this day!'))
+            if record.specialty == 'cardiologist':
+                record.color = '#FF0000'
+            elif record.specialty == 'pediatrician':
+                record.color = '#00FF00'
+            elif record.specialty == 'neurologist':
+                record.color = '#FFD700'
+            else:
+                record.color = '#FFFFFF'
 
-    @api.model
-    def unlink(self):
-        """
-        Prevents the deletion or archiving of visits that
-        have associated diagnoses.
-        This method ensures that a visit cannot be deleted or
-        archived if any diagnoses have been made during the visit.
-        """
+    @api.depends('first_name', 'last_name')
+    def _compute_name(self):
         for record in self:
-            if record.diagnosis_ids:
-                raise ValidationError(_('You cannot delete or '
-                                        'archive a visit with diagnoses!'))
-        return super().unlink()
+            if record.last_name or record.first_name:
+                record.name = 'Dr. %s  %s' % (
+                    record.first_name, record.last_name)
+
+    @api.constrains('mentor_id')
+    def _check_mentor_not_intern(self):
+        for record in self:
+            if (record.mentor_id
+                    and record.mentor_id.is_intern):
+                raise models.ValidationError(_("An intern cannot /"
+                                               "be a mentor."))
+
+    def create_visit(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Create Visit',
+            'res_model': 'hr.hospital.visit',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_doctor_id': self.id,
+            },
+        }
