@@ -1,0 +1,584 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_hospital
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-14 07:10+0000\n"
+"PO-Revision-Date: 2025-04-14 07:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_hospital
+#: model:ir.actions.report,print_report_name:hr_hospital.hr_hospital_doctor_main_report
+msgid "(object.name)"
+msgstr ""
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_doctor_main_template
+msgid ""
+"<strong>--------------------------------------------------------</strong>"
+msgstr ""
+
+msgid "(object.name)"
+msgstr "(object.name)"  # залишено без змін, оскільки це динамічна вставка
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_doctor_main_template
+msgid "<strong>--------------------------------------------------------</strong>"
+msgstr "<strong>--------------------------------------------------------</strong>"  # декоративне, без перекладу
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_doctor_kanban
+msgid "<strong>Intern: </strong>✅"
+msgstr "<strong>Інтерн: </strong>✅"
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_doctor_kanban
+msgid "<strong>Interns:</strong>"
+msgstr "<strong>Інтерни:</strong>"
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_doctor_kanban
+msgid "<strong>Mentor: </strong>"
+msgstr "<strong>Наставник: </strong>"
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_doctor_kanban
+msgid "<strong>Specialty: </strong>"
+msgstr "<strong>Спеціалізація: </strong>"
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_doctor_main_template
+msgid "<strong>Specialty:</strong>"
+msgstr "<strong>Спеціалізація:</strong>"
+
+#. module: hr_hospital
+#: model:hr.hospital.disease,description:hr_hospital.disease_tuberculosis
+msgid "A bacterial infection that primarily affects the lungs."
+msgstr "Бактеріальна інфекція, що вражає переважно легені."
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,description:hr_hospital.demo_disease_5
+msgid "A chronic disease that affects the airways, making it difficult to breathe."
+msgstr "Хронічне захворювання дихальних шляхів, яке ускладнює дихання."
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,description:hr_hospital.demo_disease_20
+msgid "A chronic infectious disease that primarily affects the lungs."
+msgstr "Хронічне інфекційне захворювання, що вражає переважно легені."
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,description:hr_hospital.demo_disease_3
+msgid "A condition in which the blood pressure in the arteries is persistently elevated.\n        "
+msgstr "Стан, при якому артеріальний тиск у судинах постійно підвищений."
+
+#. module: hr_hospital
+#: model:hr.hospital.disease,description:hr_hospital.disease_arthritis
+msgid "A condition that causes inflammation and stiffness in the joints."
+msgstr "Стан, що спричиняє запалення та скутість у суглобах."
+
+#. module: hr_hospital
+#: model:ir.model.fields,help:hr_hospital.field_hr_hospital_patient__description
+msgid "A description of the patient."
+msgstr "Опис пацієнта."
+
+#. module: hr_hospital
+#: model:ir.model.fields,help:hr_hospital.field_hr_hospital_diagnosis__description
+msgid "A detailed description of the diagnosis."
+msgstr "Детальний опис діагнозу."
+
+#. module: hr_hospital
+#: model:ir.model.fields,help:hr_hospital.field_hr_hospital_disease__description
+msgid "A detailed description of the disease."
+msgstr "Детальний опис захворювання."
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,description:hr_hospital.demo_disease_4
+msgid "A disease that affects the body's ability to regulate blood sugar levels."
+msgstr "Захворювання, що впливає на здатність організму регулювати рівень цукру в крові."
+
+#. module: hr_hospital
+#: model:hr.hospital.disease,description:hr_hospital.disease_diabetes
+msgid "A disease that affects the body’s ability to produce or respond to insulin."
+msgstr "Захворювання, що порушує вироблення або реакцію організму на інсулін."
+
+#. module: hr_hospital
+#: model:ir.model.fields,help:hr_hospital.field_hr_hospital_visit__diagnosis_ids
+msgid "A list of diagnoses made during the visit."
+msgstr "Список діагнозів, поставлених під час візиту."
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,description:hr_hospital.demo_disease_6
+msgid "A sudden interruption of blood flow to the brain, causing brain cell damage."
+msgstr "Раптове припинення кровотоку до мозку, що спричиняє пошкодження клітин мозку."
+
+#. module: hr_hospital
+#: model:hr.hospital.disease,description:hr_hospital.disease_flu
+msgid "A viral infection that attacks your respiratory system."
+msgstr "Вірусна інфекція, що вражає дихальну систему."
+
+#. module: hr_hospital
+#: model:res.groups,name:hr_hospital.group_admin
+msgid "Admin"
+msgstr "Адмін"
+
+#. module: hr_hospital
+#: model:res.groups,comment:hr_hospital.group_admin
+msgid "Administrators(full rights)"
+msgstr "Адміністратори (повні права)"
+
+
+#. module: hr_hospital
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__age
+msgid "Age"
+msgstr "Вік"
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,description:hr_hospital.demo_disease_10
+msgid "An acute respiratory illness caused by the influenza virus."
+msgstr "Гостре респіраторне захворювання, спричинене вірусом грипу."
+
+#. module: hr_hospital
+#. odoo-python
+#: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
+#, python-format
+msgid "An intern cannot /be a mentor."
+msgstr "Інтерн не може бути наставником."
+
+#. module: hr_hospital
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_diagnosis__is_approved
+msgid "Approved"
+msgstr "Схвалено"
+
+#. module: hr_hospital
+#: model:hr.hospital.disease,name:hr_hospital.disease_arthritis
+msgid "Arthritis"
+msgstr "Артрит"
+
+#. module: hr_hospital
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__birth_date
+msgid "Birth Date"
+msgstr "Дата народження"
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_doctor_main_template
+msgid "Birth date"
+msgstr "Дата народження"
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.view_disease_report_wizard
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: hr_hospital
+#: model:ir.model.fields.selection:name:hr_hospital.selection__hr_hospital_visit__visit_status__cancelled
+msgid "Cancelled"
+msgstr "Скасовано"
+
+#. module: hr_hospital
+#: model:ir.model.fields.selection:name:hr_hospital.selection__hr_hospital_doctor__specialty__cardiologist
+msgid "Cardiologist"
+msgstr "Кардіолог"
+
+#. module: hr_hospital
+#: model:hr.hospital.disease,name:hr_hospital.disease_chronic
+msgid "Chronic Diseases"
+msgstr "Хронічні захворювання"
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_doctor_main_template
+msgid "City:"
+msgstr "Місто:"
+
+#. module: hr_hospital
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__color
+msgid "Color"
+msgstr "Колір"
+
+#. module: hr_hospital
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease__complete_name
+msgid "Complete Name"
+msgstr "Повна назва"
+
+#. module: hr_hospital
+#: model:ir.model.fields.selection:name:hr_hospital.selection__hr_hospital_visit__visit_status__completed
+msgid "Completed"
+msgstr "Завершено"
+
+#. module: hr_hospital
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_visit__completed_date
+msgid "Completed Date"
+msgstr "Дата завершення"
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_patient_form
+msgid "Create Visit"
+msgstr "Створити візит"
+
+msgid "Created by"
+msgstr "Створено"
+
+msgid "Created on"
+msgstr "Дата створення"
+
+msgid "Date of printing:"
+msgstr "Дата друку:"
+
+msgid "Delete"
+msgstr "Видалити"
+
+msgid "Description"
+msgstr "Опис"
+
+msgid "Diabetes"
+msgstr "Діабет"
+
+msgid "Diagnoses"
+msgstr "Діагнози"
+
+msgid "Diagnosis"
+msgstr "Діагноз"
+
+msgid "Diagnosis Date"
+msgstr "Дата діагнозу"
+
+msgid "Disease"
+msgstr "Захворювання"
+
+msgid "Disease Report"
+msgstr "Звіт про захворювання"
+
+msgid "DiseaseReportWizard"
+msgstr "Майстер звіту про захворювання"
+
+msgid "Diseases"
+msgstr "Захворювання"
+
+msgid "Diseases caused by pathogens such as bacteria, viruses, or fungi."
+msgstr "Захворювання, спричинені патогенами, такими як бактерії, віруси або гриби."
+
+msgid "Display Name"
+msgstr "Відображуване ім’я"
+
+msgid "Doctor"
+msgstr "Лікар"
+
+msgid "Doctor Data"
+msgstr "Дані лікаря"
+
+msgid "Doctors"
+msgstr "Лікарі"
+
+msgid "Doctors/Patients"
+msgstr "Лікарі/Пацієнти"
+
+msgid "Edit"
+msgstr "Редагувати"
+
+msgid "Emergency Contact"
+msgstr "Контакт у разі надзвичайної ситуації"
+
+msgid "Female"
+msgstr "Жіноча"
+
+msgid "Filter"
+msgstr "Фільтр"
+
+msgid "Filter by Doctors"
+msgstr "Фільтр за лікарями"
+
+msgid "Filter by Mentors"
+msgstr "Фільтр за наставниками"
+
+msgid "Filters"
+msgstr "Фільтри"
+
+msgid "First Name"
+msgstr "Ім’я"
+
+msgid "Flu"
+msgstr "Грип"
+
+msgid "From Date"
+msgstr "З дати"
+
+msgid "Gender"
+msgstr "Стать"
+
+msgid "Generate Disease Report"
+msgstr "Згенерувати звіт про захворювання"
+
+msgid "Generate Report"
+msgstr "Згенерувати звіт"
+
+msgid "Graph"
+msgstr "Графік"
+
+msgid "Group By"
+msgstr "Групувати за"
+
+msgid "HR Hospital"
+msgstr "HR Госпіталь"
+
+msgid "Hospital"
+msgstr "Госпіталь"
+
+msgid "ID"
+msgstr "ID"
+
+
+msgid "Indicates if the diagnosis has been approved."
+msgstr "Вказує, чи діагноз було затверджено."
+
+msgid "Infectious Diseases"
+msgstr "Інфекційні захворювання"
+
+msgid "Intern"
+msgstr "Інтерн"
+
+msgid "Intern's diagnosis must be approved by a mentor."
+msgstr "Діагноз інтерна має бути затверджений ментором."
+
+msgid "Interns"
+msgstr "Інтерни"
+
+msgid ""
+"It is not possible to change the time/date/doctor for a completed or "
+"canceled visit!"
+msgstr "Неможливо змінити час/дату/лікаря для завершеного або скасованого візиту!"
+
+msgid "Last Name"
+msgstr "Прізвище"
+
+msgid "Last Updated by"
+msgstr "Останнє оновлення здійснив"
+
+msgid "Last Updated on"
+msgstr "Дата останнього оновлення"
+
+msgid "Long-lasting diseases that persist over time."
+msgstr "Захворювання, які тривають протягом тривалого часу."
+
+msgid "Main Doctor report"
+msgstr "Звіт головного лікаря"
+
+msgid "Male"
+msgstr "Чоловіча"
+
+msgid "Meneger"
+msgstr "Менеджер"
+
+msgid "Mentor"
+msgstr "Наставник"
+
+msgid "Mentors"
+msgstr "Наставники"
+
+msgid "Name"
+msgstr "Ім’я"
+
+msgid "Neurologist"
+msgstr "Невролог"
+
+msgid "New Personal Doctor"
+msgstr "Новий особистий лікар"
+
+msgid "Other"
+msgstr "Інше"
+
+msgid "Parent"
+msgstr "Батьківське"
+
+msgid "Parent Path"
+msgstr "Батьківський шлях"
+
+msgid "Passport Number"
+msgstr "Номер паспорта"
+
+msgid "Patient"
+msgstr "Пацієнт"
+
+msgid "Patient`s Information"
+msgstr "Інформація про пацієнта"
+
+msgid "Patients"
+msgstr "Пацієнти"
+
+msgid "Pediatrician"
+msgstr "Педіатр"
+
+msgid "Person"
+msgstr "Особа"
+
+msgid "Personal Data"
+msgstr "Особисті дані"
+
+msgid "Personal doctor"
+msgstr "Особистий лікар"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Phone number"
+msgstr "Номер телефону"
+
+msgid "Photo"
+msgstr "Фото"
+
+msgid "Pivot Example"
+msgstr "Приклад зведеної таблиці"
+
+msgid "Report"
+msgstr "Звіт"
+
+msgid "Scheduled"
+msgstr "Заплановано"
+
+msgid "Scheduled Date"
+msgstr "Запланована дата"
+
+msgid "Scheduled date"
+msgstr "Дата запланованого візиту"
+
+msgid "Set"
+msgstr "Призначити"
+
+msgid "Set personal doctor"
+msgstr "Призначити особистого лікаря"
+
+msgid "SetPersonalDoctorWizard"
+msgstr "Майстер призначення особистого лікаря"
+
+msgid "Specialty"
+msgstr "Спеціалізація"
+
+msgid "Status last visit"
+msgstr "Статус останнього візиту"
+
+msgid "Sub Diseases"
+msgstr "Підкатегорії захворювань"
+
+msgid "The 'From Date' should be before / or equal to the 'To Date'."
+msgstr "'Дата з' повинна бути раніше або дорівнювати 'Дата до'."
+
+msgid "The birth date of the patient."
+msgstr "Дата народження пацієнта."
+
+msgid "The child diseases under this disease category."
+msgstr "Підкатегорії захворювань, що належать до цієї категорії."
+
+msgid "The current status of the visit (scheduled, completed, or cancelled)."
+msgstr "Поточний статус візиту (запланований, завершений або скасований)."
+
+msgid "The date and time when the visit was completed (if applicable)."
+msgstr "Дата та час завершення візиту (якщо застосовується)."
+
+msgid "The date when the diagnosis was made, computed from the visit date."
+msgstr "Дата встановлення діагнозу, визначена на основі дати візиту."
+
+
+msgid "The disease being treated or diagnosed during the visit."
+msgstr "Захворювання, яке лікується або діагностується під час візиту."
+
+msgid "The disease diagnosed in this visit."
+msgstr "Захворювання, діагностоване під час цього візиту."
+
+msgid "The doctor assigned to the patient as their personal doctor."
+msgstr "Лікар, закріплений за пацієнтом як персональний лікар."
+
+msgid "The doctor assigned to the patient for the visit."
+msgstr "Лікар, призначений пацієнту для цього візиту."
+
+msgid "The doctor who made the diagnosis, computed from the visit."
+msgstr "Лікар, який поставив діагноз, визначений на основі візиту."
+
+msgid "The emergency contact information for the patient."
+msgstr "Контактна інформація на випадок екстреної ситуації для пацієнта."
+
+msgid "The full name of the disease, computed based on its parent disease names."
+msgstr "Повна назва захворювання, сформована на основі батьківських категорій."
+
+msgid "The full name of the patient, computed from first and last names."
+msgstr "Повне ім’я пацієнта, сформоване з імені та прізвища."
+
+msgid "The name of the disease."
+msgstr "Назва захворювання."
+
+msgid "The parent disease for hierarchical classification."
+msgstr "Базове захворювання для ієрархічної класифікації."
+
+msgid "The passport number of the patient."
+msgstr "Номер паспорта пацієнта."
+
+msgid "The path to the parent disease for hierarchical indexing."
+msgstr "Шлях до батьківського захворювання для ієрархічного індексування."
+
+msgid "The patient is already scheduled to see this doctor for this day!"
+msgstr "Пацієнт уже записаний до цього лікаря на цей день!"
+
+msgid "The patient who is visiting the hospital."
+msgstr "Пацієнт, який відвідує лікарню."
+
+msgid "The patient's age, computed based on the birth date."
+msgstr "Вік пацієнта, обчислений на основі дати народження."
+
+msgid "The scheduled date and time for the visit."
+msgstr "Запланована дата та час візиту."
+
+msgid "The visit associated with this diagnosis."
+msgstr "Візит, пов'язаний із цим діагнозом."
+
+msgid "Therapist"
+msgstr "Терапевт"
+
+msgid "To Date"
+msgstr "До дати"
+
+msgid "Tuberculosis"
+msgstr "Туберкульоз"
+
+msgid "User"
+msgstr "Користувач"
+
+msgid "User access levels for the Library"
+msgstr "Рівні доступу користувачів до Бібліотеки"
+
+msgid "Visit"
+msgstr "Візит"
+
+msgid "Visit History"
+msgstr "Історія візитів"
+
+msgid "Visit Status"
+msgstr "Статус візиту"
+
+msgid "Visit date"
+msgstr "Дата візиту"
+
+msgid "Visit status"
+msgstr "Статус візиту"
+
+msgid "Visit`s Information"
+msgstr "Інформація про візит"
+
+msgid "Visits"
+msgstr "Візити"
+
+msgid "Wizard for generating disease report"
+msgstr "Майстер створення звіту про захворювання"
+
+msgid "Wizard to set personal doctor for selected patients"
+msgstr "Майстер призначення персонального лікаря для обраних пацієнтів"
+
+msgid "You cannot create recursive categories."
+msgstr "Неможливо створити рекурсивні категорії."
+
+msgid "You cannot delete or archive a visit with diagnoses!"
+msgstr "Неможливо видалити або заархівувати візит із діагнозами!"
