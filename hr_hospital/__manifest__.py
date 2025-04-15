@@ -38,4 +38,5 @@
         'static/description/icon.png'
     ],
 
+    'i18n': True,
 }
