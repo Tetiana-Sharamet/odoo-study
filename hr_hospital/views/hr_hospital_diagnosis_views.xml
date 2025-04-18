@@ -6,7 +6,7 @@
             <tree>
                 <field name="name"/>
                 <field name="visit_id"/>
-                <field name="disease_id"/>
+                <field name="disease_id" context="{'hierarchical_naming': True}"/>
                 <field name="description"/>
                 <field name="diagnosis_date"/>
                 <field name="is_approved"/>
@@ -22,7 +22,7 @@
                     <group>
                         <field name="name"/>
                         <field name="visit_id"/>
-                        <field name="disease_id"/>
+                        <field name="disease_id" context="{'hierarchical_naming': True}"/>
                         <field name="description"/>
                         <field name="diagnosis_date"/>
                         <field name="is_approved"/>

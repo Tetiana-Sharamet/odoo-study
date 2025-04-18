@@ -42,6 +42,7 @@ class HHPatient(models.Model):
     name = fields.Char(
         compute='_compute_name',
         store=True,
+        translate=True,
         help="The full name of the patient, "
              "computed from first and last names."
     )

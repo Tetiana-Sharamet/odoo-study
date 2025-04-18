@@ -5,8 +5,8 @@ class Person(models.AbstractModel):
     _name = 'hr.hospital.person'
     _description = 'Person'
 
-    last_name = fields.Char()  # Прізвище
-    first_name = fields.Char()  # Ім'я
+    last_name = fields.Char(translate=True,)  # Прізвище
+    first_name = fields.Char(translate=True,)  # Ім'я
     phone = fields.Char()  # Телефон
     photo = fields.Binary()
     user_id = fields.Many2one(

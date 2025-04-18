@@ -29,6 +29,6 @@
     <record id="disease_diabetes" model="hr.hospital.disease">
         <field name="name">Diabetes</field>
         <field name="parent_id" ref="disease_chronic"/>
-        <field name="description">A disease that affects the body’s ability to produce or respond to insulin.</field>
+        <field name="description">A disease that affects the body's ability to produce or respond to insulin.</field>
     </record>
 </odoo>
