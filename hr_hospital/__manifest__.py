@@ -35,7 +35,8 @@
     'auto_install': False,
 
     'images': [
-        'static/description/icon.png'
+        'static/description/icon.png',
+        'static/description/baner.png'
     ],
 
     'i18n': True,
