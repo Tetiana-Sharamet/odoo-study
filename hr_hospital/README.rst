@@ -50,8 +50,8 @@ Dependencies
 Contributors
 ============
 
-- [Your Name](https://github.com/yourusername)
-- [Other Contributors](https://github.com/yourusername/other-contributors)
+- Tetiana Sharamet(https://github.com/Tetiana-Sharamet)
+
 
 License
 =======

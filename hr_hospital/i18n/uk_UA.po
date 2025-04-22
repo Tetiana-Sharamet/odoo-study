@@ -1156,6 +1156,7 @@ msgstr "Інформація про діагноз"
 
 #. module: hr_hospital
 #: model:ir.model.fields,help:hr_hospital.field_hr_hospital_disease__description
+#: model:hr.hospital.disease,description:disease_flu
 msgid "An acute respiratory illness caused by the influenza virus."
 msgstr "Гостре респіраторне захворювання, викликане вірусом грипу."
 
