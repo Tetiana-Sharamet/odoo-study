@@ -1254,6 +1254,212 @@ msgstr "Телефон"
 #: model:ir.model,name:hr_hospital.model_hr_hospital_doctor
 msgid "Doctor"
 msgstr "Лікар"
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,description:hr_hospital.demo_disease_5
+msgid ""
+"A chronic disease that affects the airways, making it difficult to breathe."
+msgstr "Хронічне захворювання, яке вражає дихальні шляхи, ускладнює дихання."
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,description:hr_hospital.demo_disease_20
+msgid "A chronic infectious disease that primarily affects the lungs."
+msgstr "Хронічне інфекційне захворювання, яке переважно вражає легені."
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,description:hr_hospital.demo_disease_3
+msgid ""
+"A condition in which the blood pressure in the arteries is persistently elevated."
+msgstr "Стан, при якому артеріальний тиск постійно підвищується."
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,description:hr_hospital.demo_disease_4
+msgid ""
+"A disease that affects the body's ability to regulate blood sugar levels."
+msgstr "Захворювання, яке впливає на здатність організму регулювати рівень цукру в крові."
+
+#. module: hr_hospital
+#: model:ir.model.fields,help:hr_hospital.field_hr_hospital_visit__diagnosis_ids
+msgid "A list of diagnoses made during the visit."
+msgstr "Перелік діагнозів, поставлених під час візиту."
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,description:hr_hospital.demo_disease_6
+msgid ""
+"A sudden interruption of blood flow to the brain, causing brain cell damage."
+msgstr "Раптове припинення кровотоку до мозку, що спричиняє пошкодження клітин мозку."
+
+
+#. module: hr_hospital
+#: model:hr.hospital.patient,first_name:hr_hospital.patient_300
+#: model:hr.hospital.patient,first_name:hr_hospital.patient_400
+msgid "Alice"
+msgstr "Еліс"
+
+#. module: hr_hospital
+#: model:hr.hospital.patient,name:hr_hospital.patient_300
+msgid "Alice  Johnson"
+msgstr "Еліс Джонсон"
+
+#. module: hr_hospital
+#: model:hr.hospital.patient,name:hr_hospital.patient_400
+msgid "Alice  Milano"
+msgstr "Еліс Мілано"
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,description:hr_hospital.demo_disease_10
+msgid "An acute respiratory illness caused by the influenza virus."
+msgstr "Гостре респіраторне захворювання, викликане вірусом грипу."
+
+#. module: hr_hospital
+#. odoo-python
+#: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
+#, python-format
+msgid "An intern cannot /be a mentor."
+msgstr "Інтерн не може бути наставником"
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,name:hr_hospital.demo_disease_5
+msgid "Asthma"
+msgstr "Астма"
+
+#. module: hr_hospital
+#: model:hr.hospital.doctor,last_name:hr_hospital.doctor_30
+msgid "Brown"
+msgstr "Браун"
+
+#. module: hr_hospital
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_diagnosis__create_uid
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease__create_uid
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease_report_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__create_uid
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__create_uid
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_set_personal_doctor_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_visit__create_uid
+msgid "Created by"
+msgstr "Створено"
+
+#. module: hr_hospital
+#: model:hr.hospital.doctor,first_name:hr_hospital.doctor_50
+msgid "Devid"
+msgstr "Девід"
+
+#. module: hr_hospital
+#: model:ir.actions.act_window,name:hr_hospital.action_disease_report_wizard30
+#: model:ir.ui.menu,name:hr_hospital.menu_disease_report_1
+msgid "Disease Report"
+msgstr "Звіт по хворобам"
+
+#. module: hr_hospital
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_diagnosis__display_name
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease__display_name
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease_report_wizard__display_name
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__display_name
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__display_name
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_set_personal_doctor_wizard__display_name
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_visit__display_name
+msgid "Display Name"
+msgstr "Екранне ім'я"
+
+#. module: hr_hospital
+#: model:hr.hospital.patient,last_name:hr_hospital.patient_100
+#: model:hr.hospital.patient,last_name:hr_hospital.patient_200
+msgid "Doe"
+msgstr "Доу"
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_disease_search
+msgid "Filter"
+msgstr "Фільтр"
+
+#. module: hr_hospital
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease_report_wizard__date_from
+msgid "From Date"
+msgstr "З дати"
+
+#. module: hr_hospital
+#: model_terms:ir.ui.view,arch_db:hr_hospital.view_disease_report_wizard
+msgid "Generate Report"
+msgstr "Зформувати звіт"
+
+#. module: hr_hospital
+#: model:ir.module.category,name:hr_hospital.hr_hospital
+msgid "Hospital"
+msgstr "Лікарня"
+
+#. module: hr_hospital
+#: model:hr.hospital.diagnosis,name:hr_hospital.demo_disease_3
+msgid "Hypertension"
+msgstr "Гіпертонія"
+
+#. module: hr_hospital
+#. odoo-python
+#: code:addons/hr_hospital/models/hr_hospital_diagnosis.py:0
+#, python-format
+msgid "Intern's diagnosis must be approved by a mentor."
+msgstr "Діагноз лікаря-інтерна затверджується наставником."
+
+
+#. module: hr_hospital
+#. odoo-python
+#: code:addons/hr_hospital/models/hr_hospital_visit.py:0
+#, python-format
+msgid ""
+"It is not possible to change the time/date/doctor for a completed or "
+"canceled visit!"
+msgstr "Неможливо змінити час/дату/лікаря для завершеного або "
+"Відмінений візит!"
+
+#. module: hr_hospital
+#: model:hr.hospital.patient,first_name:hr_hospital.patient_200
+msgid "Jane"
+msgstr "Джейн"
+
+#. module: hr_hospital
+#: model:hr.hospital.patient,name:hr_hospital.patient_200
+msgid "Jane  Doe"
+msgstr "Джей Доу"
+
+#. module: hr_hospital
+#: model:hr.hospital.doctor,last_name:hr_hospital.doctor_40
+msgid "Jobs"
+msgstr "Джобс"
+
+#. module: hr_hospital
+#: model:hr.hospital.doctor,first_name:hr_hospital.doctor_10
+#: model:hr.hospital.patient,first_name:hr_hospital.patient_100
+msgid "John"
+msgstr "Джон"
+
+#. module: hr_hospital
+#: model:hr.hospital.patient,name:hr_hospital.patient_100
+msgid "John  Doe"
+msgstr "Джон  Доу"
+
+#. module: hr_hospital
+#: model:hr.hospital.doctor,last_name:hr_hospital.doctor_20
+#: model:hr.hospital.patient,last_name:hr_hospital.patient_300
+msgid "Johnson"
+msgstr "Джонсон"
+
+#. module: hr_hospital
+#: model:hr.hospital.doctor,first_name:hr_hospital.doctor_20
+msgid "Mark"
+msgstr "Марк"
+
+#. module: hr_hospital
+#: model:res.groups,name:hr_hospital.group_manager
+msgid "Meneger"
+msgstr "Менеджер"
+
+#. module: hr_hospital
+#: model:hr.hospital.patient,last_name:hr_hospital.patient_400
+msgid "Milano"
+msgstr "Мілано"
+
+#. module: hr_hospital
+#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_set_personal_doctor_wizard__doctor_id
+msgid "New Personal Doctor"
+msgstr "Новий особистий лікар"
 
 #. module: hr_hospital
 #: model:ir.model,name:hr_hospital.model_hr_hospital_patient
