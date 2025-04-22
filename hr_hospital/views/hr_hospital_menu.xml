@@ -9,7 +9,7 @@
             parent="hr_hospital_main_menu"
             name="Doctors/Patients" sequence="100"/>
 
-  <menuitem id="hr_hospital_menu_main_visit1"
-            parent="hr_hospital_main_menu"
-            name="Report" sequence="900"/>
+<!--  <menuitem id="hr_hospital_menu_main_visit1"-->
+<!--            parent="hr_hospital_main_menu"-->
+<!--            name="Report" sequence="900"/>-->
 </odoo>
