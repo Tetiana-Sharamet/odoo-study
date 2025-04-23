@@ -27,6 +27,7 @@
                         <group>
                             <field name="first_name"/>
                             <field name="last_name"/>
+                            <field name="user_id"/>
                             <separator/>
                             <field name="specialty"/>
                             <separator/>

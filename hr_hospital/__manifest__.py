@@ -24,8 +24,7 @@
         'views/hr_hospital_disease_views.xml',
         # 'demo/hr_hospital_demo.xml',
         'wizard/hr_hospital_disease_report_wizard_view.xml',
-        'report/hr_hospital_doctor_report.xml',
-       
+        'report/hr_hospital_doctor_report.xml'
     ],
 
     'demo': [
@@ -36,7 +35,8 @@
     'auto_install': False,
 
     'images': [
-        'static/description/icon.png'
+        'static/description/banner.png',
+        'static/description/icon.png',
     ],
 
     'i18n': True,
