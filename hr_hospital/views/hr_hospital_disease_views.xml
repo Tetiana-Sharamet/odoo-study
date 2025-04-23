@@ -4,7 +4,7 @@
         <field name="model">hr.hospital.disease</field>
         <field name="arch" type="xml">
             <tree default_group_by="parent_id">
-                <field name="complete_name"/>
+                <field name="name"/>
                 <field name="description"/>
                 <field name="parent_id"/>
             </tree>
