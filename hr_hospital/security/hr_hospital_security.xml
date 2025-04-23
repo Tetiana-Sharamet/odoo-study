@@ -2,8 +2,8 @@
     <!-- Пацієнт: тільки свої відвідування -->
     <record id="visit_rule_patient" model="ir.rule">
       <field name="name">Patient: only own visits</field>
-      <field name="model_id" ref="hr_hospital.model_hr_hospital_visit"/>
-      <field name="groups" eval="[(4, ref('hr_hospital.group_patient'))]"/>
+      <field name="model_id" ref="model_hr_hospital_visit"/>
+      <field name="groups" eval="[(4, ref('group_patient'))]"/>
       <field name="domain_force">[('patient_id.user_id', '=', user.id)]</field>
       <field name="perm_read" eval="True"/>
     </record>
@@ -11,9 +11,19 @@
     <!-- Інтерн: тільки свої відвідування -->
     <record id="visit_rule_intern" model="ir.rule">
       <field name="name">Intern: only own visits</field>
-      <field name="model_id" ref="hr_hospital.model_hr_hospital_visit"/>
-      <field name="groups" eval="[(4, ref('hr_hospital.group_intern'))]"/>
+      <field name="model_id" ref="model_hr_hospital_visit"/>
+      <field name="groups" eval="[(4, ref('group_intern'))]"/>
       <field name="domain_force">[('doctor_id.user_id', '=', user.id)]</field>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="True"/>
+      <field name="perm_create" eval="True"/>
+    </record>
+
+     <record id="diagnosis_rule_intern" model="ir.rule">
+      <field name="name">Intern: only own visits</field>
+      <field name="model_id" ref="model_hr_hospital_diagnosis"/>
+      <field name="groups" eval="[(4, ref('group_intern'))]"/>
+      <field name="domain_force">[('visit_id.doctor_id.user_id', '=', user.id)]</field>
       <field name="perm_read" eval="True"/>
       <field name="perm_write" eval="True"/>
       <field name="perm_create" eval="True"/>
@@ -22,8 +32,8 @@
     <!-- Лікар: свої та інтернівські відвідування -->
     <record id="visit_rule_doctor" model="ir.rule">
       <field name="name">Doctor: own and intern visits</field>
-      <field name="model_id" ref="hr_hospital.model_hr_hospital_visit"/>
-      <field name="groups" eval="[(4, ref('hr_hospital.group_doctor'))]"/>
+      <field name="model_id" ref="model_hr_hospital_visit"/>
+      <field name="groups" eval="[(4, ref('group_doctor'))]"/>
       <field name="domain_force">
         ['|', ('doctor_id.user_id', '=', user.id), ('doctor_id.mentor_id.user_id', '=', user.id)]
       </field>
@@ -32,11 +42,21 @@
       <field name="perm_create" eval="True"/>
     </record>
 
+     <record id="diagnosis_rule_doctor" model="ir.rule">
+      <field name="name">Doctor: own and intern visits</field>
+      <field name="model_id" ref="model_hr_hospital_diagnosis"/>
+      <field name="groups" eval="[(4, ref('group_doctor'))]"/>
+      <field name="domain_force">['|', ('visit_id.doctor_id.user_id', '=', user.id), ('visit_id.doctor_id.mentor_id.user_id', '=', user.id)]</field>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="True"/>
+      <field name="perm_create" eval="True"/>
+    </record>
+
     <!-- Менеджер: доступ до всіх відвідувань -->
     <record id="visit_rule_manager" model="ir.rule">
       <field name="name">Manager: access to all visits</field>
-      <field name="model_id" ref="hr_hospital.model_hr_hospital_visit"/>
-      <field name="groups" eval="[(4, ref('hr_hospital.group_manager'))]"/>
+      <field name="model_id" ref="model_hr_hospital_visit"/>
+      <field name="groups" eval="[(4, ref('group_manager'))]"/>
       <field name="domain_force">[(1, '=', 1)]</field>
       <field name="perm_read" eval="True"/>
       <field name="perm_write" eval="True"/>
@@ -46,8 +66,8 @@
     <!-- Адміністратор: повний доступ до всіх відвідувань -->
     <record id="visit_rule_admin" model="ir.rule">
       <field name="name">Administrator: full access to all visits</field>
-      <field name="model_id" ref="hr_hospital.model_hr_hospital_visit"/>
-      <field name="groups" eval="[(4, ref('hr_hospital.group_admin'))]"/>
+      <field name="model_id" ref="model_hr_hospital_visit"/>
+      <field name="groups" eval="[(4, ref('group_admin'))]"/>
       <field name="domain_force">[(1, '=', 1)]</field>
       <field name="perm_read" eval="True"/>
       <field name="perm_write" eval="True"/>
@@ -58,8 +78,8 @@
     <!-- Пацієнт: доступ тільки до своїх записів -->
     <record id="patient_rule_patient" model="ir.rule">
       <field name="name">Patient: access only to their own records</field>
-      <field name="model_id" ref="hr_hospital.model_hr_hospital_patient"/>
-      <field name="groups" eval="[(4, ref('hr_hospital.group_patient'))]"/>
+      <field name="model_id" ref="model_hr_hospital_patient"/>
+      <field name="groups" eval="[(4, ref('group_patient'))]"/>
       <field name="domain_force">[('user_id', '=', user.id)]</field>
       <field name="perm_read" eval="True"/>
     </record>
@@ -67,8 +87,8 @@
     <!-- Інтерн: доступ до своїх та пацієнтів, які під ним -->
     <record id="patient_rule_intern" model="ir.rule">
       <field name="name">Intern: access to his/her own patients and those under him/her</field>
-      <field name="model_id" ref="hr_hospital.model_hr_hospital_patient"/>
-      <field name="groups" eval="[(4, ref('hr_hospital.group_intern'))]"/>
+      <field name="model_id" ref="model_hr_hospital_patient"/>
+      <field name="groups" eval="[(4, ref('group_intern'))]"/>
       <field name="domain_force">['|', ('user_id', '=', user.id), ('doctor_id.user_id', '=', user.id)]</field>
       <field name="perm_read" eval="True"/>
       <field name="perm_write" eval="True"/>
@@ -77,8 +97,8 @@
     <!-- Лікар: доступ до своїх та пацієнтів, які під ним -->
     <record id="patient_rule_doctor" model="ir.rule">
       <field name="name">Doctor: access to his own patients and those under him</field>
-      <field name="model_id" ref="hr_hospital.model_hr_hospital_patient"/>
-      <field name="groups" eval="[(4, ref('hr_hospital.group_doctor'))]"/>
+      <field name="model_id" ref="model_hr_hospital_patient"/>
+      <field name="groups" eval="[(4, ref('group_doctor'))]"/>
       <field name="domain_force">['|', ('user_id', '=', user.id), ('doctor_id.user_id', '=', user.id)]</field>
       <field name="perm_read" eval="True"/>
       <field name="perm_write" eval="True"/>
@@ -87,8 +107,8 @@
     <!-- Менеджер: доступ до всіх пацієнтів -->
     <record id="patient_rule_manager" model="ir.rule">
       <field name="name">Manager: access to all patients</field>
-      <field name="model_id" ref="hr_hospital.model_hr_hospital_patient"/>
-      <field name="groups" eval="[(4, ref('hr_hospital.group_manager'))]"/>
+      <field name="model_id" ref="model_hr_hospital_patient"/>
+      <field name="groups" eval="[(4, ref('group_manager'))]"/>
       <field name="domain_force">[(1, '=', 1)]</field>
       <field name="perm_read" eval="True"/>
     </record>
@@ -96,8 +116,18 @@
     <!-- Адміністратор: повний доступ до всіх пацієнтів -->
     <record id="patient_rule_admin" model="ir.rule">
       <field name="name">Admin: access to all patients</field>
-      <field name="model_id" ref="hr_hospital.model_hr_hospital_patient"/>
-      <field name="groups" eval="[(4, ref('hr_hospital.group_admin'))]"/>
+      <field name="model_id" ref="model_hr_hospital_patient"/>
+      <field name="groups" eval="[(4, ref('group_admin'))]"/>
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="True"/>
+      <field name="perm_create" eval="True"/>
+      <field name="perm_unlink" eval="True"/>
+    </record>
+    <record id="diagnosis_rule_admin" model="ir.rule">
+      <field name="name">Admin: access to all patients</field>
+      <field name="model_id" ref="model_hr_hospital_diagnosis"/>
+      <field name="groups" eval="[(4, ref('group_admin'))]"/>
       <field name="domain_force">[(1, '=', 1)]</field>
       <field name="perm_read" eval="True"/>
       <field name="perm_write" eval="True"/>
