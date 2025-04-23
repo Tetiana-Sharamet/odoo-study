@@ -1653,7 +1653,7 @@ msgstr "Девід"
 
 #. module: hr_hospital
 #: model:hr.hospital.doctor,last_name:hr_hospital.doctor_50
-msgid "Devid"
+msgid "Orhast"
 msgstr "Орхаст"
 
 
