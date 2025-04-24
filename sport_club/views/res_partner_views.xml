@@ -1,0 +1,24 @@
+<odoo>
+    <record id="view_partner_form_inherit_sport" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.sport</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <header position="inside">
+                <button name="%(action_club_visit_partner)d"
+                        string="Visits"
+                        type="action"
+                        icon="fa-calendar"
+                        attrs="{'invisible': [('is_club_member', '=', False)]}"/>
+                <field name="visits_count" widget="statinfo"
+                       icon="fa-calendar"
+                       string="Visits"/>
+            </header>
+            <sheet position="inside">
+                <group string="Club Info">
+                    <field name="is_club_member"/>
+                </group>
+            </sheet>
+        </field>
+    </record>
+</odoo>

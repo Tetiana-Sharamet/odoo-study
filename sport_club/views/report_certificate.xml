@@ -1,0 +1,10 @@
+<odoo>
+    <report
+        id="certificate_report_action"
+        model="club.visit"
+        string="Generate Certificate"
+        report_type="qweb-pdf"
+        name="sport_club.report_certificate"
+        file="sport_club.report_certificate"
+    />
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+    <!-- Demo records for club.visit -->
+    <record id="club_visit_demo_1" model="club.visit">
+        <field name="partner_id" ref="base.partner_demo"/>
+        <field name="visit_date">2025-04-20 10:00:00</field>
+        <field name="coach_id" ref="base.partner_demo"/>
+        <field name="notes">Initial visit, fitness check-up.</field>
+    </record>
+
+    <record id="club_visit_demo_2" model="club.visit">
+        <field name="partner_id" ref="base.partner_demo"/>
+        <field name="visit_date">2025-04-21 11:00:00</field>
+        <field name="coach_id" ref="base.partner_demo"/>
+        <field name="notes">Cardio training session.</field>
+    </record>
+
+    <record id="club_visit_demo_3" model="club.visit">
+        <field name="partner_id" ref="base.partner_demo"/>
+        <field name="visit_date">2025-04-22 12:00:00</field>
+        <field name="coach_id" ref="base.partner_demo"/>
+        <field name="notes">Strength training session.</field>
+    </record>
+</odoo>
