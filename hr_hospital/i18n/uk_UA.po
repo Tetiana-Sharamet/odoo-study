@@ -1597,9 +1597,6 @@ msgstr "Лікар, призначений пацієнту як його осо
 msgid "The full name of the patient, computed from first and last names."
 msgstr "Повне ім'я пацієнта."
 
-
-
-
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_visit.py:0
@@ -1655,8 +1652,6 @@ msgstr "Девід"
 #: model:hr.hospital.doctor,last_name:hr_hospital.doctor_50
 msgid "Orhast"
 msgstr "Орхаст"
-
-
 
 #. module: hr_hospital
 #: model:res.groups,name:hr_hospital.group_manager
