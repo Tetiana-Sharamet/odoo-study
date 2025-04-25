@@ -1423,7 +1423,7 @@ msgstr "<strong>Інтерн: </strong>✅"
 #. module: hr_hospital
 #: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_doctor_kanban
 msgid "<strong>Interns:</strong>"
-msgstr ""<strong>Інтерни:</strong>""
+msgstr "<strong>Інтерни:</strong>"
 
 #. module: hr_hospital
 #: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_doctor_kanban
@@ -1597,6 +1597,9 @@ msgstr "Лікар, призначений пацієнту як його осо
 msgid "The full name of the patient, computed from first and last names."
 msgstr "Повне ім'я пацієнта."
 
+
+
+
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_visit.py:0
@@ -1650,8 +1653,10 @@ msgstr "Девід"
 
 #. module: hr_hospital
 #: model:hr.hospital.doctor,last_name:hr_hospital.doctor_50
-msgid "Orhast"
+msgid "Devid"
 msgstr "Орхаст"
+
+
 
 #. module: hr_hospital
 #: model:res.groups,name:hr_hospital.group_manager
