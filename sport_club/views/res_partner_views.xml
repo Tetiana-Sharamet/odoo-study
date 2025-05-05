@@ -1,24 +1,15 @@
 <odoo>
-    <record id="view_partner_form_inherit_sport" model="ir.ui.view">
-        <field name="name">res.partner.form.inherit.sport</field>
+    <record id="view_partner_form_inherit_sport_club" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.sport.club</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <header position="inside">
-                <button name="%(action_club_visit_partner)d"
-                        string="Visits"
-                        type="action"
-                        icon="fa-calendar"
-                        attrs="{'invisible': [('is_club_member', '=', False)]}"/>
-                <field name="visits_count" widget="statinfo"
-                       icon="fa-calendar"
-                       string="Visits"/>
-            </header>
-            <sheet position="inside">
-                <group string="Club Info">
+            <xpath expr="//sheet/group" position="inside">
+                <group string="Sport Club">
                     <field name="is_club_member"/>
+<!--                    <field name="is_coach"/>-->
                 </group>
-            </sheet>
+            </xpath>
         </field>
     </record>
 </odoo>

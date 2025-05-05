@@ -26,28 +26,31 @@
         </field>
     </record>
 
-     <record id="view_club_visit_graph" model="ir.ui.view">
-        <field name="name">club.visit.graph</field>
-        <field name="model">sport.club.visit</field>
-        <field name="arch" type="xml">
-            <graph string="Club Visits Graph" type="bar">
-                <field name="visit_date" type="measure"/>
-                <field name="partner_id" type="row"/>
-            </graph>
-        </field>
+    <record id="view_club_visit_pivot" model="ir.ui.view">
+        <field name="name">sport.club.visit.pivot</field>
+            <field name="model">sport.club.visit</field>
+                <field name="arch" type="xml">
+                    <pivot string="Pivot Example" sample="1" disable_linking="1" display_quantity="1">
+                        <field name="visit_date" interval="month" type="col"/>
+                        <field name="partner_id" type="row"/>
+                        <field name="coach_id" type="col"/>
+                     </pivot>
+                </field>
     </record>
 
-     <record id="view_club_visit_pivot" model="ir.ui.view">
-        <field name="name">sport.club.visit.pivot</field>
-        <field name="model">sport.club.visit</field>
-        <field name="arch" type="xml">
-            <pivot string="Club Visits Pivot">
-                <field name="partner_id" type="row"/>
-                <field name="coach_id" type="col"/>
-                <field name="visit_date" type="measure"/>
-            </pivot>
-        </field>
-    </record>
+
+
+    <record id="view_club_visit_graph" model="ir.ui.view">
+    <field name="name">club.visit.graph</field>
+    <field name="model">sport.club.visit</field>
+    <field name="arch" type="xml">
+         <graph string="Graph" type="bar">
+                <field name="partner_id"/>
+                <field name="visit_date" interval="month"/>
+            </graph>
+    </field>
+</record>
+
 
     <record id="action_club_visit" model="ir.actions.act_window">
         <field name="name">Club Visits</field>
@@ -59,7 +62,7 @@
     </record>
 
     <menuitem id="menu_club_visits" name="Club Visits"
-              parent="menu_sport_club_root"
+              parent="sport_club_main_menu"
               action="action_club_visit"
               sequence="20"/>
 </odoo>

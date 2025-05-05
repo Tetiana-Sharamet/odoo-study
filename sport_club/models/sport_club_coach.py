@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields,api
 
 
 class SportClubCoach(models.Model):
@@ -15,10 +15,27 @@ class SportClubCoach(models.Model):
     """
     _name = 'sport.club.coach'
     _description = 'Sport Club Coach'
+    _inherits = {'res.partner': 'partner_id'}
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string="Name", required=True, translate=True)
-    specialty = fields.Char(string="Specialty")
-    phone = fields.Char(string="Phone")
-    email = fields.Char(string="Email")
-    active = fields.Boolean(string="Active", default=True)
-    biography = fields.Text(string="Biography")
+    partner_id = fields.Many2one(
+        comodel_name='res.partner',
+        string="Related Partner",
+        required=True,
+        ondelete='cascade')
+
+    name = fields.Char(
+        compute='_compute_name',
+        store=True,
+        required=True,
+        translate=True)
+    specialty = fields.Char()
+
+    is_active = fields.Boolean(default=True)
+    biography = fields.Text()
+
+    @api.depends('partner_id')
+    def _compute_name(self):
+        for record in self:
+            if record.partner_id:
+                record.name = record.partner_id.name

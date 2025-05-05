@@ -30,16 +30,27 @@
             </form>
         </field>
     </record>
+     <record id="view_sport_club_training_session_calendar" model="ir.ui.view">
+        <field name="name">sport.club.training.session.calendar</field>
+        <field name="model">sport.club.training.session</field>
+        <field name="arch" type="xml">
+            <calendar string="Training Sessions Calendar" date_start="session_date" color="coach_id">
+                <field name="name"/>
+                <field name="coach_id"/>
+                <field name="member_ids"/>
+            </calendar>
+        </field>
+    </record>
 
     <record id="action_training_session" model="ir.actions.act_window">
         <field name="name">Training Sessions</field>
         <field name="res_model">sport.club.training.session</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">calendar,tree,form</field>
     </record>
 
-    <menuitem id="menu_sport_club_training"
-              name="Trainings"
-              parent="menu_sport_club_root"
+    <menuitem id="menu_sport_club_training"  name="Trainings"
+              parent="sport_club_main_menu"
               action="action_training_session"
-              sequence="30"/>
+              sequence="20"/>
+
 </odoo>

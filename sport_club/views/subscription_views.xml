@@ -44,7 +44,7 @@
 
     <menuitem id="menu_sport_club_subscriptions"
               name="Subscriptions"
-              parent="menu_sport_club_root"
+              parent="sport_club_main_menu"
               action="action_subscription"
               sequence="40"/>
 </odoo>

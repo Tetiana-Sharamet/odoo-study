@@ -16,13 +16,22 @@ class SportClubTrainingSession(models.Model):
     _name = 'sport.club.training.session'
     _description = 'Training Session'
 
-    name = fields.Char(string="Title", required=True, translate=True)
-    coach_id = fields.Many2one('sport.club.coach', string="Coach", required=True)
-    member_ids = fields.Many2many('sport.club.member', string="Participants")
-    session_date = fields.Datetime(string="Date", required=True)
+    name = fields.Char(
+        string="Title",
+        required=True,
+        translate=True)
+    coach_id = fields.Many2one(
+        comodel_name='sport.club.coach',
+        required=True)
+    member_ids = fields.Many2many(
+        comodel_name='res.partner',
+        string="Participants")
+    session_date = fields.Datetime(
+        string="Date",
+        required=True)
     session_type = fields.Selection([
         ('group', 'Group Training'),
         ('personal', 'Personal Training'),
         ('online', 'Online Session')],
-        string="Type", default='group')
-    notes = fields.Text(string="Notes")
+        default='group')
+    notes = fields.Text()

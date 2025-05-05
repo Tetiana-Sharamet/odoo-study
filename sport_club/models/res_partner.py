@@ -1,18 +1,23 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    is_club_member = fields.Boolean(string="Club Member",
-                                    default=False)
-    is_coach = fields.Boolean(string="Coach",
-                              default=False)
-    visits_count = fields.Integer(string="Number of Visits")
+    is_club_member = fields.Boolean(
+        string="Club Member",
+        default=False)
 
-    visit_ids = fields.One2many('club.visit', 'partner_id', string="Visits")
+
+    visits_count = fields.Integer(
+        string="Number of Visits")
+
+    visit_ids = fields.One2many(
+        comodel_name='sport.club.visit',
+        inverse_name='partner_id',
+        )
 
     @api.depends('visit_ids')
     def _compute_visits_count(self):
-        for rec in self:
-            rec.visits_count = len(rec.visit_ids)
+        for record in self:
+            record.visits_count = len(record.visit_ids)
