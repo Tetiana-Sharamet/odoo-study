@@ -21,10 +21,14 @@
                     <group>
                         <field name="name"/>
                         <field name="coach_id"/>
+                        <field name="location_id"/>
                         <field name="session_date"/>
                         <field name="session_type"/>
+                        <field name="group_category">
+                            <visibility_condition>'group' == session_type</visibility_condition>
+                        </field>
+                         <field name="remaining_seats"/>
                         <field name="member_ids" widget="many2many_tags"/>
-                        <field name="notes"/>
                     </group>
                 </sheet>
             </form>

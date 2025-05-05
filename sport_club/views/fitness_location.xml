@@ -1,0 +1,45 @@
+<odoo>
+    <record id="view_fitness_location_form" model="ir.ui.view">
+        <field name="name">fitness.location.form</field>
+        <field name="model">fitness.location</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="location_type"/>
+                        <field name="capacity"/>
+                        <field name="is_active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_fitness_location_tree" model="ir.ui.view">
+        <field name="name">fitness.location.tree</field>
+        <field name="model">fitness.location</field>
+        <field name="arch" type="xml">
+            <tree string="Локації тренувань">
+                <field name="name"/>
+                <field name="location_type"/>
+                <field name="capacity"/>
+                <field name="is_active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_fitness_location" model="ir.actions.act_window">
+        <field name="name">Локації</field>
+        <field name="res_model">fitness.location</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Тут ви можете додавати або редагувати доступні локації для тренувань.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_sport_club_location"  name="Locations"
+              parent="sport_club_main_menu"
+              action="action_fitness_location"
+              sequence="20"/>
+</odoo>

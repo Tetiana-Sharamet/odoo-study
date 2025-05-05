@@ -1,0 +1,26 @@
+<odoo>
+    <data noupdate="1">
+
+        <record id="fitness_location_main_gym" model="fitness.location">
+            <field name="name">Main Gym</field>
+            <field name="location_type">personal</field>
+            <field name="capacity">100</field>
+            <field name="is_active">1</field>
+        </record>
+
+        <record id="fitness_location_studio_a" model="fitness.location">
+            <field name="name">Studio A</field>
+            <field name="location_type">group</field>
+            <field name="capacity">20</field>
+            <field name="is_active">1</field>
+        </record>
+
+        <record id="fitness_location_studio_b" model="fitness.location">
+            <field name="name">Studio B</field>
+            <field name="location_type">group</field>
+            <field name="capacity">15</field>
+            <field name="is_active">1</field>
+        </record>
+
+    </data>
+</odoo>

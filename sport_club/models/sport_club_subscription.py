@@ -79,9 +79,9 @@ class SportClubSubscription(models.Model):
     def _compute_price(self):
         for record in self:
             if record.subscription_type =='standard':
-                record.price = 10
+                record.price = 1000
             if record.subscription_type =='premium':
-                record.price = 20
+                record.price = 2000
             if record.subscription_type == 'vip':
-                record.price = 30
+                record.price = 3000
 

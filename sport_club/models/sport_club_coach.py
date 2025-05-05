@@ -27,9 +27,19 @@ class SportClubCoach(models.Model):
     name = fields.Char(
         compute='_compute_name',
         store=True,
-        required=True,
         translate=True)
-    specialty = fields.Char()
+    specialty = fields.Selection(
+        selection=[
+            ('dance', 'Dance'),
+            ('yoga_stretching', 'Yoga/Stretching'),
+            ('strength training', 'Strength training'),
+            ('cardio training', 'Cardio  training'),
+        ])
+
+    schedule_ids = fields.One2many(
+        comodel_name='sport.club.training.session',
+        inverse_name='coach_id',
+        string='Training Schedule')
 
     is_active = fields.Boolean(default=True)
     biography = fields.Text()

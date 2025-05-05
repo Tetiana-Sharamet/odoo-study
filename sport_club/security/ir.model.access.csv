@@ -4,3 +4,4 @@ access_sport_club_admin,access.sport.club.admin,model_sport_club_visit,base.grou
 access_sport_club_training_session_sport_club_user,access.sport.club.user,model_sport_club_training_session,base.group_user,1,1,1,1
 access_sport_club_coach_sport_club_user,access.sport.club.user,model_sport_club_coach,base.group_user,1,1,1,1
 access_sport_club_subscription_sport_club_user,access.sport.club.user,model_sport_club_subscription,base.group_user,1,1,1,1
+access_sport_club_sfitness_location,access.fitness.location,model_fitness_location,base.group_user,1,1,1,1

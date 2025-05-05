@@ -11,6 +11,7 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+        'data/locations.xml',
         'views/sport_club_menu.xml',
         'views/club_visit_views.xml',
         'views/report_certificate.xml',
@@ -18,6 +19,7 @@
         'views/training_session_views.xml',
         'views/subscription_views.xml',
         'views/res_partner_views.xml',
+        'views/fitness_location.xml',
         'reports/certificate_report.xml',
         'wizard/register_session_wizard_view.xml',
     ],
