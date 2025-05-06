@@ -1,5 +1,5 @@
-from odoo import models, fields, api
 from datetime import timedelta
+from odoo import models, fields, api
 
 
 class SportClubSubscription(models.Model):
@@ -37,7 +37,6 @@ class SportClubSubscription(models.Model):
         string="Duration (Months)",
         default=1)
     end_date = fields.Date(
-        string="End Date",
         compute="_compute_end_date",
         store=True)
 
@@ -55,12 +54,10 @@ class SportClubSubscription(models.Model):
         store=True)
 
     group_sessions_left = fields.Integer(
-        string="Group Sessions Left",
         compute='_compute_sessions_left',
         store=True)
 
     personal_sessions_left = fields.Integer(
-        string="Personal Sessions Left",
         compute='_compute_sessions_left',
         store=True)
 
@@ -122,5 +119,3 @@ class SportClubSubscription(models.Model):
                 if rec.member_id:
                     rec.member_id.is_club_member = True
         return res
-
-

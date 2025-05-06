@@ -4,10 +4,9 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_res_partner_filter"/>
         <field name="arch" type="xml">
-            <filter name="customer" position="after">
-                <filter string="Club Members" name="is_club_member"
-                        domain="[('is_club_member', '=', True)]"/>
-            </filter>
+            <xpath expr="//search" position="inside">
+                <filter string="Club Members" name="is_club_member" domain="[('is_club_member', '=', True)]"/>
+            </xpath>
         </field>
     </record>
 </odoo>

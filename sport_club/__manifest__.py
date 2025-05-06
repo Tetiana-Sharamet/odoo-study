@@ -1,13 +1,12 @@
 {
     'name': 'Sport Club',
     'version': '17.0.0.1.0',
+    'license': 'OPL-1',
     'category': 'Sports',
     'summary': 'Module for managing a sports club '
                'with sessions, visits, and reports',
-    'description': 'Manage club visits, '
-                   'sessions, and create certificates.',
     'author': 'Tetiana Sharamet',
-    'depends': ['base', 'product'],
+    'depends': ['base', 'mail','product'],
 
     'data': [
         'security/security.xml',
@@ -34,7 +33,7 @@
         ],
     },
     'demo': [
-        'demo/club_visit_demo.xml',
+        # 'demo/club_visit_demo.xml',
     ],
     'installable': True,
     'application': True,

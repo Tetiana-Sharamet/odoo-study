@@ -4,9 +4,9 @@
         <field name="model">sport.club.visit</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="partner_id"/>
+                <field name="member_id"/>
                 <field name="visit_date"/>
-                <field name="coach_id"/>
+                <field name="session_id"/>
             </tree>
         </field>
     </record>
@@ -17,10 +17,9 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="partner_id"/>
+                    <field name="member_id"/>
                     <field name="visit_date"/>
-                    <field name="coach_id"/>
-                    <field name="notes"/>
+                    <field name="session_id"/>
                 </group>
             </form>
         </field>
@@ -32,8 +31,8 @@
                 <field name="arch" type="xml">
                     <pivot string="Pivot Example" sample="1" disable_linking="1" display_quantity="1">
                         <field name="visit_date" interval="month" type="col"/>
-                        <field name="partner_id" type="row"/>
-                        <field name="coach_id" type="col"/>
+                        <field name="member_id" type="row"/>
+                        <field name="session_id" type="col"/>
                      </pivot>
                 </field>
     </record>
@@ -45,7 +44,7 @@
     <field name="model">sport.club.visit</field>
     <field name="arch" type="xml">
          <graph string="Graph" type="bar">
-                <field name="partner_id"/>
+                <field name="member_id"/>
                 <field name="visit_date" interval="month"/>
             </graph>
     </field>

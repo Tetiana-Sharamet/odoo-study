@@ -1,8 +1,7 @@
+from datetime import timedelta
 from odoo import models, fields, api
-from datetime import datetime, timedelta
 from odoo.exceptions import ValidationError
 from odoo.tools.translate import _
-
 
 
 class SportClubTrainingSession(models.Model):
@@ -46,7 +45,7 @@ class SportClubTrainingSession(models.Model):
         comodel_name='fitness.location',
         required=True)
     remaining_seats = fields.Integer(
-         compute="_compute_remaining_seats")
+        compute="_compute_remaining_seats")
 
     group_category = fields.Selection([
         ('yoga', 'Yoga'),
@@ -55,7 +54,6 @@ class SportClubTrainingSession(models.Model):
         ('crossfit', 'Crossfit'),
         ('stretching', 'Stretching'),
     ])
-
 
     @api.constrains('coach_id', 'session_date', 'duration', 'location_id')
     def _check_trainer_location_conflict(self):
@@ -90,7 +88,7 @@ class SportClubTrainingSession(models.Model):
     def _onchange_training_type(self):
         Location = self.env['fitness.location']
 
-        if self.session_type =='personal':
+        if self.session_type == 'personal':
             # Отримуємо першу доступну локацію для персональних або самостійних
             location = Location.search([('location_type', '=', 'personal')], limit=1)
             return {
@@ -102,7 +100,7 @@ class SportClubTrainingSession(models.Model):
                 }
             }
 
-        elif self.session_type == 'group':
+        if self.session_type == 'group':
             location = Location.search([('location_type', '=', 'group')], limit=1)
             return {
                 'domain': {
@@ -113,8 +111,7 @@ class SportClubTrainingSession(models.Model):
                 }
             }
 
-        else:
-            return {
+        return {
                 'domain': {'location_id': []},
                 'value': {'location_id': False}
             }
@@ -130,7 +127,7 @@ class SportClubTrainingSession(models.Model):
                         f"локації '{rec.location_id.name}' ({rec.location_id.capacity})."
                     ))
 
-    @api.depends('member_ids', 'location_id.capacity','session_type')
+    @api.depends('member_ids', 'location_id.capacity', 'session_type')
     def _compute_remaining_seats(self):
         for rec in self:
             if rec.session_type == 'personal':
@@ -146,8 +143,10 @@ class SportClubTrainingSession(models.Model):
         if self.session_type != 'group':
             self.group_category = False
 
-    @api.depends('location_id','coach_id','group_category')
+    @api.depends('location_id', 'coach_id', 'group_category')
     def _compute_name(self):
         for record in self:
-               record.name = '%s / %s / %s' % (
-                        record.group_category, record.location_id.name,record.coach_id.name)
+            record.name = '%s / %s / %s' % (
+                record.group_category,
+                record.location_id.name,
+                record.coach_id.name)

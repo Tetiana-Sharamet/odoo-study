@@ -20,7 +20,7 @@
         <field name="name">fitness.location.tree</field>
         <field name="model">fitness.location</field>
         <field name="arch" type="xml">
-            <tree string="Локації тренувань">
+            <tree>
                 <field name="name"/>
                 <field name="location_type"/>
                 <field name="capacity"/>

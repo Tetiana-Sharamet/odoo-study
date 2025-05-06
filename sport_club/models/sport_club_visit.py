@@ -16,7 +16,10 @@ class ClubVisit(models.Model):
 
     member_id = fields.Many2one(
         comodel_name='res.partner',
-        required=True)
+        required=True,
+        string='Member',
+        inverse_name='club_visit_ids'  # Ensure that this matches the inverse relation in `res.partner`
+    )
 
     session_id = fields.Many2one(
         comodel_name='sport.club.training.session',

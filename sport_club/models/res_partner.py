@@ -14,7 +14,7 @@ class ResPartner(models.Model):
 
     visit_ids = fields.One2many(
         comodel_name='sport.club.visit',
-        inverse_name='partner_id',
+        inverse_name='member_id',
         )
 
     @api.depends('visit_ids')

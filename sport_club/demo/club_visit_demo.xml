@@ -1,20 +1,116 @@
 <odoo>
-    <!-- Demo records for club.visit -->
-    <record id="club_visit_demo_1" model="sport.club.visit">
-        <field name="partner_id" ref="base.partner_demo"/>
-        <field name="visit_date">2025-04-20 10:00:00</field>
-        <field name="notes">Initial visit, fitness check-up.</field>
+    <!-- Демонстраційний запис для партнера (члена клубу) з активною підпискою і груповим тренуванням -->
+    <record id="demo_member_1" model="res.partner">
+        <field name="name">John Doe</field>
+        <field name="is_member">True</field>
     </record>
 
-    <record id="club_visit_demo_2" model="sport.club.visit">
-        <field name="partner_id" ref="base.partner_demo"/>
-        <field name="visit_date">2025-04-21 11:00:00</field>
-        <field name="notes">Cardio training session.</field>
+    <record id="demo_subscription_1" model="sport.club.subscription">
+        <field name="member_id" ref="demo_member_1"/>
+        <field name="is_active">True</field>
+        <field name="group_sessions_left">5</field>
+        <field name="personal_sessions_left">2</field>
+        <field name="start_date">2025-01-01</field>
     </record>
 
-    <record id="club_visit_demo_3" model="sport.club.visit">
-        <field name="partner_id" ref="base.partner_demo"/>
-        <field name="visit_date">2025-04-22 12:00:00</field>
-        <field name="notes">Strength training session.</field>
+    <record id="demo_session_1" model="sport.club.training.session">
+        <field name="name">Yoga Session</field>
+        <field name="session_type">group</field>
+        <field name="start_date">2025-05-07</field>
+    </record>
+
+    <record id="demo_visit_1" model="sport.club.visit">
+        <field name="member_id" ref="demo_member_1"/>
+        <field name="session_id" ref="demo_session_1"/>
+        <field name="visit_date">2025-05-07</field>
+    </record>
+
+    <!-- Демонстраційний запис для партнера без активної підписки -->
+    <record id="demo_member_2" model="res.partner">
+        <field name="name">Alice Smith</field>
+        <field name="is_member">True</field>
+    </record>
+
+    <record id="demo_session_2" model="sport.club.training.session">
+        <field name="name">Pilates Session</field>
+        <field name="session_type">group</field>
+        <field name="start_date">2025-05-08</field>
+    </record>
+
+    <record id="demo_visit_2" model="sport.club.visit">
+        <field name="member_id" ref="demo_member_2"/>
+        <field name="session_id" ref="demo_session_2"/>
+        <field name="visit_date">2025-05-08</field>
+    </record>
+
+    <!-- Демонстраційний запис для партнера з підпискою, але без сесій -->
+    <record id="demo_member_3" model="res.partner">
+        <field name="name">Tom Brown</field>
+        <field name="is_member">True</field>
+    </record>
+
+    <record id="demo_subscription_2" model="sport.club.subscription">
+        <field name="member_id" ref="demo_member_3"/>
+        <field name="is_active">True</field>
+        <field name="group_sessions_left">5</field>
+        <field name="personal_sessions_left">0</field>
+        <field name="start_date">2025-01-01</field>
+    </record>
+
+    <record id="demo_session_3" model="sport.club.training.session">
+        <field name="name">Personal Training</field>
+        <field name="session_type">personal</field>
+        <field name="start_date">2025-05-09</field>
+    </record>
+
+    <record id="demo_visit_3" model="sport.club.visit">
+        <field name="member_id" ref="demo_member_3"/>
+        <field name="session_id" ref="demo_session_3"/>
+        <field name="visit_date">2025-05-09</field>
+    </record>
+
+    <!-- Демонстраційний запис для партнера з достатньою кількістю сесій -->
+    <record id="demo_member_4" model="res.partner">
+        <field name="name">Emma White</field>
+        <field name="is_member">True</field>
+    </record>
+
+    <record id="demo_subscription_3" model="sport.club.subscription">
+        <field name="member_id" ref="demo_member_4"/>
+        <field name="is_active">True</field>
+        <field name="group_sessions_left">10</field>
+        <field name="personal_sessions_left">3</field>
+        <field name="start_date">2025-01-01</field>
+    </record>
+
+    <record id="demo_session_4" model="sport.club.training.session">
+        <field name="name">Strength Training</field>
+        <field name="session_type">group</field>
+        <field name="start_date">2025-05-10</field>
+    </record>
+
+    <record id="demo_visit_4" model="sport.club.visit">
+        <field name="member_id" ref="demo_member_4"/>
+        <field name="session_id" ref="demo_session_4"/>
+        <field name="visit_date">2025-05-10</field>
+    </record>
+
+    <!-- Демонстраційний запис для партнера без сесії -->
+    <record id="demo_member_5" model="res.partner">
+        <field name="name">Sophia Green</field>
+        <field name="is_member">True</field>
+    </record>
+
+    <record id="demo_subscription_4" model="sport.club.subscription">
+        <field name="member_id" ref="demo_member_5"/>
+        <field name="is_active">True</field>
+        <field name="group_sessions_left">5</field>
+        <field name="personal_sessions_left">2</field>
+        <field name="start_date">2025-02-01</field>
+    </record>
+
+    <record id="demo_visit_5" model="sport.club.visit">
+        <field name="member_id" ref="demo_member_5"/>
+        <field name="visit_date">2025-05-11</field>
     </record>
 </odoo>

@@ -1,6 +1,6 @@
 # models/wizard/renew_subscription_wizard.py
-from odoo import models, fields, api
 from datetime import timedelta
+from odoo import models, fields
 
 
 class RenewSubscriptionWizard(models.TransientModel):
