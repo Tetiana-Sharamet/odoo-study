@@ -7,6 +7,7 @@
                 <field name="member_id"/>
                 <field name="visit_date"/>
                 <field name="session_id"/>
+                <field name="subscription_id"/>
             </tree>
         </field>
     </record>
@@ -20,6 +21,7 @@
                     <field name="member_id"/>
                     <field name="visit_date"/>
                     <field name="session_id"/>
+                    <field name="subscription_id"/>
                 </group>
             </form>
         </field>

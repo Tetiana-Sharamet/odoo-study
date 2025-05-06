@@ -67,3 +67,5 @@ class ClubVisit(models.Model):
         for record in self:
             if record.member_id:
                 record.name =  record.member_id.name
+            else:
+                record.name = _("Visit")
