@@ -16,7 +16,6 @@
                 <p>Trainer: <span t-field="doc.coach_id.name"/></p>
                 <p>Participant: <span t-field="doc.partner_id.name"/></p>
                 <p>Session Date: <span t-field="doc.visit_date"/></p>
-                <p>Notes: <span t-field="doc.notes"/></p>
             </div>
         </t>
     </template>

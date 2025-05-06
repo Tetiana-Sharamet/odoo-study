@@ -28,6 +28,7 @@ class SportClubCoach(models.Model):
         compute='_compute_name',
         store=True,
         translate=True)
+
     specialty = fields.Selection(
         selection=[
             ('dance', 'Dance'),
@@ -36,15 +37,18 @@ class SportClubCoach(models.Model):
             ('cardio training', 'Cardio  training'),
         ])
 
+
+    is_active= fields.Boolean(
+        string = 'Active'
+    )
+    biography = fields.Text()
     schedule_ids = fields.One2many(
         comodel_name='sport.club.training.session',
         inverse_name='coach_id',
-        string='Training Schedule')
-
-    is_active= fields.Boolean(
-        string = 'Active',
-        default=True)
-    biography = fields.Text()
+        string="Future Schedules"
+        )
+    color = fields.Integer(
+        store=True)
 
     future_schedule_ids = fields.One2many(
         comodel_name='sport.club.training.session',
