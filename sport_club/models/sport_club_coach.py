@@ -41,11 +41,28 @@ class SportClubCoach(models.Model):
         inverse_name='coach_id',
         string='Training Schedule')
 
-    is_active = fields.Boolean(default=True)
+    is_active= fields.Boolean(
+        string = 'Active',
+        default=True)
     biography = fields.Text()
+
+    future_schedule_ids = fields.One2many(
+        comodel_name='sport.club.training.session',
+        inverse_name='coach_id',
+        string="Future Schedules",
+        compute='_compute_future_schedules'
+    )
+
+    @api.depends('schedule_ids.session_date')
+    def _compute_future_schedules(self):
+        # Оновлюємо поле future_schedule_ids лише з тренуваннями, де дата більше поточної
+        for record in self:
+            future_sessions = record.schedule_ids.filtered(lambda x: x.session_date > fields.Datetime.now())
+            record.future_schedule_ids = future_sessions
 
     @api.depends('partner_id')
     def _compute_name(self):
         for record in self:
             if record.partner_id:
                 record.name = record.partner_id.name
+

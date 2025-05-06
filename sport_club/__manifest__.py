@@ -7,7 +7,8 @@
     'description': 'Manage club visits, '
                    'sessions, and create certificates.',
     'author': 'Tetiana Sharamet',
-    'depends': ['base','product'],
+    'depends': ['base', 'product'],
+
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
@@ -23,6 +24,11 @@
         'reports/certificate_report.xml',
         'wizard/register_session_wizard_view.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'static/src/js/calendar_patch.js',
+        ],
+    },
     'demo': [
         'demo/club_visit_demo.xml',
     ],

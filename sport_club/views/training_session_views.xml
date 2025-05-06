@@ -34,17 +34,42 @@
             </form>
         </field>
     </record>
+
      <record id="view_sport_club_training_session_calendar" model="ir.ui.view">
         <field name="name">sport.club.training.session.calendar</field>
         <field name="model">sport.club.training.session</field>
         <field name="arch" type="xml">
-            <calendar string="Training Sessions Calendar" date_start="session_date" color="coach_id">
+            <calendar string="Training Sessions Calendar" date_start="session_date" color="coach_id"
+                  js_class="calendar">
                 <field name="name"/>
                 <field name="coach_id"/>
-                <field name="member_ids"/>
+                <field name="group_category"/>
             </calendar>
         </field>
     </record>
+
+    <record id="view_training_session_search" model="ir.ui.view">
+    <field name="name">sport.club.training.session.search</field>
+    <field name="model">sport.club.training.session</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="coach_id"/>
+<!--            <filter name="filter_my" string="Мої тренування" domain="[('coach_id','=',uid)]"/>-->
+            <separator/>
+
+            <filter string="Group" name="group_sessions" domain="[('session_type','=','group')]"/>
+            <filter string="Personal" name="personal_sessions" domain="[('session_type','=','personal')]"/>
+            <searchpanel>
+                    <field name="coach_id" string="Filter by trainers" icon="fa-users" select="multi"
+                           enable_counters="1"/>
+
+                    <field name="group_category" string="Filter by types" icon="fa-bolt" select="multi"
+                           enable_counters="1"/>
+                </searchpanel>
+        </search>
+    </field>
+</record>
 
     <record id="action_training_session" model="ir.actions.act_window">
         <field name="name">Training Sessions</field>
