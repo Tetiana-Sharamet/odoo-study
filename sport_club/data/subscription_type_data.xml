@@ -1,0 +1,29 @@
+<odoo>
+    <record id="subscription_type_standard" model="sport.club.subscription.type">
+        <field name="name">Standard</field>
+        <field name="price">1000</field>
+        <field name="allow_gym_access">True</field>
+        <field name="allow_group_sessions">False</field>
+        <field name="allow_personal_sessions">False</field>
+    </record>
+
+    <record id="subscription_type_premium" model="sport.club.subscription.type">
+        <field name="name">Premium</field>
+        <field name="price">2000</field>
+        <field name="allow_gym_access">True</field>
+        <field name="allow_group_sessions">True</field>
+        <field name="group_sessions_limit">10</field>
+        <field name="allow_personal_sessions">True</field>
+        <field name="personal_sessions_limit">5</field>
+    </record>
+
+    <record id="subscription_type_vip" model="sport.club.subscription.type">
+        <field name="name">VIP</field>
+        <field name="price">3000</field>
+        <field name="allow_gym_access">True</field>
+        <field name="allow_group_sessions">True</field>
+        <field name="group_sessions_limit">999</field>
+        <field name="allow_personal_sessions">True</field>
+        <field name="personal_sessions_limit">999</field>
+    </record>
+</odoo>

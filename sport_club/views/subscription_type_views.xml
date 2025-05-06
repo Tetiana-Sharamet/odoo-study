@@ -1,0 +1,56 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_subscription_type_tree" model="ir.ui.view">
+        <field name="name">sport.club.subscription.type.tree</field>
+        <field name="model">sport.club.subscription.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="price"/>
+                <field name="allow_gym_access"/>
+                <field name="allow_group_sessions"/>
+                <field name="group_sessions_limit"/>
+                <field name="allow_personal_sessions"/>
+                <field name="personal_sessions_limit"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_subscription_type_form" model="ir.ui.view">
+        <field name="name">sport.club.subscription.type.form</field>
+        <field name="model">sport.club.subscription.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="price"/>
+                    </group>
+                    <group string="Access Settings">
+                        <field name="allow_gym_access"/>
+                        <field name="allow_group_sessions"/>
+                        <field name="group_sessions_limit"/>
+                        <field name="allow_personal_sessions"/>
+                        <field name="personal_sessions_limit"/>
+                    </group>
+                    <field name="description"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_subscription_type" model="ir.actions.act_window">
+        <field name="name">Subscription Types</field>
+        <field name="res_model">sport.club.subscription.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_subscription_type"
+              name="Subscription Types"
+              parent="sport_club_menu_main_subscription"
+              action="action_subscription_type"
+              sequence="30"/>
+</odoo>

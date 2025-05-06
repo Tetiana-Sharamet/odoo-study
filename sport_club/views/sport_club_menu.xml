@@ -8,5 +8,8 @@
   <menuitem id="sport_club_menu_main_doctor_patient"
             parent="sport_club_main_menu"
             name="Treners" sequence="100"/>
+   <menuitem id="sport_club_menu_main_subscription"
+            parent="sport_club_main_menu"
+            name="Subscription" sequence="100"/>
 
 </odoo>

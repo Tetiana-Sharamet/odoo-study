@@ -20,9 +20,13 @@
         'views/training_session_views.xml',
         'views/subscription_views.xml',
         'views/res_partner_views.xml',
+        'views/res_partner_search_view.xml',
         'views/fitness_location.xml',
+        'data/subscription_type_data.xml',
+        'views/subscription_type_views.xml',
         'reports/certificate_report.xml',
         'wizard/register_session_wizard_view.xml',
+        'wizard/renew_subscription_wizard_view.xml',
     ],
     'assets': {
         'web.assets_backend': [

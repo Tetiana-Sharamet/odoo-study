@@ -1,0 +1,20 @@
+<!-- views/renew_subscription_wizard_views.xml -->
+<odoo>
+    <record id="view_renew_subscription_wizard_form" model="ir.ui.view">
+        <field name="name">renew.subscription.wizard.form</field>
+        <field name="model">sport.club.subscription.renew.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Renew Subscription">
+                <group>
+                    <field name="member_id" readonly="1"/>
+                    <field name="subscription_type_id"/>
+                    <field name="duration_months"/>
+                </group>
+                <footer>
+                    <button string="Confirm Renewal" type="object" name="action_renew" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

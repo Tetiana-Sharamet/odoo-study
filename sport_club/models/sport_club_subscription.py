@@ -40,16 +40,28 @@ class SportClubSubscription(models.Model):
         string="End Date",
         compute="_compute_end_date",
         store=True)
-    price = fields.Float(
-        compute="_compute_price",
-        required=True)
-    subscription_type = fields.Selection([
-        ('standard', 'Standard'),
-        ('premium', 'Premium'),
-        ('vip', 'VIP')],
-        default='standard')
+
     is_active = fields.Boolean(
         compute="_compute_is_active",
+        store=True)
+
+    subscription_type_id = fields.Many2one(
+        'sport.club.subscription.type',
+        string="Subscription Type",
+        required=True)
+
+    price = fields.Float(
+        related='subscription_type_id.price',
+        store=True)
+
+    group_sessions_left = fields.Integer(
+        string="Group Sessions Left",
+        compute='_compute_sessions_left',
+        store=True)
+
+    personal_sessions_left = fields.Integer(
+        string="Personal Sessions Left",
+        compute='_compute_sessions_left',
         store=True)
 
     @api.depends('start_date', 'duration_months')
@@ -75,13 +87,40 @@ class SportClubSubscription(models.Model):
                 record.name = '%s  %s - %s month' % (
                     record.member_id.name, record.start_date, record.duration_months)
 
-    @api.depends('subscription_type')
-    def _compute_price(self):
+    @api.depends('subscription_type_id')
+    def _compute_sessions_left(self):
         for record in self:
-            if record.subscription_type =='standard':
-                record.price = 1000
-            if record.subscription_type =='premium':
-                record.price = 2000
-            if record.subscription_type == 'vip':
-                record.price = 3000
+            st = record.subscription_type_id
+            record.group_sessions_left = st.group_sessions_limit if st.allow_group_sessions else 0
+            record.personal_sessions_left = st.personal_sessions_limit if st.allow_personal_sessions else 0
+
+
+
+    def action_open_renew_wizard(self):
+        self.ensure_one()
+        return {
+            'name': 'Renew Subscription',
+            'type': 'ir.actions.act_window',
+            'res_model': 'sport.club.subscription.renew.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {'default_subscription_id': self.id},
+        }
+
+    @api.model
+    def create(self, vals):
+        subscription = super().create(vals)
+        if subscription.member_id:
+            subscription.member_id.is_club_member = True
+        return subscription
+
+    @api.model
+    def write(self, vals):
+        res = super().write(vals)
+        if 'member_id' in vals:
+            for rec in self:
+                if rec.member_id:
+                    rec.member_id.is_club_member = True
+        return res
+
 

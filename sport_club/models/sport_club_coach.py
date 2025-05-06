@@ -69,4 +69,3 @@ class SportClubCoach(models.Model):
         for record in self:
             if record.partner_id:
                 record.name = record.partner_id.name
-
