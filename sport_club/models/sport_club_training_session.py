@@ -26,9 +26,12 @@ class SportClubTrainingSession(models.Model):
     coach_id = fields.Many2one(
         comodel_name='sport.club.coach',
         required=True)
-    member_ids = fields.Many2many(
-        comodel_name='res.partner',
-        string="Participants")
+
+    visit_ids = fields.One2many(
+        comodel_name='sport.club.visit',
+        inverse_name='session_id',
+        string='Participants'
+    )
     session_date = fields.Datetime(
         string="Date",
         required=True)
@@ -45,7 +48,9 @@ class SportClubTrainingSession(models.Model):
         comodel_name='fitness.location',
         required=True)
     remaining_seats = fields.Integer(
-        compute="_compute_remaining_seats")
+        compute="_compute_remaining_seats",
+        store=True
+    )
 
     group_category = fields.Selection([
         ('yoga', 'Yoga'),
@@ -74,14 +79,18 @@ class SportClubTrainingSession(models.Model):
 
             for overlap in overlapping:
                 overlap_start_time = overlap.session_date
-                overlap_end_time = overlap_start_time + timedelta(hours=overlap.duration)
+                overlap_end_time = (overlap_start_time
+                                    + timedelta(hours=overlap.duration))
 
                 # Перевірка на часове перекриття
-                if not (end_time <= overlap_start_time or start_time >= overlap_end_time):
+                if not (end_time <= overlap_start_time or
+                        start_time >= overlap_end_time):
                     raise ValidationError(_(
-                        f"Тренер {rec.coach_id.name} вже має заняття у {rec.location_id.name} на {rec.session_date} "
+                        f"Тренер {rec.coach_id.name} вже має заняття у "
+                        f"{rec.location_id.name} на {rec.session_date} "
                         f"з {start_time} по {end_time} год. "
-                        f"Перекриття з {overlap_start_time} по {overlap_end_time} год."
+                        f"Перекриття з {overlap_start_time} "
+                        f"по {overlap_end_time} год."
                     ))
 
     @api.onchange('session_type')
@@ -89,8 +98,10 @@ class SportClubTrainingSession(models.Model):
         Location = self.env['fitness.location']
 
         if self.session_type == 'personal':
-            # Отримуємо першу доступну локацію для персональних або самостійних
-            location = Location.search([('location_type', '=', 'personal')], limit=1)
+            # Отримуємо першу доступну локацію
+            # для персональних або самостійних
+            location = Location.search([('location_type',
+                                         '=', 'personal')], limit=1)
             return {
                 'domain': {
                     'location_id': [('location_type', '=', 'personal')]
@@ -101,7 +112,8 @@ class SportClubTrainingSession(models.Model):
             }
 
         if self.session_type == 'group':
-            location = Location.search([('location_type', '=', 'group')], limit=1)
+            location = Location.search([('location_type',
+                                         '=', 'group')], limit=1)
             return {
                 'domain': {
                     'location_id': [('location_type', '=', 'group')]
@@ -116,32 +128,40 @@ class SportClubTrainingSession(models.Model):
                 'value': {'location_id': False}
             }
 
-    @api.constrains('location_id', 'member_ids')
+    @api.constrains('location_id', 'visit_ids')
     def _check_capacity(self):
         for rec in self:
-            if rec.location_id and rec.location_id.capacity:
-                participant_count = len(rec.member_ids)
+            if rec.location_id and rec.location_id.capacity and rec.session_type == 'group':
+                participant_count = len(rec.visit_ids)
                 if participant_count > rec.location_id.capacity:
                     raise ValidationError(_(
-                        f"Кількість учасників ({participant_count}) перевищує місткість "
-                        f"локації '{rec.location_id.name}' ({rec.location_id.capacity})."
+                        f"Кількість учасників ({participant_count}) "
+                        f"перевищує місткість "
+                        f"локації '{rec.location_id.name}' "
+                        f"({rec.location_id.capacity})."
                     ))
+            if  rec.session_type == 'personal':
+                participant_count = len(rec.visit_ids)
+                if participant_count > 1:
+                    raise ValidationError(_(
+                        f"Кількість учасників ({participant_count}) "
+                        f"перевищує 1 для персонального тренування."))
 
-    @api.depends('member_ids', 'location_id.capacity', 'session_type')
+    @api.depends('session_type','visit_ids')
     def _compute_remaining_seats(self):
         for rec in self:
             if rec.session_type == 'personal':
-                rec.remaining_seats = 1
+                visits = self.env['sport.club.visit'].search_count([
+                    ('session_id', '=', rec.id)
+                ])
+                rec.remaining_seats = 1 - visits
             else:
-                if rec.location_id:
-                    rec.remaining_seats = rec.location_id.capacity - len(rec.member_ids)
-                else:
-                    rec.remaining_seats = 0
+                visits = self.env['sport.club.visit'].search_count([
+                    ('session_id', '=', rec.id)
+                ])
+                rec.remaining_seats = (rec.location_id.capacity or 0) - visits
 
-    @api.onchange('session_type')
-    def _onchange_training_type_clear_group_category(self):
-        if self.session_type != 'group':
-            self.group_category = False
+
 
     @api.depends('location_id', 'coach_id', 'group_category')
     def _compute_name(self):

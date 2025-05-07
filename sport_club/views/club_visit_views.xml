@@ -17,10 +17,14 @@
         <field name="model">sport.club.visit</field>
         <field name="arch" type="xml">
             <form>
+                 <header>
+                    <field name="visit_status" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
                 <group>
                     <field name="member_id"/>
                     <field name="visit_date"/>
-                    <field name="session_id"/>
+                     <field name="is_independent"/>
+                    <field name="session_id"  domain="[('session_date', '&gt;=', visit_date), ('session_date', '&lt;=', visit_date)]"/>
                     <field name="subscription_id"/>
                 </group>
             </form>

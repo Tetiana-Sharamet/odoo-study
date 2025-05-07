@@ -28,7 +28,7 @@
                             <visibility_condition>'group' == session_type</visibility_condition>
                         </field>
                          <field name="remaining_seats"/>
-                        <field name="member_ids" widget="many2many_tags"/>
+                        <field name="visit_ids" widget="many2many_tags"/>
                     </group>
                 </sheet>
             </form>

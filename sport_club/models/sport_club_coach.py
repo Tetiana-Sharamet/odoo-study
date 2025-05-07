@@ -1,4 +1,4 @@
-from odoo import models, fields,api
+from odoo import models, fields, api
 
 
 class SportClubCoach(models.Model):
@@ -37,16 +37,15 @@ class SportClubCoach(models.Model):
             ('cardio training', 'Cardio  training'),
         ])
 
-
-    is_active= fields.Boolean(
-        string = 'Active'
+    is_active = fields.Boolean(
+        string='Active'
     )
     biography = fields.Text()
     schedule_ids = fields.One2many(
         comodel_name='sport.club.training.session',
         inverse_name='coach_id',
         string="Future Schedules"
-        )
+    )
     color = fields.Integer(
         store=True)
 
@@ -59,9 +58,13 @@ class SportClubCoach(models.Model):
 
     @api.depends('schedule_ids.session_date')
     def _compute_future_schedules(self):
-        # Оновлюємо поле future_schedule_ids лише з тренуваннями, де дата більше поточної
+        # Оновлюємо поле future_schedule_ids лише
+        # з тренуваннями, де дата більше поточної
         for record in self:
-            future_sessions = record.schedule_ids.filtered(lambda x: x.session_date > fields.Datetime.now())
+            future_sessions = (
+                record.schedule_ids.filtered(lambda x:
+                                             x.session_date >
+                                             fields.Datetime.now()))
             record.future_schedule_ids = future_sessions
 
     @api.depends('partner_id')
@@ -69,3 +72,15 @@ class SportClubCoach(models.Model):
         for record in self:
             if record.partner_id:
                 record.name = record.partner_id.name
+
+    def create_visit(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Create training session',
+            'res_model': 'sport.club.training.session',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_coach_id': self.id,
+            },
+        }

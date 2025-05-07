@@ -51,49 +51,49 @@
 
     <record id="view_subscription_pivot" model="ir.ui.view">
         <field name="name">sport.club.subscription.pivot</field>
-            <field name="model">sport.club.subscription</field>
-                <field name="arch" type="xml">
-                    <pivot string="Pivot Example" sample="1" disable_linking="1" display_quantity="1">
-                        <field name="start_date" interval="month" type="col"/>
-                        <field name="subscription_type_id" type="row"/>
-                        <field name="price" type="col"/>
-                     </pivot>
-                </field>
+        <field name="model">sport.club.subscription</field>
+        <field name="arch" type="xml">
+            <pivot string="Pivot Example" sample="1" disable_linking="1" display_quantity="1">
+                <field name="start_date" interval="month" type="col"/>
+                <field name="subscription_type_id" type="row"/>
+                <field name="price" type="measure"/>
+            </pivot>
+        </field>
     </record>
 
 
-
     <record id="view_club_subscription_graph" model="ir.ui.view">
-    <field name="name">club.subscription.graph</field>
-    <field name="model">sport.club.subscription</field>
-    <field name="arch" type="xml">
-         <graph string="Graph" type="bar">
-                <field name="price"/>
-                <field name="start_date" interval="month"/>
+        <field name="name">club.subscription.graph</field>
+        <field name="model">sport.club.subscription</field>
+        <field name="arch" type="xml">
+            <graph string="Graph" type="bar">
+                <field name="subscription_type_id" type="row"/>
+                <field name="start_date" interval="month" type="col"/>
+                <field name="price" type="measure"/>
             </graph>
-    </field>
-</record>
+        </field>
+    </record>
 
-     <record id="view_subscription_search" model="ir.ui.view">
-    <field name="name">sport.club.subscription.search</field>
-    <field name="model">sport.club.subscription</field>
-    <field name="arch" type="xml">
-        <search>
-            <field name="name"/>
-            <field name="member_id"/>
-<!--            <filter name="filter_my" string="Мої тренування" domain="[('coach_id','=',uid)]"/>-->
-            <separator/>
+    <record id="view_subscription_search" model="ir.ui.view">
+        <field name="name">sport.club.subscription.search</field>
+        <field name="model">sport.club.subscription</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="member_id"/>
+                <!--            <filter name="filter_my" string="Мої тренування" domain="[('coach_id','=',uid)]"/>-->
+                <separator/>
 
-            <searchpanel>
+                <searchpanel>
                     <field name="member_id" string="Filter by member" icon="fa-users" select="multi"
                            enable_counters="1"/>
 
                     <field name="subscription_type_id" string="Filter by types" icon="fa-bolt" select="multi"
                            enable_counters="1"/>
                 </searchpanel>
-        </search>
-    </field>
-</record>
+            </search>
+        </field>
+    </record>
     <record id="action_subscription" model="ir.actions.act_window">
         <field name="name">Subscriptions</field>
         <field name="res_model">sport.club.subscription</field>

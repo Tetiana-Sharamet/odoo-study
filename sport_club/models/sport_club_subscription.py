@@ -82,16 +82,19 @@ class SportClubSubscription(models.Model):
         for record in self:
             if record.member_id or record.start_date:
                 record.name = '%s  %s - %s month' % (
-                    record.member_id.name, record.start_date, record.duration_months)
+                    record.member_id.name,
+                    record.start_date, record.duration_months)
 
     @api.depends('subscription_type_id')
     def _compute_sessions_left(self):
         for record in self:
             st = record.subscription_type_id
-            record.group_sessions_left = st.group_sessions_limit if st.allow_group_sessions else 0
-            record.personal_sessions_left = st.personal_sessions_limit if st.allow_personal_sessions else 0
-
-
+            record.group_sessions_left = st.group_sessions_limit \
+                if st.allow_group_sessions \
+                else 0
+            record.personal_sessions_left = st.personal_sessions_limit \
+                if st.allow_personal_sessions \
+                else 0
 
     def action_open_renew_wizard(self):
         self.ensure_one()

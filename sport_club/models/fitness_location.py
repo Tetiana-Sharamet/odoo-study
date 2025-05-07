@@ -1,5 +1,6 @@
 from odoo import models, fields
 
+
 class FitnessLocation(models.Model):
     _name = 'fitness.location'
     _description = 'Training Location'
@@ -11,4 +12,4 @@ class FitnessLocation(models.Model):
     ], required=True)
 
     is_active = fields.Boolean(default=True)
-    capacity =fields.Integer()
+    capacity = fields.Integer()

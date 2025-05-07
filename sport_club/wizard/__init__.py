@@ -1,2 +1,1 @@
-from . import (register_session_wizard,
-               renew_subscription_wizard)
+from . import renew_subscription_wizard

@@ -117,6 +117,7 @@
                                         <span class="badge bg-secondary text-white">Inactive</span>
                                     </t>
                                 </div>
+                                 <button name="create_visit" string="Create training session" type="object" class="oe_highlight"/>
                             </div>
 
                              <field name="image_256" widget="image"

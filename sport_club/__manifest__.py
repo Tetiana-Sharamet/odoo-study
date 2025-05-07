@@ -6,7 +6,7 @@
     'summary': 'Module for managing a sports club '
                'with sessions, visits, and reports',
     'author': 'Tetiana Sharamet',
-    'depends': ['base', 'mail','product'],
+    'depends': ['base', 'mail', 'product'],
 
     'data': [
         'security/security.xml',
@@ -14,7 +14,6 @@
         'data/locations.xml',
         'views/sport_club_menu.xml',
         'views/club_visit_views.xml',
-        'views/report_certificate.xml',
         'views/coach_views.xml',
         'views/training_session_views.xml',
         'views/subscription_views.xml',
@@ -23,8 +22,6 @@
         'views/fitness_location.xml',
         'data/subscription_type_data.xml',
         'views/subscription_type_views.xml',
-        'reports/certificate_report.xml',
-        'wizard/register_session_wizard_view.xml',
         'wizard/renew_subscription_wizard_view.xml',
     ],
     'assets': {
