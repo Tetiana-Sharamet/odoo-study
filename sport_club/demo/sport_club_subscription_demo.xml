@@ -1,0 +1,35 @@
+<odoo>
+    <!-- Demo 1: Basic Subscription -->
+
+    <record id="demo_sport_club_subscription_1" model="sport.club.subscription">
+        <field name="name">John Doe 2025-05-07 - 1 month</field>
+        <field name="member_id" ref="base.res_partner_address_15"/>
+        <field name="start_date">2025-05-07</field>
+        <field name="duration_months">1</field>
+        <field name="subscription_type_id"
+               ref="subscription_type_standard"/>  <!-- Assuming subscription type with ID 1 exists -->
+        <field name="is_active">True</field>
+    </record>
+
+    <!-- Demo 2: Longer Subscription with Group Sessions -->
+    <record id="demo_sport_club_subscription_2" model="sport.club.subscription">
+        <field name="name">Jane Smith 2025-05-01 - 6 months</field>
+        <field name="member_id" ref="base.res_partner_address_16"/>
+        <field name="start_date">2025-05-01</field>
+        <field name="duration_months">1</field>
+        <field name="subscription_type_id"
+               ref="subscription_type_premium"/>  <!-- Assuming subscription type with ID 2 exists -->
+        <field name="is_active">True</field>
+    </record>
+
+    <!-- Demo 3: Personal Subscription with Custom Start Date -->
+    <record id="demo_sport_club_subscription_3" model="sport.club.subscription">
+        <field name="name">Alice Johnson 2025-06-15 - 12 months</field>
+        <field name="member_id" ref="base.res_partner_address_17"/>
+        <field name="start_date">2025-05-01</field>
+        <field name="duration_months">1</field>
+        <field name="subscription_type_id"
+               ref="subscription_type_vip"/>  <!-- Assuming subscription type with ID 3 exists -->
+        <field name="is_active">True</field>
+    </record>
+</odoo>

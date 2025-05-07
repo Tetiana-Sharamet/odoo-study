@@ -1,0 +1,92 @@
+<odoo>
+
+    <record id="visit_1" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_17"/>
+        <field name="session_id" ref="sport_club.demo_training_session_1"/>
+        <field name="visit_date">2025-05-10</field>
+    </record>
+
+    <record id="visit_2" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_16"/>
+        <field name="session_id" ref="sport_club.demo_training_session_1"/>
+        <field name="visit_date">2025-05-10</field>
+    </record>
+
+    <record id="visit_3" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_15"/>
+        <field name="session_id" ref="sport_club.demo_training_session_2"/>
+        <field name="visit_date">2025-05-11</field>
+    </record>
+
+    <record id="visit_4" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_17"/>
+        <field name="session_id" ref="sport_club.demo_training_session_2"/>
+        <field name="visit_date">2025-05-11</field>
+    </record>
+
+    <record id="visit_5" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_16"/>
+        <field name="session_id" ref="sport_club.demo_training_session_3"/>
+        <field name="visit_date">2025-05-12</field>
+    </record>
+
+    <record id="visit_6" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_15"/>
+        <field name="session_id" ref="sport_club.demo_training_session_4"/>
+        <field name="visit_date">2025-05-13</field>
+    </record>
+
+    <record id="visit_7" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_17"/>
+        <field name="session_id" ref="sport_club.demo_training_session_4"/>
+        <field name="visit_date">2025-05-13</field>
+    </record>
+
+    <record id="visit_8" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_16"/>
+        <field name="session_id" ref="sport_club.demo_training_session_5"/>
+        <field name="visit_date">2025-05-14</field>
+    </record>
+
+    <record id="visit_9" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_15"/>
+        <field name="session_id" ref="sport_club.demo_training_session_5"/>
+        <field name="visit_date">2025-05-14</field>
+    </record>
+
+    <record id="visit_10" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_15"/>
+        <field name="session_id" ref="sport_club.demo_training_session_6"/>
+        <field name="visit_date">2025-05-15</field>
+    </record>
+
+    <record id="visit_11" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_15"/>
+        <field name="session_id" ref="sport_club.demo_training_session_7"/>
+        <field name="visit_date">2025-05-16</field>
+    </record>
+
+    <record id="visit_12" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_15"/>
+        <field name="session_id" ref="sport_club.demo_training_session_8"/>
+        <field name="visit_date">2025-05-17</field>
+    </record>
+
+    <record id="visit_13" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_16"/>
+        <field name="session_id" ref="sport_club.demo_training_session_9"/>
+        <field name="visit_date">2025-05-18</field>
+    </record>
+
+    <record id="visit_14" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_17"/>
+        <field name="session_id" ref="sport_club.demo_training_session_10"/>
+        <field name="visit_date">2025-05-19</field>
+    </record>
+
+    <record id="visit_15" model="sport.club.visit">
+        <field name="member_id" ref="base.res_partner_address_15"/>
+        <field name="session_id" ref="sport_club.demo_training_session_10"/>
+        <field name="visit_date">2025-05-19</field>
+    </record>
+</odoo>

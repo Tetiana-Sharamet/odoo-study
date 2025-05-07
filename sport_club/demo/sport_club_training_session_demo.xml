@@ -1,0 +1,103 @@
+<odoo>
+    <!-- Припускаємо, що location та coach уже визначені у вашому demo або data -->
+
+    <!-- Сеанс 1 -->
+    <record id="demo_training_session_1" model="sport.club.training.session">
+        <field name="coach_id" ref="sport_club.coach_1"/>
+        <field name="session_date">2025-05-10 10:00:00</field>
+        <field name="session_type">group</field>
+        <field name="duration">1.0</field>
+        <field name="location_id" ref="sport_club.fitness_location_studio_b"/>
+        <field name="group_category">yoga</field>
+    </record>
+
+    <!-- Сеанс 2 -->
+    <record id="demo_training_session_2" model="sport.club.training.session">
+        <field name="coach_id" ref="sport_club.coach_2"/>
+        <field name="session_date">2025-05-11 12:00:00</field>
+        <field name="session_type">group</field>
+        <field name="duration">1.0</field>
+        <field name="location_id" ref="sport_club.fitness_location_studio_b"/>
+        <field name="group_category">aerobics</field>
+    </record>
+
+    <!-- Сеанс 3 -->
+    <record id="demo_training_session_3" model="sport.club.training.session">
+        <field name="coach_id" ref="sport_club.coach_3"/>
+        <field name="session_date">2025-05-12 09:00:00</field>
+        <field name="session_type">personal</field>
+        <field name="duration">1.0</field>
+        <field name="location_id" ref="sport_club.fitness_location_main_gym"/>
+        <field name="group_category">crossfit</field>
+    </record>
+
+    <!-- Сеанс 4 -->
+    <record id="demo_training_session_4" model="sport.club.training.session">
+        <field name="coach_id" ref="sport_club.coach_4"/>
+        <field name="session_date">2025-05-13 14:00:00</field>
+        <field name="session_type">group</field>
+        <field name="duration">1.0</field>
+        <field name="location_id" ref="sport_club.fitness_location_main_gym"/>
+        <field name="group_category">crossfit</field>
+    </record>
+
+    <!-- Сеанс 5 -->
+    <record id="demo_training_session_5" model="sport.club.training.session">
+        <field name="coach_id" ref="sport_club.coach_2"/>
+        <field name="session_date">2025-05-14 08:00:00</field>
+        <field name="session_type">online</field>
+        <field name="duration">1.0</field>
+        <field name="location_id" ref="sport_club.fitness_location_studio_b"/>
+        <field name="group_category">stretching</field>
+    </record>
+
+    <!-- Сеанс 6 -->
+    <record id="demo_training_session_6" model="sport.club.training.session">
+        <field name="coach_id" ref="sport_club.coach_1"/>
+        <field name="session_date">2025-05-15 18:00:00</field>
+        <field name="session_type">group</field>
+        <field name="duration">1.0</field>
+        <field name="location_id" ref="sport_club.fitness_location_studio_b"/>
+        <field name="group_category">pilates</field>
+    </record>
+
+    <!-- Сеанс 7 -->
+    <record id="demo_training_session_7" model="sport.club.training.session">
+        <field name="coach_id" ref="sport_club.coach_3"/>
+        <field name="session_date">2025-05-16 16:00:00</field>
+        <field name="session_type">personal</field>
+        <field name="duration">1.0</field>
+        <field name="location_id" ref="sport_club.fitness_location_studio_a"/>
+        <field name="group_category">crossfit</field>
+    </record>
+
+    <!-- Сеанс 8 -->
+    <record id="demo_training_session_8" model="sport.club.training.session">
+        <field name="coach_id" ref="sport_club.coach_2"/>
+        <field name="session_date">2025-05-17 11:00:00</field>
+        <field name="session_type">group</field>
+        <field name="duration">1</field>
+        <field name="location_id" ref="sport_club.fitness_location_studio_a"/>
+        <field name="group_category">yoga</field>
+    </record>
+
+    <!-- Сеанс 9 -->
+    <record id="demo_training_session_9" model="sport.club.training.session">
+        <field name="coach_id" ref="sport_club.coach_4"/>
+        <field name="session_date">2025-05-18 17:00:00</field>
+        <field name="session_type">online</field>
+        <field name="duration">1.0</field>
+        <field name="location_id" ref="sport_club.fitness_location_studio_a"/>
+        <field name="group_category">aerobics</field>
+    </record>
+
+    <!-- Сеанс 10 -->
+    <record id="demo_training_session_10" model="sport.club.training.session">
+        <field name="coach_id" ref="sport_club.coach_1"/>
+        <field name="session_date">2025-05-19 10:30:00</field>
+        <field name="session_type">group</field>
+        <field name="duration">1.0</field>
+        <field name="location_id" ref="sport_club.fitness_location_studio_a"/>
+        <field name="group_category">stretching</field>
+    </record>
+</odoo>

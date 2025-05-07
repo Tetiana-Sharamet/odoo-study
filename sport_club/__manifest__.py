@@ -23,6 +23,9 @@
         'data/subscription_type_data.xml',
         'views/subscription_type_views.xml',
         'wizard/renew_subscription_wizard_view.xml',
+        'wizard/coach_performance_wizard_view.xml',
+        'reports/report_coach_performance_template.xml',
+
     ],
     'assets': {
         'web.assets_backend': [
@@ -30,7 +33,10 @@
         ],
     },
     'demo': [
-        # 'demo/club_visit_demo.xml',
+        'demo/sport_club_subscription_demo.xml',
+        'demo/sport_club_coach_demo.xml',
+        'demo/sport_club_training_session_demo.xml',
+        'demo/sport_club_visit_demo.xml',
     ],
     'installable': True,
     'application': True,

@@ -1,0 +1,44 @@
+<odoo>
+    <template id="report_coach_performance_template">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <h2>Coach Performance Report</h2>
+                <p>
+                    Period:
+                    <strong><t t-esc="data['date_from']"/></strong> —
+                    <strong><t t-esc="data['date_to']"/></strong>
+                </p>
+                <table class="table table-sm mt-3">
+                    <thead>
+                        <tr>
+                            <th>Coach</th>
+                            <th>Number of Sessions</th>
+                            <th>Total Participants</th>
+                            <th>Average Participants</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="data['coaches']" t-as="line">
+                            <tr>
+                                <td><t t-esc="line['coach'].name"/></td>
+                                <td><t t-esc="line['session_count']"/></td>
+                                <td><t t-esc="line['total_participants']"/></td>
+                                <td><t t-esc="line['avg_participants']"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <record id="action_report_coach_performance" model="ir.actions.report">
+        <field name="name">Coach Performance Report</field>
+        <field name="model">sport.club.coach.performance.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sport_club.report_coach_performance_template</field>
+        <field name="report_file">sport_club.report_coach_performance_template</field>
+        <field name="binding_model_id" ref="sport_club.model_sport_club_coach_performance_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

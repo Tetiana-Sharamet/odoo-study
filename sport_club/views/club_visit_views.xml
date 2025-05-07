@@ -3,11 +3,12 @@
         <field name="name">club.visit.tree</field>
         <field name="model">sport.club.visit</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree default_order="visit_date asc">
                 <field name="member_id"/>
                 <field name="visit_date"/>
                 <field name="session_id"/>
                 <field name="subscription_id"/>
+                 <field name="visit_status"/>
             </tree>
         </field>
     </record>

@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-  <menuitem id="sport_club_main_menu"
-            web_icon="sport_club,static/description/icon.png"
-            name="GYM" sequence="300"/>
+    <menuitem id="sport_club_main_menu"
+              web_icon="sport_club,static/description/icon.png"
+              name="GYM" sequence="300"/>
 
-  <menuitem id="sport_club_menu_main_doctor_patient"
-            parent="sport_club_main_menu"
-            name="Treners" sequence="100"/>
-   <menuitem id="sport_club_menu_main_subscription"
-            parent="sport_club_main_menu"
-            name="Subscription" sequence="100"/>
+    <menuitem id="sport_club_menu_main_doctor_patient"
+              parent="sport_club_main_menu"
+              name="Treners" sequence="100"/>
+    <menuitem id="sport_club_menu_main_subscription"
+              parent="sport_club_main_menu"
+              name="Subscription" sequence="100"/>
+
+    <menuitem id="menu_coach_report_root"
+              name="Reports"
+              parent="sport_club_main_menu"
+              sequence="30"/>
 
 </odoo>
