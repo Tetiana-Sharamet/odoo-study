@@ -10,7 +10,7 @@ access_sport_club_coach_sport_club_user,access.sport.club.user,model_sport_club_
 
 access_sport_club_subscription_sport_club_user,access.sport.club.user,model_sport_club_subscription,base.group_user,1,0,0,0
 access_sport_club_sfitness_location,access.fitness.location,model_fitness_location,base.group_user,1,0,0,0
-access_sport_club_subscription_type_sport_club_user,access.sport.club.user,model_sport_club_subscription_type,base.group_user,0,0,0,0
+access_sport_club_subscription_type_sport_club_user,access.sport.club.user,model_sport_club_subscription_type,base.group_user,1,0,0,0
 access_sport_club_subscription_renew_wizard,sport.club.subscription.renew.wizard,model_sport_club_subscription_renew_wizard,base.group_user,0,0,0,0
 access_sport_club_subscription_coach_performance_wizard,sport.club.subscription.coach.performance.wizard,model_sport_club_coach_performance_wizard,base.group_user,0,0,0,0
 
