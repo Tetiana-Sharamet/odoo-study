@@ -60,38 +60,30 @@ class SportClubTrainingSession(models.Model):
         ('stretching', 'Stretching'),
     ])
 
-    @ api.constrains('coach_id', 'session_date', 'duration', 'location_id')
+    @api.constrains('coach_id', 'session_date', 'duration', 'location_id')
     def _check_trainer_location_conflict(self):
         for rec in self:
-            # Переведемо дату початку та тривалість в час
-            start_time = rec.session_date
-            end_time = start_time + timedelta(hours=rec.duration)
+            start = rec.session_date
+            end = start + timedelta(hours=rec.duration)
 
-            # Перевірка на перетини
-            overlapping = self.env['sport.club.training.session'].search([
+            overlapping_sessions = self.search([
                 ('id', '!=', rec.id),
-                ('session_date', '<', end_time),
-                ('session_date', '>=', rec.session_date),
-                '|',  # оператор OR
-                ('coach_id', '=', rec.coach_id.id),
-                ('location_id', '=', rec.location_id.id),
+                ('session_date', '<', end),
+                ('session_date', '>=', rec.session_date - timedelta(hours=6)),  # для захоплення довших сесій
             ])
 
-            for overlap in overlapping:
-                overlap_start_time = overlap.session_date
-                overlap_end_time = (overlap_start_time
-                                    + timedelta(hours=overlap.duration))
+            for other in overlapping_sessions:
+                other_start = other.session_date
+                other_end = other_start + timedelta(hours=other.duration)
 
-                # Перевірка на часове перекриття
-                if not (end_time <= overlap_start_time or
-                        start_time >= overlap_end_time):
-                    raise ValidationError(_(
-                        f"Coach {rec.coach_id.name} already has a class at "
-                        f"{rec.location_id.name} on {rec.session_date} "
-                        f"from {start_time} to {end_time} "
-                        f"Overlap from {overlap_start_time} "
-                        f"to {overlap_end_time}"
-                    ))
+                if not (end <= other_start or start >= other_end):
+                    if other.coach_id == rec.coach_id or other.location_id == rec.location_id:
+                        raise ValidationError(_(
+                            f"Conflict detected:\n"
+                            f"Session '{rec.name}' from {start} to {end}\n"
+                            f"overlaps with session '{other.name}' from {other_start} to {other_end}\n"
+                            f"Coach: {rec.coach_id.name}, Location: {rec.location_id.name}"
+                        ))
 
     @api.onchange('session_type')
     def _onchange_training_type(self):

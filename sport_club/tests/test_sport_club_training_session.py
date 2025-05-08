@@ -2,6 +2,7 @@ from odoo.tests.common import TransactionCase
 from odoo.exceptions import ValidationError
 from datetime import datetime, timedelta
 
+
 class TestSportClubTrainingSession(TransactionCase):
 
     def setUp(self):
@@ -81,6 +82,15 @@ class TestSportClubTrainingSession(TransactionCase):
         visit_model = self.env['sport.club.visit']
         subscription_model = self.env['sport.club.subscription']
 
+        subscription_type = self.env['sport.club.subscription.type'].create({
+            'name': 'Basic',
+            'price': 100.0,
+            'allow_group_sessions': True,
+            'group_sessions_limit': 5,
+            'allow_personal_sessions': True,
+            'personal_sessions_limit': 1,
+        })
+
         for i in range(11):
             member = partner_model.create({
                 'name': f'Member {i}',
@@ -91,6 +101,7 @@ class TestSportClubTrainingSession(TransactionCase):
                 'is_active': True,
                 'group_sessions_left': 5,
                 'personal_sessions_left': 0,
+                'subscription_type_id': subscription_type.id
             })
             if i == 10:
                 with self.assertRaises(ValidationError):
@@ -126,15 +137,26 @@ class TestSportClubTrainingSession(TransactionCase):
             'is_club_member': True
         })
 
+        subscription_type = self.env['sport.club.subscription.type'].create({
+            'name': 'Basic',
+            'price': 100.0,
+            'allow_group_sessions': True,
+            'group_sessions_limit': 5,
+            'allow_personal_sessions': True,
+            'personal_sessions_limit': 1,
+        })
+
         subscription1 = self.env['sport.club.subscription'].create({
             'member_id': partner1.id,
             'is_active': True,
             'personal_sessions_left': 1,
+            'subscription_type_id': subscription_type.id
         })
         subscription2 = self.env['sport.club.subscription'].create({
             'member_id': partner2.id,
             'is_active': True,
             'personal_sessions_left': 1,
+            'subscription_type_id': subscription_type.id
         })
 
         self.env['sport.club.visit'].create({

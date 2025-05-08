@@ -19,7 +19,7 @@ class TestClubVisit(TransactionCase):
 
         self.coach = self.env['sport.club.coach'].create({
             'partner_id': self.coach_partner.id,
-            'specialty': 'Fitness',
+            'specialty': 'dance',
             'is_active': True,
         })
 
@@ -38,11 +38,20 @@ class TestClubVisit(TransactionCase):
         self.session_date = datetime.now() + timedelta(days=1)
 
     def create_subscription(self, member, group_left=1, personal_left=1):
+        subscription_type = self.env['sport.club.subscription.type'].create({
+            'name': 'Basic',
+            'price': 100.0,
+            'allow_group_sessions': True,
+            'group_sessions_limit': group_left,
+            'allow_personal_sessions': True,
+            'personal_sessions_limit': personal_left,
+        })
         return self.env['sport.club.subscription'].create({
             'member_id': member.id,
             'group_sessions_left': group_left,
             'personal_sessions_left': personal_left,
             'is_active': True,
+            'subscription_type_id': subscription_type.id
         })
 
     def test_visit_created_with_subscription(self):
@@ -88,7 +97,7 @@ class TestClubVisit(TransactionCase):
             'coach_id': self.coach.id,
             'session_date': self.session_date,
             'session_type': 'group',
-            'location_id': self.location,
+            'location_id': self.location.id,
             'group_category': 'aerobics',
         })
 
@@ -125,7 +134,7 @@ class TestClubVisit(TransactionCase):
             'coach_id': self.coach.id,
             'session_date': self.session_date,
             'session_type': 'personal',
-            'location_id': self.personal_location,
+            'location_id': self.personal_location.id,
         })
 
         visit1 = self.env['sport.club.visit'].create({
@@ -156,7 +165,7 @@ class TestClubVisit(TransactionCase):
             'coach_id': self.coach.id,
             'session_date': self.session_date,
             'session_type': 'group',
-            'location_id': self.location,
+            'location_id': self.location.id,
         })
 
         visit = self.env['sport.club.visit'].create({
