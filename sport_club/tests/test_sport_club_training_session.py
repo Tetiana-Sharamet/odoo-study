@@ -129,4 +129,23 @@ class TestSportClubTrainingSession(TransactionCase):
         subscription1 = self.env['sport.club.subscription'].create({
             'member_id': partner1.id,
             'is_active': True,
-            'personal_sessions_
+            'personal_sessions_left': 1,
+        })
+        subscription2 = self.env['sport.club.subscription'].create({
+            'member_id': partner2.id,
+            'is_active': True,
+            'personal_sessions_left': 1,
+        })
+
+        self.env['sport.club.visit'].create({
+            'member_id': partner1.id,
+            'session_id': session.id,
+            'visit_date': self.date.date(),
+        })
+
+        with self.assertRaises(ValidationError):
+            self.env['sport.club.visit'].create({
+                'member_id': partner2.id,
+                'session_id': session.id,
+                'visit_date': self.date.date(),
+            })
