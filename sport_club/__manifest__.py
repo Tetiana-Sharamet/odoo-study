@@ -9,6 +9,7 @@
     'depends': ['base', 'mail', 'product'],
 
     'data': [
+        'security/sport_club_groups.xml',
         'security/security.xml',
         'security/ir.model.access.csv',
         'data/locations.xml',
