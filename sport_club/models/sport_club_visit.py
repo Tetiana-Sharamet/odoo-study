@@ -19,13 +19,12 @@ class ClubVisit(models.Model):
         comodel_name='res.partner',
         required=True,
         string='Member',
-        domain="[('is_club_member', '=', True)]",
-        inverse_name='club_visit_ids'
+        domain="[('is_club_member', '=', True)]"
     )
 
     session_id = fields.Many2one(
         comodel_name='sport.club.training.session'
-       )
+    )
 
     subscription_id = fields.Many2one(
         comodel_name='sport.club.subscription',
@@ -61,7 +60,7 @@ class ClubVisit(models.Model):
                     ('member_id', '=', rec.member_id.id),
                     ('is_active', '=', True)
                 ], limit=1, order='start_date desc')
-                rec.subscription_id = subscription.id\
+                rec.subscription_id = subscription.id \
                     if subscription else False
 
     @api.model_create_multi
@@ -91,7 +90,6 @@ class ClubVisit(models.Model):
             rec._validate_session_capacity()
         return records
 
-
     def write(self, vals):
         res = super().write(vals)
         for rec in self:
@@ -99,24 +97,23 @@ class ClubVisit(models.Model):
         return res
 
     def _validate_session_capacity(self):
-            if not self.session_id:
-                return
-            session = self.session_id
-            # Отримаємо кількість існуючих візитів на цю сесію
-            existing_visits = self.search_count([
-                ('session_id', '=', session.id),
-                ('id', '!=', self.id)
-            ])
-            if session.session_type == 'group':
-                if existing_visits >= session.location_id.capacity:
-                    raise ValidationError(_("No seats "
-                                            "available in this group session."))
+        if not self.session_id:
+            return
+        session = self.session_id
+        # Отримаємо кількість існуючих візитів на цю сесію
+        existing_visits = self.search_count([
+            ('session_id', '=', session.id),
+            ('id', '!=', self.id)
+        ])
+        if session.session_type == 'group':
+            if existing_visits >= session.location_id.capacity:
+                raise ValidationError(_("No seats "
+                                        "available in this group session."))
 
-            elif session.session_type == 'personal':
-                if existing_visits >= 1:
-                    raise ValidationError(_("This personal "
-                                            "session already has a participant."))
-
+        elif session.session_type == 'personal':
+            if existing_visits >= 1:
+                raise ValidationError(_("This personal "
+                                        "session already has a participant."))
 
     @api.depends('member_id')
     def _compute_name(self):
@@ -125,7 +122,6 @@ class ClubVisit(models.Model):
                 record.name = record.member_id.name
             else:
                 record.name = _("Visit")
-
 
     @api.onchange('visit_date')
     def _onchange_visit_date_clear_invalid_session(self):
@@ -142,9 +138,3 @@ class ClubVisit(models.Model):
                 rec.is_independent = False
             else:
                 rec.is_independent = (sub.group_sessions_left <= 0 and sub.personal_sessions_left <= 0)
-
-
-
-
-
-

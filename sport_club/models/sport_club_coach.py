@@ -37,14 +37,13 @@ class SportClubCoach(models.Model):
             ('cardio training', 'Cardio  training'),
         ])
 
-    is_active = fields.Boolean(
-        string='Active'
-    )
+    is_active = fields.Boolean()
+
     biography = fields.Text()
     schedule_ids = fields.One2many(
         comodel_name='sport.club.training.session',
         inverse_name='coach_id',
-        string="Future Schedules"
+        string="Schedules"
     )
     color = fields.Integer(
         store=True)

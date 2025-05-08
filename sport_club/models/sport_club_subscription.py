@@ -107,7 +107,7 @@ class SportClubSubscription(models.Model):
             'context': {'default_subscription_id': self.id},
         }
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
         subscription = super().create(vals)
         if subscription.member_id:
