@@ -43,8 +43,8 @@ class CoachPerformanceWizard(models.TransientModel):
 
         # Створюємо словник з усіма даними
         data = {
-            'date_from': self.date_from.isoformat(),
-            'date_to': self.date_to.isoformat(),
+            'date_from': self.date_from.strftime('%d-%m-%Y'),
+            'date_to': self.date_to.strftime('%d-%m-%Y'),
             'coaches': coach_data_list,
         }
 
