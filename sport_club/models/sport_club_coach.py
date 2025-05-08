@@ -29,6 +29,10 @@ class SportClubCoach(models.Model):
         store=True,
         translate=True)
 
+    user_id = fields.Many2one(
+        comodel_name='res.users',
+        ondelete='set null')
+
     specialty = fields.Selection(
         selection=[
             ('dance', 'Dance'),

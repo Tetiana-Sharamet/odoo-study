@@ -45,6 +45,7 @@
 
                             <separator/>
                             <field name="specialty"/>
+                             <field name="user_id"/>
                             <separator/>
                         </group>
                     </group>
