@@ -45,7 +45,7 @@
     <record id="demo_training_session_5" model="sport.club.training.session">
         <field name="coach_id" ref="sport_club.coach_2"/>
         <field name="session_date">2025-05-14 08:00:00</field>
-        <field name="session_type">online</field>
+        <field name="session_type">group</field>
         <field name="duration">1.0</field>
         <field name="location_id" ref="sport_club.fitness_location_studio_b"/>
         <field name="group_category">stretching</field>
@@ -85,7 +85,7 @@
     <record id="demo_training_session_9" model="sport.club.training.session">
         <field name="coach_id" ref="sport_club.coach_4"/>
         <field name="session_date">2025-05-18 17:00:00</field>
-        <field name="session_type">online</field>
+        <field name="session_type">group</field>
         <field name="duration">1.0</field>
         <field name="location_id" ref="sport_club.fitness_location_studio_a"/>
         <field name="group_category">aerobics</field>
