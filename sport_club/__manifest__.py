@@ -40,4 +40,5 @@
     ],
     'installable': True,
     'application': True,
+    'i18n': True,
 }

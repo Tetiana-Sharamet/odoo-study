@@ -1,0 +1,1305 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sport_club
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-08 11:31+0000\n"
+"PO-Revision-Date: 2025-05-08 11:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_training_session_form
+msgid "'group' == session_type"
+msgstr "'групове' == session_type"
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__type
+msgid ""
+"- Contact: Use this to organize the contact details of employees of a given company (e.g. CEO, CFO, ...).\n"
+"- Invoice Address: Preferred address for all invoices. Selected by default when you invoice an order that belongs to this company.\n"
+"- Delivery Address: Preferred address for all deliveries. Selected by default when you deliver an order that belongs to this company.\n"
+"- Other: Other address for the company (e.g. subsidiary, ...)"
+msgstr ""
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_sport_club_coach_kanban
+msgid "<span class=\"badge bg-info text-white\">Active</span>"
+msgstr "<span class=\"badge bg-info text-white\">Доступний</span>"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_sport_club_coach_kanban
+msgid "<span class=\"badge bg-secondary text-white\">Inactive</span>"
+msgstr "<span class=\"badge bg-secondary text-white\">Не доступний</span>"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_subscription_type_form
+msgid "Access Settings"
+msgstr "Права доступу"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__allow_gym_access
+msgid "Access to Gym"
+msgstr "Доступ до Спорт Залу"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__message_needaction
+msgid "Action Needed"
+msgstr "Потрібна дія"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__active
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__is_active
+msgid "Active"
+msgstr "Доступний"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__active_lang_count
+msgid "Active Lang Count"
+msgstr "Кількість активних мов"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__activity_ids
+msgid "Activities"
+msgstr "Діяльність"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Декорація виключення діяльності"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__activity_state
+msgid "Activity State"
+msgstr "Стан діяльності"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Значок типу діяльності"
+
+#. module: sport_club
+#: model:sport.club.coach,name:sport_club.coach_1
+msgid "Addison Olson"
+msgstr "Еддісон Олсон"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__additional_info
+msgid "Additional info"
+msgstr "Додаткова інформація"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__type
+msgid "Address Type"
+msgstr "Тип адреси"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_training_session__group_category__aerobics
+msgid "Aerobics"
+msgstr "Аеробіка"
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+msgstr ""
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_sport_club_coach_form
+msgid "Archived"
+msgstr "Заархівовано"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__message_attachment_count
+msgid "Attachment Count"
+msgstr "Кількість вкладень"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__avatar_1920
+msgid "Avatar"
+msgstr "Аватар"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__avatar_1024
+msgid "Avatar 1024"
+msgstr "Аватар 1024"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__avatar_128
+msgid "Avatar 128"
+msgstr "Аватар 128"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__avatar_256
+msgid "Avatar 256"
+msgstr "Аватар 256"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__avatar_512
+msgid "Avatar 512"
+msgstr "Аватар 512"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.report_coach_performance_template
+msgid "Average Participants"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__bank_ids
+msgid "Banks"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__barcode
+msgid "Barcode"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__biography
+msgid "Biography"
+msgstr "Біографія"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__is_blacklisted
+msgid "Blacklist"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__mobile_blacklisted
+msgid "Blacklisted Phone Is Mobile"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__phone_blacklisted
+msgid "Blacklisted Phone is Phone"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__message_bounce
+msgid "Bounce"
+msgstr ""
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_coach_performance_wizard_form
+#: model_terms:ir.ui.view,arch_db:sport_club.view_renew_subscription_wizard_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_visit__visit_status__cancelled
+msgid "Cancelled"
+msgstr "Скасовано"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_fitness_location__capacity
+msgid "Capacity"
+msgstr "Місткість"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_coach__specialty__cardio_training
+msgid "Cardio  training"
+msgstr "Кардіо"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__channel_ids
+msgid "Channels"
+msgstr "Канали"
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__employee
+msgid "Check this box if this contact is an Employee."
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__city
+msgid "City"
+msgstr "Місто"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_res_partner__is_club_member
+#: model:ir.model.fields,field_description:sport_club.field_res_users__is_club_member
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__is_club_member
+msgid "Club Member"
+msgstr "Член клубу"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_res_partner_search_inherit
+msgid "Club Members"
+msgstr "Члени клубу"
+
+#. module: sport_club
+#: model:ir.model,name:sport_club.model_sport_club_subscription
+msgid "Club Subscription"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model,name:sport_club.model_sport_club_visit
+msgid "Club Visit"
+msgstr "Відвідування"
+
+#. module: sport_club
+#: model:ir.actions.act_window,name:sport_club.action_club_visit
+#: model:ir.ui.menu,name:sport_club.menu_club_visits
+msgid "Club Visits"
+msgstr "Відвідування"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach_performance_wizard__coach_ids
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__coach_id
+#: model_terms:ir.ui.view,arch_db:sport_club.report_coach_performance_template
+msgid "Coach"
+msgstr "Тренер"
+
+#. module: sport_club
+#: model:ir.ui.menu,name:sport_club.menu_coach_performance_report
+msgid "Coach Performance"
+msgstr "Ефективність тренерів"
+
+#. module: sport_club
+#: model:ir.actions.act_window,name:sport_club.action_coach_performance_wizard
+#: model:ir.actions.report,name:sport_club.action_report_coach_performance
+#: model:ir.model,name:sport_club.model_report_sport_club_report_coach_performance_template
+#: model_terms:ir.ui.view,arch_db:sport_club.report_coach_performance_template
+#: model_terms:ir.ui.view,arch_db:sport_club.view_coach_performance_wizard_form
+msgid "Coach Performance Report"
+msgstr "Звіт про роботу тренера"
+
+#. module: sport_club
+#: model:ir.model,name:sport_club.model_sport_club_coach_performance_wizard
+msgid "Coach Performance Wizard"
+msgstr "Візард по роботі тренерів"
+
+#. module: sport_club
+#: model:ir.actions.act_window,name:sport_club.action_sport_club_coach
+#: model:ir.ui.menu,name:sport_club.menu_sport_club_coaches
+msgid "Coaches"
+msgstr "Тренери"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__color
+msgid "Color"
+msgstr "Колір"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__commercial_partner_id
+msgid "Commercial Entity"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__company_id
+msgid "Company"
+msgstr "Компанія"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__company_registry
+msgid "Company ID"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__company_name
+msgid "Company Name"
+msgstr "Назва компанії"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__commercial_company_name
+msgid "Company Name Entity"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__company_type
+msgid "Company Type"
+msgstr "Тип компанії"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__partner_gid
+msgid "Company database ID"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__contact_address
+msgid "Complete Address"
+msgstr "Повна адреса"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__complete_name
+msgid "Complete Name"
+msgstr "Повна назва"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_renew_subscription_wizard_form
+msgid "Confirm Renewal"
+msgstr "Підтвердити поновлення"
+
+#. module: sport_club
+#: model:ir.model,name:sport_club.model_res_partner
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__child_ids
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__message_bounce
+msgid "Counter of the number of bounced emails for this contact"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__country_id
+msgid "Country"
+msgstr "Країна"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__country_code
+msgid "Country Code"
+msgstr ""
+
+#. module: sport_club
+#: model_terms:ir.actions.act_window,help:sport_club.action_club_visit
+msgid "Create and manage club visit history."
+msgstr ""
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_sport_club_coach_kanban
+msgid "Create training session"
+msgstr "Додати запис до розкладу"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_fitness_location__create_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__create_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach_performance_wizard__create_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__create_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_renew_wizard__create_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__create_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__create_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__create_uid
+msgid "Created by"
+msgstr "Створено"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_fitness_location__create_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__create_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach_performance_wizard__create_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__create_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_renew_wizard__create_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__create_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__create_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__create_date
+msgid "Created on"
+msgstr "Створено"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_training_session__group_category__crossfit
+msgid "Crossfit"
+msgstr "Кросфіт"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_coach__specialty__dance
+msgid "Dance"
+msgstr "Танці"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__session_date
+msgid "Date"
+msgstr "Дата"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach_performance_wizard__date_from
+msgid "Date From"
+msgstr "Дата з"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach_performance_wizard__date_to
+msgid "Date To"
+msgstr "Дата по"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_sport_club_coach_kanban
+msgid "Delete"
+msgstr "Видалити"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__description
+msgid "Description"
+msgstr "Опис"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_fitness_location__display_name
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__display_name
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach_performance_wizard__display_name
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__display_name
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_renew_wizard__display_name
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__display_name
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__display_name
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__display_name
+msgid "Display Name"
+msgstr "Назва"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_visit__visit_status__done
+msgid "Done"
+msgstr "Виконано"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__duration_months
+msgid "Duration (Months)"
+msgstr "Тривалість (місяців)"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__duration
+msgid "Duration (hrs)"
+msgstr "Тривалість (годин)"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_renew_wizard__duration_months
+msgid "Duration (months)"
+msgstr "Тривалість (місяців)"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_sport_club_coach_kanban
+msgid "Edit"
+msgstr "Редагувати"
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__partner_share
+msgid ""
+"Either customer (not a user), either shared user. Indicated the current "
+"partner is a customer without access or with a limited access created for "
+"sharing data."
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__email
+msgid "Email"
+msgstr "Ел.пошта"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__employee
+msgid "Employee"
+msgstr "Співробітник"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__end_date
+msgid "End Date"
+msgstr "Дата завершення"
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__phone_sanitized
+msgid ""
+"Field used to store sanitized phone number. Helps speeding up searches and "
+"comparisons."
+msgstr ""
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_subscription_search
+msgid "Filter by member"
+msgstr ""
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_training_session_search
+msgid "Filter by trainers"
+msgstr "Фільтрувати учасників"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_subscription_search
+#: model_terms:ir.ui.view,arch_db:sport_club.view_training_session_search
+msgid "Filter by types"
+msgstr "Фільтрувати за типом"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__message_follower_ids
+msgid "Followers"
+msgstr "Послідовувачі"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr "Формат електронної адреси \"Ім'я <email@domain>\""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__email_formatted
+msgid "Formatted Email"
+msgstr ""
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_sport_club_coach_form
+msgid "Future Schedule"
+msgstr "Майбутній розклад"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__future_schedule_ids
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__schedule_ids
+msgid "Future Schedules"
+msgstr "Майбутні розклади"
+
+#. module: sport_club
+#: model:ir.ui.menu,name:sport_club.sport_club_main_menu
+msgid "GYM"
+msgstr "Спортзал"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__partner_latitude
+msgid "Geo Latitude"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__partner_longitude
+msgid "Geo Longitude"
+msgstr "Географічна довгота"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_club_subscription_graph
+#: model_terms:ir.ui.view,arch_db:sport_club.view_club_visit_graph
+msgid "Graph"
+msgstr "Графік"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__fitness_location__location_type__group
+#: model_terms:ir.ui.view,arch_db:sport_club.view_training_session_search
+msgid "Group"
+msgstr "Групове"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__group_category
+msgid "Group Category"
+msgstr "Категорія групового заняття"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__allow_group_sessions
+msgid "Group Sessions"
+msgstr "Групове заняття"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__group_sessions_left
+msgid "Group Sessions Left"
+msgstr "Залишок групових занять"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_training_session__session_type__group
+msgid "Group Training"
+msgstr "Групове тренування"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__has_message
+msgid "Has Message"
+msgstr "Повідомлення"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_fitness_location__id
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__id
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach_performance_wizard__id
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__id
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_renew_wizard__id
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__id
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__id
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__id
+msgid "ID"
+msgstr "ІД"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__im_status
+msgid "IM Status"
+msgstr "Статус"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__activity_exception_icon
+msgid "Icon"
+msgstr "Іконка"
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__message_has_error
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Якщо позначено, деякі повідомлення мають помилку доставки."
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__team_id
+msgid ""
+"If set, this Sales Team will be used for sales and assignments related to "
+"this partner"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__is_blacklisted
+msgid ""
+"If the email address is on the blacklist, the contact won't receive mass "
+"mailing anymore, from any list"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__phone_sanitized_blacklisted
+msgid ""
+"If the sanitized phone number is on the blacklist, the contact won't receive"
+" mass mailing sms anymore, from any list"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__image_1920
+msgid "Image"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__image_512
+msgid "Image 512"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__is_independent
+msgid "Independent Visit"
+msgstr "Самостійне відвідування"
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__mobile_blacklisted
+msgid ""
+"Indicates if a blacklisted sanitized phone number is a mobile number. Helps "
+"distinguish which number is blacklisted             when there is both a "
+"mobile and phone field in a model."
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__phone_blacklisted
+msgid ""
+"Indicates if a blacklisted sanitized phone number is a phone number. Helps "
+"distinguish which number is blacklisted             when there is both a "
+"mobile and phone field in a model."
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__industry_id
+msgid "Industry"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__contact_address_inline
+msgid "Inlined Complete Address"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_fitness_location__is_active
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__is_active
+msgid "Is Active"
+msgstr "Активований"
+
+#. module: sport_club
+#: model:sport.club.coach,name:sport_club.coach_2
+msgid "Jesse Brown"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__function
+msgid "Job Position"
+msgstr "Джессі Браун"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__lang
+msgid "Language"
+msgstr "Мова"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_fitness_location__write_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__write_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach_performance_wizard__write_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__write_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_renew_wizard__write_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__write_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__write_uid
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__write_uid
+msgid "Last Updated by"
+msgstr "Останнє оновлення"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_fitness_location__write_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__write_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach_performance_wizard__write_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__write_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_renew_wizard__write_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__write_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__write_date
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__write_date
+msgid "Last Updated on"
+msgstr "Останнє оновлення"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__location_id
+msgid "Location"
+msgstr "Зала"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_fitness_location__location_type
+msgid "Location Type"
+msgstr "Тип зали"
+
+#. module: sport_club
+#: model:ir.ui.menu,name:sport_club.menu_sport_club_location
+msgid "Locations"
+msgstr "Зали"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__group_sessions_limit
+msgid "Max Group Sessions"
+msgstr "Максимальна кількість групових занять"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__personal_sessions_limit
+msgid "Max Personal Sessions"
+msgstr "Максимальна кількість персональних тренувань з тренером"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__member_id
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_renew_wizard__member_id
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__member_id
+msgid "Member"
+msgstr "Учасник"
+
+
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__message_ids
+msgid "Messages"
+msgstr "Повідомлення"
+
+
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__name
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__name
+msgid "Name"
+msgstr "Ім'я"
+
+
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__activity_summary
+msgid "Next Activity Summary"
+msgstr "Підсумок наступної діяльності"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__activity_type_id
+msgid "Next Activity Type"
+msgstr "Наступний тип діяльності"
+
+#. module: sport_club
+#. odoo-python
+#: code:addons/sport_club/models/sport_club_visit.py:0
+#, python-format
+msgid "No active subscription found."
+msgstr "Діючого абонементу не знайдено."
+
+#. module: sport_club
+#. odoo-python
+#: code:addons/sport_club/models/sport_club_visit.py:0
+#, python-format
+msgid "No seats available in this group session."
+msgstr "На цій груповій сесії немає місць."
+
+
+
+#. module: sport_club
+#. odoo-python
+#: code:addons/sport_club/models/sport_club_visit.py:0
+#, python-format
+msgid "Not enough group sessions."
+msgstr "Недостатньо групових занять."
+
+#. module: sport_club
+#. odoo-python
+#: code:addons/sport_club/models/sport_club_visit.py:0
+#, python-format
+msgid "Not enough personal sessions."
+msgstr "Недостатньо особистих тренувань."
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__comment
+msgid "Notes"
+msgstr "Нотатки"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Номер дії"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.report_coach_performance_template
+msgid "Number of Sessions"
+msgstr "Кількість тренувань"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_res_partner__visits_count
+#: model:ir.model.fields,field_description:sport_club.field_res_users__visits_count
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__visits_count
+msgid "Number of Visits"
+msgstr "Кількість відвідувачів"
+
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__parent_name
+msgid "Parent name"
+msgstr ""
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__visit_ids
+msgid "Participants"
+msgstr "Учасники"
+
+
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.report_coach_performance_template
+msgid "Period:"
+msgstr "Період: "
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_training_session_search
+msgid "Personal"
+msgstr "Персональне"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__personal_sessions_left
+msgid "Personal Sessions Left"
+msgstr "Залишок персональних тренувань"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__allow_personal_sessions
+msgid "Personal Trainer"
+msgstr "Особистий тренер"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_training_session__session_type__personal
+msgid "Personal Training"
+msgstr "Персональне тренування"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__fitness_location__location_type__personal
+msgid "Personal/Self"
+msgstr "Персональні з тренером/самостійні"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__phone
+msgid "Phone"
+msgstr "Телефон"
+
+
+
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_training_session__group_category__pilates
+msgid "Pilates"
+msgstr "Пілатес"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_club_visit_pivot
+#: model_terms:ir.ui.view,arch_db:sport_club.view_subscription_pivot
+msgid "Pivot Example"
+msgstr "Зведена таблиця"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__price
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_type__price
+msgid "Price"
+msgstr "Ціна"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__property_product_pricelist
+msgid "Pricelist"
+msgstr ""
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_coach_performance_wizard_form
+msgid "Print Report"
+msgstr "Друкувати звіт"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__ref
+msgid "Reference"
+msgstr "Довідка"
+
+
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__partner_id
+msgid "Related Partner"
+msgstr "Пов'язаний партнер"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__remaining_seats
+msgid "Remaining Seats"
+msgstr "Залишок місць"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_subscription_form
+msgid "Renew"
+msgstr "Поновити"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_renew_subscription_wizard_form
+msgid "Renew Subscription"
+msgstr "Поновити абонемент"
+
+#. module: sport_club
+#: model:ir.model,name:sport_club.model_sport_club_subscription_renew_wizard
+msgid "Renew Subscription Wizard"
+msgstr "Майстер поновлення абонементу"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.report_coach_performance_template
+msgid "Report generated on:"
+msgstr "Звіт створено:"
+
+#. module: sport_club
+#: model:ir.ui.menu,name:sport_club.menu_coach_report_root
+msgid "Reports"
+msgstr "Звіти"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__activity_user_id
+msgid "Responsible User"
+msgstr "Відповідальний користувач"
+
+#. module: sport_club
+#: model:sport.club.coach,name:sport_club.coach_3
+msgid "Ron Gibson"
+msgstr "Рон Гібсон"
+
+
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__team_id
+msgid "Sales Team"
+msgstr "Команда продажів"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__user_id
+msgid "Salesperson"
+msgstr "Продавець"
+
+
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_visit__visit_status__scheduled
+msgid "Scheduled"
+msgstr "Заплановано"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__self
+msgid "Self"
+msgstr "Самостійне"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__session_id
+msgid "Session"
+msgstr "Тренування"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__session_type
+msgid "Session Type"
+msgstr "Тип тренування"
+
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__specialty
+msgid "Specialty"
+msgstr "Спеціалізація"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_partner_form_inherit_sport_club
+msgid "Sport Club"
+msgstr "Спорт клуб"
+
+#. module: sport_club
+#: model:res.groups,name:sport_club.group_sport_club_admin
+msgid "Sport Club Admin"
+msgstr "Спорт клуб адмін"
+
+#. module: sport_club
+#: model:ir.model,name:sport_club.model_sport_club_coach
+msgid "Sport Club Coach"
+msgstr "Тренер"
+
+#. module: sport_club
+#: model:res.groups,name:sport_club.group_sport_club_user
+msgid "Sport Club User"
+msgstr "Користувач"
+
+#. module: sport_club
+#: model:ir.module.category,name:sport_club.sport_club
+msgid "Sport club"
+msgstr "Спорт клуб"
+
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__start_date
+msgid "Start Date"
+msgstr "Дата початку"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__state_id
+msgid "State"
+msgstr "Статус"
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_coach__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Статус на основі діяльності\n"
+"Прострочено: термін виконання вже минув\n"
+"Сьогодні: дата дії сьогодні\n"
+"Планується: майбутня діяльність."
+
+
+
+
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_coach__specialty__strength_training
+msgid "Strength training"
+msgstr "Силове тренування"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_training_session__group_category__stretching
+msgid "Stretching"
+msgstr "Стречинг"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_renew_wizard__subscription_id
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__subscription_id
+#: model:ir.ui.menu,name:sport_club.sport_club_menu_main_subscription
+msgid "Subscription"
+msgstr "Абонемент"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__name
+msgid "Subscription Name"
+msgstr "Абонемент"
+
+#. module: sport_club
+#: model:ir.model,name:sport_club.model_sport_club_subscription_type
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription__subscription_type_id
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_subscription_renew_wizard__subscription_type_id
+msgid "Subscription Type"
+msgstr "Тип абонементу"
+
+#. module: sport_club
+#: model:ir.actions.act_window,name:sport_club.action_subscription_type
+#: model:ir.ui.menu,name:sport_club.menu_subscription_type
+msgid "Subscription Types"
+msgstr "Типи абонементів"
+
+#. module: sport_club
+#: model:ir.actions.act_window,name:sport_club.action_subscription
+#: model:ir.ui.menu,name:sport_club.menu_sport_club_subscriptions
+msgid "Subscriptions"
+msgstr "Абонементи"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__category_id
+msgid "Tags"
+msgstr "Теги"
+
+
+
+#. module: sport_club
+#: model:ir.model.fields,help:sport_club.field_sport_club_visit__visit_status
+msgid "The current status of the visit (scheduled, completed, or cancelled)."
+msgstr "Поточний статус візиту (заплановано, завершено або скасовано)."
+
+
+
+
+
+
+#. module: sport_club
+#. odoo-python
+#: code:addons/sport_club/models/sport_club_visit.py:0
+#, python-format
+msgid "This personal session already has a participant."
+msgstr "У цій персональній сесії вже є учасник."
+
+
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__tz
+msgid "Timezone"
+msgstr "Час"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__tz_offset
+msgid "Timezone offset"
+msgstr "Зсув часового поясу"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__title
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_training_session__name
+msgid "Title"
+msgstr "Назва тренування"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_subscription_tree
+msgid "Total"
+msgstr "Підсумок"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.report_coach_performance_template
+msgid "Total Participants"
+msgstr "Всього учасників"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.report_coach_performance_template
+msgid "Average Participants"
+msgstr "Середня кількість учасників"
+
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.report_coach_performance_template
+msgid "Totals"
+msgstr "Підсумки"
+
+#. module: sport_club
+#: model:ir.model,name:sport_club.model_fitness_location
+#: model:ir.model.fields,field_description:sport_club.field_fitness_location__name
+msgid "Training Location"
+msgstr "Місце тренування"
+
+#. module: sport_club
+#: model:ir.model,name:sport_club.model_sport_club_training_session
+msgid "Training Session"
+msgstr "Тренування"
+
+#. module: sport_club
+#: model:ir.actions.act_window,name:sport_club.action_training_session
+msgid "Training Sessions"
+msgstr "Тренування"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_sport_club_training_session_calendar
+msgid "Training Sessions Calendar"
+msgstr "Розклад тренувань"
+
+#. module: sport_club
+#: model:ir.ui.menu,name:sport_club.menu_sport_club_training
+msgid "Trainings"
+msgstr "Тренування"
+
+#. module: sport_club
+#: model_terms:ir.ui.view,arch_db:sport_club.view_sport_club_coach_form
+msgid "Trener`s info"
+msgstr "Інформація о тренері"
+
+#. module: sport_club
+#: model:ir.ui.menu,name:sport_club.sport_club_menu_main_doctor_patient
+msgid "Treners"
+msgstr "Тренера"
+
+#. module: sport_club
+#: model:ir.module.category,description:sport_club.sport_club
+msgid "User access levels for the Club"
+msgstr "Рівні доступу користувачів до Клубу"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__user_ids
+msgid "Users"
+msgstr "Користувачі"
+
+#. module: sport_club
+#. odoo-python
+#: code:addons/sport_club/models/sport_club_visit.py:0
+#: model:ir.model.fields,field_description:sport_club.field_res_partner__visit_ids
+#: model:ir.model.fields,field_description:sport_club.field_res_users__visit_ids
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__visit_ids
+#, python-format
+msgid "Visit"
+msgstr "Відвідування"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__visit_date
+msgid "Visit Date"
+msgstr "Дата відвідування"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__name
+msgid "Visit Name"
+msgstr "Назва"
+
+#. module: sport_club
+#: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__visit_status
+msgid "Visit Status"
+msgstr "Статус"
+
+
+
+
+
+#. module: sport_club
+#: model:sport.club.coach,name:sport_club.coach_4
+msgid "Willie Burke"
+msgstr "Віллі Берк"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_training_session__group_category__yoga
+msgid "Yoga"
+msgstr "Йога"
+
+#. module: sport_club
+#: model:ir.model.fields.selection,name:sport_club.selection__sport_club_coach__specialty__yoga_stretching
+msgid "Yoga/Stretching"
+msgstr "Йога/Стречинг"
+
+
+#. module: sport_club
+#: model:ir.actions.act_window,name:sport_club.action_fitness_location
+msgid "Locations"
+msgstr "Локації"
+
+#. module: sport_club
+#: model_terms:ir.actions.act_window,help:sport_club.action_fitness_location
+msgid "Here you can add or edit available training locations."
+msgstr "Тут ви можете додавати або редагувати доступні локації для тренувань."
