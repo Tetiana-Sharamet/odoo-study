@@ -62,7 +62,7 @@
 
             <filter string="Group" name="group_sessions" domain="[('session_type','=','group')]"/>
             <filter string="Personal" name="personal_sessions" domain="[('session_type','=','personal')]"/>
-            <searchpanel>
+            <searchpanel view_types="calendar">
                     <field name="coach_id" string="Filter by trainers" icon="fa-users" select="multi"
                            enable_counters="1"/>
 
@@ -77,11 +77,11 @@
         <field name="name">Training Sessions</field>
         <field name="res_model">sport.club.training.session</field>
         <field name="view_mode">calendar,tree,form</field>
+        <field name="search_view_id" ref="view_training_session_search"/>
     </record>
 
     <menuitem id="menu_sport_club_training"  name="Trainings"
               parent="sport_club_main_menu"
               action="action_training_session"
               sequence="20"/>
-
 </odoo>
