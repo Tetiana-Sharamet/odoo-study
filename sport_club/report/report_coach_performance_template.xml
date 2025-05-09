@@ -1,0 +1,100 @@
+<odoo>
+    <record id="paperformat_coach_performance" model="report.paperformat">
+        <field name="name">Coach Performance A4</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">28</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_coach_performance" model="ir.actions.report">
+        <field name="name">Coach Performance Report</field>
+        <field name="model">sport.club.coach.performance.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sport_club.report_coach_performance_template</field>
+        <field name="report_file">sport_club.report_coach_performance_template</field>
+        <field name="binding_model_id" ref="model_sport_club_coach_performance_wizard"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_coach_performance"/>
+    </record>
+
+    <template id="report_coach_performance_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Coach Performance Report</h2>
+                    <p>
+                        Period:
+                        <strong>
+                            <t t-esc="date_from"/>
+                        </strong>
+                        —
+                        <strong>
+                            <t t-esc="date_to"/>
+                        </strong>
+                    </p>
+                    <table class="table table-sm mt-3">
+                        <thead>
+                            <tr>
+                                <th>Coach</th>
+                                <th>Number of Sessions</th>
+                                <th>Total Participants</th>
+                                <th>Average Participants</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="coach_data">
+                                <tr>
+                                    <td>
+                                        <t t-esc="coach_data['coach_name']"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="coach_data['session_count']"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="coach_data['total_participants']"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="coach_data['avg_participants']"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Totals</th>
+                                <th>
+                                    <t t-esc="sum(d['session_count'] for d in docs)"/>
+                                </th>
+                                <th>
+                                    <t t-esc="sum(d['total_participants'] for d in docs)"/>
+                                </th>
+                                <th>
+                                    <t t-esc="('%.2f' % (
+                                    sum(d['avg_participants'] for d in docs) / (len(docs) or 1)
+                                ))"/>
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <div class="row">
+                        <div class="col-12 text-center" style="font-size: 0.8em;">
+                            <p>Report generated on:
+                                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y %H:%M:%S')"/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
