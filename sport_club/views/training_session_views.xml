@@ -41,7 +41,7 @@
         <field name="arch" type="xml">
             <calendar string="Training Sessions Calendar"
                      quick_create="0" mode="week" scales="day,week,month,year"
-                     create_name_field="session_date" color="coach_id" date_start="session_date"
+                     color="coach_id" date_start="session_date"
                      event_open_popup="False">
                 <field name="name"/>
                 <field name="coach_id"/>
