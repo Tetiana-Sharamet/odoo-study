@@ -9,11 +9,14 @@ class ResPartner(models.Model):
         default=False)
 
     visits_count = fields.Integer(
-        string="Number of Visits")
+        string="Number of Visits",
+        compute='_compute_visits_count'
+    )
 
     visit_ids = fields.One2many(
         comodel_name='sport.club.visit',
         inverse_name='member_id',
+        store=True
     )
 
     @api.depends('visit_ids')

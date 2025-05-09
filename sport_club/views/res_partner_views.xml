@@ -7,6 +7,7 @@
             <xpath expr="//sheet/group" position="inside">
                 <group string="Sport Club">
                     <field name="is_club_member"/>
+                    <field name="visits_count"/>
 <!--                    <field name="is_coach"/>-->
                 </group>
             </xpath>

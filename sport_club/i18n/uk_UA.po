@@ -150,42 +150,14 @@ msgstr "Аватар 512"
 #. module: sport_club
 #: model_terms:ir.ui.view,arch_db:sport_club.report_coach_performance_template
 msgid "Average Participants"
-msgstr ""
+msgstr "Середня кількість учасників"
 
-#. module: sport_club
-#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__bank_ids
-msgid "Banks"
-msgstr ""
-
-#. module: sport_club
-#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__barcode
-msgid "Barcode"
-msgstr ""
 
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__biography
 msgid "Biography"
 msgstr "Біографія"
 
-#. module: sport_club
-#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__is_blacklisted
-msgid "Blacklist"
-msgstr ""
-
-#. module: sport_club
-#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__mobile_blacklisted
-msgid "Blacklisted Phone Is Mobile"
-msgstr ""
-
-#. module: sport_club
-#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__phone_blacklisted
-msgid "Blacklisted Phone is Phone"
-msgstr ""
-
-#. module: sport_club
-#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__message_bounce
-msgid "Bounce"
-msgstr ""
 
 #. module: sport_club
 #: model_terms:ir.ui.view,arch_db:sport_club.view_coach_performance_wizard_form
@@ -213,15 +185,7 @@ msgstr "Кардіо"
 msgid "Channels"
 msgstr "Канали"
 
-#. module: sport_club
-#: model:ir.model.fields,help:sport_club.field_sport_club_coach__is_company
-msgid "Check if the contact is a company, otherwise it is a person"
-msgstr ""
 
-#. module: sport_club
-#: model:ir.model.fields,help:sport_club.field_sport_club_coach__employee
-msgid "Check this box if this contact is an Employee."
-msgstr ""
 
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__city
@@ -243,7 +207,7 @@ msgstr "Члени клубу"
 #. module: sport_club
 #: model:ir.model,name:sport_club.model_sport_club_subscription
 msgid "Club Subscription"
-msgstr ""
+msgstr "Абонемент"
 
 #. module: sport_club
 #: model:ir.model,name:sport_club.model_sport_club_visit
@@ -293,40 +257,28 @@ msgstr "Тренери"
 msgid "Color"
 msgstr "Колір"
 
-#. module: sport_club
-#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__commercial_partner_id
-msgid "Commercial Entity"
-msgstr ""
+
 
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__company_id
 msgid "Company"
 msgstr "Компанія"
 
-#. module: sport_club
-#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__company_registry
-msgid "Company ID"
-msgstr ""
+
 
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__company_name
 msgid "Company Name"
 msgstr "Назва компанії"
 
-#. module: sport_club
-#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__commercial_company_name
-msgid "Company Name Entity"
-msgstr ""
+
 
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__company_type
 msgid "Company Type"
 msgstr "Тип компанії"
 
-#. module: sport_club
-#: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__partner_gid
-msgid "Company database ID"
-msgstr ""
+
 
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__contact_address
@@ -349,10 +301,6 @@ msgstr "Підтвердити поновлення"
 msgid "Contact"
 msgstr "Контакт"
 
-#. module: sport_club
-#: model:ir.model.fields,help:sport_club.field_sport_club_coach__message_bounce
-msgid "Counter of the number of bounced emails for this contact"
-msgstr ""
 
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__country_id
@@ -362,12 +310,12 @@ msgstr "Країна"
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__country_code
 msgid "Country Code"
-msgstr ""
+msgstr "Код країни"
 
 #. module: sport_club
 #: model_terms:ir.actions.act_window,help:sport_club.action_club_visit
 msgid "Create and manage club visit history."
-msgstr ""
+msgstr "Створюйте та керуйте історією відвідування клубу."
 
 #. module: sport_club
 #: model_terms:ir.ui.view,arch_db:sport_club.view_sport_club_coach_kanban
@@ -504,12 +452,12 @@ msgstr ""
 #. module: sport_club
 #: model_terms:ir.ui.view,arch_db:sport_club.view_subscription_search
 msgid "Filter by member"
-msgstr ""
+msgstr "Фільтр за учасниками"
 
 #. module: sport_club
 #: model_terms:ir.ui.view,arch_db:sport_club.view_training_session_search
 msgid "Filter by trainers"
-msgstr "Фільтрувати учасників"
+msgstr "Фільтрувати за тренерами"
 
 #. module: sport_club
 #: model_terms:ir.ui.view,arch_db:sport_club.view_subscription_search
@@ -525,12 +473,8 @@ msgstr "Послідовувачі"
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Послідовувачі (Партнери)"
 
-#. module: sport_club
-#: model:ir.model.fields,help:sport_club.field_sport_club_coach__activity_type_icon
-msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
 
 #. module: sport_club
 #: model:ir.model.fields,help:sport_club.field_sport_club_coach__email_formatted
@@ -561,7 +505,7 @@ msgstr "Спортзал"
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__partner_latitude
 msgid "Geo Latitude"
-msgstr ""
+msgstr "Географічна широта"
 
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__partner_longitude
@@ -729,12 +673,12 @@ msgstr "Активований"
 #. module: sport_club
 #: model:sport.club.coach,name:sport_club.coach_2
 msgid "Jesse Brown"
-msgstr ""
+msgstr "Джессі Браун"
 
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__function
 msgid "Job Position"
-msgstr "Джессі Браун"
+msgstr "Посада"
 
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__lang
@@ -874,7 +818,7 @@ msgstr "Кількість тренувань"
 #: model:ir.model.fields,field_description:sport_club.field_res_users__visits_count
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__visits_count
 msgid "Number of Visits"
-msgstr "Кількість відвідувачів"
+msgstr "Кількість відвідувань"
 
 
 #. module: sport_club
@@ -1016,7 +960,7 @@ msgstr "Команда продажів"
 #. module: sport_club
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_coach__user_id
 msgid "Salesperson"
-msgstr "Продавець"
+msgstr "Користувач"
 
 
 
@@ -1237,7 +1181,7 @@ msgstr "Інформація о тренері"
 #. module: sport_club
 #: model:ir.ui.menu,name:sport_club.sport_club_menu_main_doctor_patient
 msgid "Treners"
-msgstr "Тренера"
+msgstr "Тренери"
 
 #. module: sport_club
 #: model:ir.module.category,description:sport_club.sport_club
@@ -1273,8 +1217,6 @@ msgstr "Назва"
 #: model:ir.model.fields,field_description:sport_club.field_sport_club_visit__visit_status
 msgid "Visit Status"
 msgstr "Статус"
-
-
 
 
 
