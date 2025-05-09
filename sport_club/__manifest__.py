@@ -28,11 +28,7 @@
         'report/report_coach_performance_template.xml',
 
     ],
-    'assets': {
-        'web.assets_backend': [
-            'static/src/js/calendar_patch.js',
-        ],
-    },
+
     'demo': [
         'demo/sport_club_subscription_demo.xml',
         'demo/sport_club_coach_demo.xml',
@@ -41,5 +37,5 @@
     ],
     'installable': True,
     'application': True,
-    'i18n': True,
+    # 'i18n': True,
 }

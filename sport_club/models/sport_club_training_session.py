@@ -161,3 +161,12 @@ class SportClubTrainingSession(models.Model):
                 record.group_category,
                 record.location_id.name,
                 record.coach_id.name)
+
+    @api.constrains('session_date')
+    def _check_session_time(self):
+        for record in self:
+            hour = record.session_date.hour
+            if hour < 7 or hour >= 20:
+                raise ValidationError(_(
+                    "Training sessions can only be scheduled between 7:00 and 20:00"
+                ))
