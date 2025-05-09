@@ -25,6 +25,7 @@ class SportClubTrainingSession(models.Model):
         translate=True)
     coach_id = fields.Many2one(
         comodel_name='sport.club.coach',
+        domain=[('is_active', '=', True)],
         required=True)
 
     visit_ids = fields.One2many(
@@ -39,7 +40,7 @@ class SportClubTrainingSession(models.Model):
     session_type = fields.Selection([
         ('group', 'Group Training'),
         ('personal', 'Personal Training')],
-        default = 'group')
+        default='group')
 
     duration = fields.Float(
         string='Duration (hrs)',

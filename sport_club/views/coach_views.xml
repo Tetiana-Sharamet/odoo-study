@@ -45,7 +45,7 @@
 
                             <separator/>
                             <field name="specialty"/>
-                             <field name="user_id"/>
+                            <field name="user_id"/>
                             <separator/>
                         </group>
                     </group>
@@ -118,10 +118,15 @@
                                         <span class="badge bg-secondary text-white">Inactive</span>
                                     </t>
                                 </div>
-                                 <button name="create_visit" string="Create training session" type="object" class="oe_highlight"/>
+                                <t t-if="record.is_active.raw_value">
+                                    <button name="create_visit"
+                                            string="Create training session"
+                                            type="object"
+                                            class="oe_highlight"/>
+                                </t>
                             </div>
 
-                             <field name="image_256" widget="image"
+                            <field name="image_256" widget="image"
                                    class="oe_avatar oe_right"
                                    options="{'preview_image': 'image_256'}"
                                    style="max-width:150px;max-height:150px;"/>
