@@ -50,7 +50,7 @@ class SportClubSubscription(models.Model):
         required=True)
 
     price = fields.Float(
-        related='subscription_type_id.price',
+        compute='_compute_subscription_price',
         store=True)
 
     group_sessions_left = fields.Integer(
@@ -68,6 +68,14 @@ class SportClubSubscription(models.Model):
                     record.duration_months):
                 record.end_date = (record.start_date
                                    + timedelta(30 * record.duration_months))
+
+    @api.depends('subscription_type_id', 'duration_months')
+    def _compute_subscription_price(self):
+        for record in self:
+            if (record.subscription_type_id and
+                    record.duration_months):
+                record.price = (record.subscription_type_id.price*
+                                   record.duration_months)
 
     @api.depends('start_date', 'end_date')
     def _compute_is_active(self):
