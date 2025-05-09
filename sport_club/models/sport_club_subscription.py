@@ -93,14 +93,15 @@ class SportClubSubscription(models.Model):
                     record.member_id.name,
                     record.start_date, record.duration_months)
 
-    @api.depends('subscription_type_id')
+    @api.depends('subscription_type_id','duration_months')
     def _compute_sessions_left(self):
         for record in self:
             st = record.subscription_type_id
-            record.group_sessions_left = st.group_sessions_limit \
+            record.group_sessions_left = (st.group_sessions_limit
+                                          *  record.duration_months)\
                 if st.allow_group_sessions \
                 else 0
-            record.personal_sessions_left = st.personal_sessions_limit \
+            record.personal_sessions_left = st.personal_sessions_limit *  record.duration_months \
                 if st.allow_personal_sessions \
                 else 0
 
