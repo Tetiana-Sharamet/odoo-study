@@ -146,8 +146,8 @@
     </record>
 
     <menuitem id="menu_sport_club_coaches"
-              name="Coaches"
-              parent="sport_club_menu_main_doctor_patient"
+              name="Treners"
+              parent="sport_club_main_menu"
               action="action_sport_club_coach"
               sequence="20"/>
 
