@@ -1,0 +1,10 @@
+<odoo>
+    <record id="action_report_coach_performance" model="ir.actions.report">
+        <field name="name">Coach Performance A4</field>
+        <field name="model">sport.club.coach.performance.wizard</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">sport_club.report_coach_performance_template</field>
+        <field name="report_file">sport_club.report_coach_performance_template</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
