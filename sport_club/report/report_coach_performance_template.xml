@@ -1,32 +1,4 @@
 <odoo>
-    <record id="paperformat_coach_performance" model="report.paperformat">
-        <field name="name">Coach Performance A4</field>
-        <field name="default" eval="True"/>
-        <field name="format">A4</field>
-        <field name="page_height">0</field>
-        <field name="page_width">0</field>
-        <field name="orientation">Portrait</field>
-        <field name="margin_top">60</field>
-        <field name="margin_bottom">28</field>
-        <field name="margin_left">7</field>
-        <field name="margin_right">7</field>
-        <field name="header_line" eval="True"/>
-        <field name="header_spacing">90</field>
-        <field name="dpi">90</field>
-    </record>
-
-    <record id="action_report_coach_performance" model="ir.actions.report">
-        <field name="name">Coach Performance Report</field>
-        <field name="model">sport.club.coach.performance.wizard</field>
-<!--        <field name="report_type">qweb-pdf</field>-->
-         <field name="report_type">qweb-html</field>
-        <field name="report_name">sport_club.report_coach_performance_template</field>
-        <field name="report_file">sport_club.report_coach_performance_template</field>
-        <field name="binding_model_id" ref="model_sport_club_coach_performance_wizard"/>
-        <field name="binding_type">report</field>
-        <field name="paperformat_id" ref="paperformat_coach_performance"/>
-    </record>
-
     <template id="report_coach_performance_template">
         <t t-call="web.html_container">
             <t t-call="web.external_layout">

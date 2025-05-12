@@ -28,9 +28,21 @@
         <field name="name">access.sport.club.admin</field>
         <field name="model_id" ref="model_sport_club_visit"/>
         <field name="groups" eval="[(4, ref('group_sport_club_admin'))]"/>
+         <field name="domain_force">[(1, '=', 1)]</field>
         <field name="perm_read" eval="1"/>
         <field name="perm_write" eval="1"/>
         <field name="perm_create" eval="1"/>
         <field name="perm_unlink" eval="1"/>
+    </record>
+
+     <record id="sport_club_training_session_rule_admin" model="ir.rule">
+      <field name="name">access.sport.club.admin</field>
+      <field name="model_id" ref="model_sport_club_training_session"/>
+      <field name="groups" eval="[(4, ref('group_sport_club_admin'))]"/>
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="True"/>
+      <field name="perm_create" eval="True"/>
+      <field name="perm_unlink" eval="True"/>
     </record>
 </odoo>

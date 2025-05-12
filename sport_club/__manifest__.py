@@ -25,6 +25,7 @@
         'views/subscription_type_views.xml',
         'wizard/renew_subscription_wizard_view.xml',
         'wizard/coach_performance_wizard_view.xml',
+        'report/report_coach.xml',
         'report/report_coach_performance_template.xml',
 
     ],
