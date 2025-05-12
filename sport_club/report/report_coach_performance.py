@@ -24,10 +24,12 @@ class CoachPerformanceReport(models.AbstractModel):
         date_from = options.get('date_from')
         date_to = options.get('date_to')
         _logger.warning('FINAL DOCS: %s', coaches)
+        company = self.env.company
         return {
             'doc_ids': docids,
             'doc_model': 'sport.club.coach.performance.wizard',
             'docs': coaches,
             'date_from': date_from,
             'date_to': date_to,
+            'company': company,
         }
